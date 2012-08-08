@@ -2,7 +2,7 @@
  * Òì³£, ²Ã¼õ×ÔOgre
  * created by reedhong 2012.07.22
  */
-#include "Platform/Platform.h"
+#include "Main/Prerequisites.h"
 namespace Lotus {
 	/** \addtogroup Core
 	*  @{

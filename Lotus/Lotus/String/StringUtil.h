@@ -7,9 +7,8 @@
 #ifndef __String_Util_H__
 #define __String_Util_H__
 
-#include <vector>
-using namespace std;
-#include "Platform/Platform.h"
+
+#include "Main/Prerequisites.h"
 
 namespace Lotus
 {

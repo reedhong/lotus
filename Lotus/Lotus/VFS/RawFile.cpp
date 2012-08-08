@@ -1,14 +1,13 @@
 /********************************************************************
-	created:	2012/08/07 
-	filename: 	FileSystemArchive.cpp
+	created:	2012/08/08 
+	filename: 	RawFile.cpp
 	author:		reedhong 
 	
-	purpose:	
+	purpose:	系统自带
 *********************************************************************/
 
-#include "FileSystemArchive.h"
+#include "RawFile.h"
 
 namespace Lotus {
 
-
-}  // end Lotus
+} // Lotus

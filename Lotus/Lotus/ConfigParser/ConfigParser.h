@@ -6,11 +6,7 @@
 #ifndef __LOTUS_CONFIG_PARSER_H__
 #define __LOTUS_CONFIG_PARSER_H__
 
-#include <vector>
-#include <map>
-using namespace std;
-
-#include "Platform/Platform.h"
+#include "Main/Prerequisites.h"
 
 namespace Lotus
 {

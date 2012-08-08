@@ -11,10 +11,10 @@ namespace Lotus {
 #define LOTUS_PLATFORM_WIN32 1
 #define LOTUS_PLATFORM_LINUX 2
 #define LOTUS_PLATFORM_APPLE 3
-#define LOTUS_PLATFORM_SYMBIAN 4
+//#define LOTUS_PLATFORM_SYMBIAN 4
 #define LOTUS_PLATFORM_APPLE_IOS 5
 #define LOTUS_PLATFORM_ANDROID 6
-#define LOTUS_PLATFORM_NACL 7
+//#define LOTUS_PLATFORM_NACL 7
 
 #define LOTUS_COMPILER_MSVC 1
 #define LOTUS_COMPILER_GNUC 2
@@ -279,11 +279,6 @@ namespace Lotus {
 	typedef unsigned long long uint64;
 	typedef long long int64;
 #endif
-
-	#define String string
-	#define  TRUE true
-	#define FALSE false
-	#define snprintf _snprintf
 }
 
 

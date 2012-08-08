@@ -13,7 +13,9 @@
 #endif
 #include <windows.h>
 #include <ctime>
+#include "Main/Prerequisites.h"
 #include "Main/Macro.h"
+
 using namespace std;
 
 namespace Lotus

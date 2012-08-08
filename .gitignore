@@ -1,0 +1,8 @@
+/src/Debug/
+/src/Lotus/Debug/
+/src/Test/Debug/
+/src/UIEngine/Debug/
+*.user
+*.suo
+*.ncb
+*.log

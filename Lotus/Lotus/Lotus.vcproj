@@ -155,15 +155,15 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath=".\VFS\Archive.cpp"
-				>
-			</File>
-			<File
 				RelativePath=".\ConfigParser\ConfigParser.cpp"
 				>
 			</File>
 			<File
 				RelativePath=".\Convert\Convert.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\VFS\Dir.cpp"
 				>
 			</File>
 			<File
@@ -175,11 +175,7 @@
 				>
 			</File>
 			<File
-				RelativePath=".\VFS\FileStream.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\VFS\FileSystemArchive.cpp"
+				RelativePath=".\VFS\File.cpp"
 				>
 			</File>
 			<File
@@ -191,11 +187,23 @@
 				>
 			</File>
 			<File
-				RelativePath=".\VFS\MemeroyStream.cpp"
+				RelativePath=".\Math\Math.cpp"
 				>
 			</File>
 			<File
 				RelativePath=".\Profile\Profiler.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\VFS\RawDir.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\VFS\RawFile.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\VFS\RawFileSystem.cpp"
 				>
 			</File>
 			<File
@@ -223,10 +231,6 @@
 				>
 			</File>
 			<File
-				RelativePath=".\VFS\Stream.cpp"
-				>
-			</File>
-			<File
 				RelativePath=".\String\StringUtil.cpp"
 				>
 			</File>
@@ -235,7 +239,7 @@
 				>
 			</File>
 			<File
-				RelativePath=".\VFS\ZipStream.cpp"
+				RelativePath=".\VFS\VFS.cpp"
 				>
 			</File>
 		</Filter>
@@ -244,10 +248,6 @@
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
-			<File
-				RelativePath=".\VFS\Archive.h"
-				>
-			</File>
 			<File
 				RelativePath=".\Main\Bitwise.h"
 				>
@@ -265,6 +265,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\VFS\Dir.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Exception\Exception.h"
 				>
 			</File>
@@ -273,11 +277,11 @@
 				>
 			</File>
 			<File
-				RelativePath=".\VFS\FileStream.h"
+				RelativePath=".\VFS\File.h"
 				>
 			</File>
 			<File
-				RelativePath=".\VFS\FileSystemArchive.h"
+				RelativePath=".\VFS\FileSystem.h"
 				>
 			</File>
 			<File
@@ -293,7 +297,7 @@
 				>
 			</File>
 			<File
-				RelativePath=".\VFS\MemoryStream.h"
+				RelativePath=".\Math\Math.h"
 				>
 			</File>
 			<File
@@ -301,7 +305,23 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Main\Prerequisites.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Profile\Profiler.h"
+				>
+			</File>
+			<File
+				RelativePath=".\VFS\RawDir.h"
+				>
+			</File>
+			<File
+				RelativePath=".\VFS\RawFile.h"
+				>
+			</File>
+			<File
+				RelativePath=".\VFS\RawFileSystem.h"
 				>
 			</File>
 			<File
@@ -329,10 +349,6 @@
 				>
 			</File>
 			<File
-				RelativePath=".\VFS\Stream.h"
-				>
-			</File>
-			<File
 				RelativePath=".\String\StringUtil.h"
 				>
 			</File>
@@ -345,7 +361,7 @@
 				>
 			</File>
 			<File
-				RelativePath=".\VFS\ZipStream.h"
+				RelativePath=".\VFS\VFS.h"
 				>
 			</File>
 		</Filter>

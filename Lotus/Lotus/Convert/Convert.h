@@ -6,7 +6,7 @@
 #ifndef __Lotus_Convert_H__
 #define __Lotus_Config_H__
 
-#include "Platform/Platform.h"
+#include "Main/Prerequisites.h"
 
 namespace Lotus {
 	class Convert

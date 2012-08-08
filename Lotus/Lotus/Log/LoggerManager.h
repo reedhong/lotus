@@ -5,11 +5,7 @@
 #ifndef __LOTUS_LOG_MANAGER_H__
 #define __LOTUS_LOG_MANAGER_H__
 
-#include <string>
-#include <map>
-
-using namespace std;
-#include "Platform/Platform.h"
+#include "Main/Prerequisites.h"
 #include "Main/Singleton.h"
 #include "Logger.h"
 
