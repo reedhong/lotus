@@ -6,3 +6,10 @@
 *.suo
 *.ncb
 *.log
+*.obj
+*.pdb
+*.ilk
+*.lib
+*.exe
+*.idb
+*.htm
