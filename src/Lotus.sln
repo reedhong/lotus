@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UIEngine", "UIEngine\UIEngine.vcproj", "{86B13170-D9EE-46B6-92F0-7D1D8852EE91}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test", "Test\Test.vcproj", "{D3BEDE20-AB30-4E4E-91D0-F406F381E547}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F77331B7-6FEA-43A7-8E45-C2A8748DA43A} = {F77331B7-6FEA-43A7-8E45-C2A8748DA43A}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lotus", "Lotus\Lotus.vcproj", "{F77331B7-6FEA-43A7-8E45-C2A8748DA43A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{86B13170-D9EE-46B6-92F0-7D1D8852EE91}.Debug|Win32.ActiveCfg = Debug|Win32
+		{86B13170-D9EE-46B6-92F0-7D1D8852EE91}.Debug|Win32.Build.0 = Debug|Win32
+		{86B13170-D9EE-46B6-92F0-7D1D8852EE91}.Release|Win32.ActiveCfg = Release|Win32
+		{86B13170-D9EE-46B6-92F0-7D1D8852EE91}.Release|Win32.Build.0 = Release|Win32
+		{D3BEDE20-AB30-4E4E-91D0-F406F381E547}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D3BEDE20-AB30-4E4E-91D0-F406F381E547}.Debug|Win32.Build.0 = Debug|Win32
+		{D3BEDE20-AB30-4E4E-91D0-F406F381E547}.Release|Win32.ActiveCfg = Release|Win32
+		{D3BEDE20-AB30-4E4E-91D0-F406F381E547}.Release|Win32.Build.0 = Release|Win32
+		{F77331B7-6FEA-43A7-8E45-C2A8748DA43A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F77331B7-6FEA-43A7-8E45-C2A8748DA43A}.Debug|Win32.Build.0 = Debug|Win32
+		{F77331B7-6FEA-43A7-8E45-C2A8748DA43A}.Release|Win32.ActiveCfg = Release|Win32
+		{F77331B7-6FEA-43A7-8E45-C2A8748DA43A}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
