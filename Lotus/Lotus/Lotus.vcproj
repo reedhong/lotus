@@ -155,6 +155,14 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
+				RelativePath=".\SceneManager\Camera.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Main\Color.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\ConfigParser\ConfigParser.cpp"
 				>
 			</File>
@@ -164,6 +172,10 @@
 			</File>
 			<File
 				RelativePath=".\VFS\Dir.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\SceneManager\Entity.cpp"
 				>
 			</File>
 			<File
@@ -179,6 +191,22 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Render\OpenGL\GLRenderSystem.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Render\OpenGL\GLTexture.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Render\OpenGL\GLTextureManager.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\SceneManager\Light.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\Log\Logger.cpp"
 				>
 			</File>
@@ -191,7 +219,19 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Math\Matrix.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\ResourceManage\Mesh.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\Profile\Profiler.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Math\Quaternion.cpp"
 				>
 			</File>
 			<File
@@ -204,6 +244,30 @@
 			</File>
 			<File
 				RelativePath=".\VFS\RawFileSystem.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\SceneManager\Renderable.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Render\RenderCapabilities.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Render\RenderSupport.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Render\RenderSystem.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Render\RenderTarget.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Render\RenderWindow.cpp"
 				>
 			</File>
 			<File
@@ -223,6 +287,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\SceneManager\SceneManager.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\Main\SharedPtr.cpp"
 				>
 			</File>
@@ -235,7 +303,27 @@
 				>
 			</File>
 			<File
+				RelativePath=".\SceneManager\SubEntity.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\ResourceManage\SubMesh.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\ResourceManage\Texture.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\ResourceManage\TextureManager.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\Platform\Win32\Timer.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Math\Vector.cpp"
 				>
 			</File>
 			<File
@@ -250,6 +338,14 @@
 			>
 			<File
 				RelativePath=".\Main\Bitwise.h"
+				>
+			</File>
+			<File
+				RelativePath=".\SceneManager\Camera.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Main\Color.h"
 				>
 			</File>
 			<File
@@ -269,6 +365,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\SceneManager\Entity.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Exception\Exception.h"
 				>
 			</File>
@@ -282,6 +382,22 @@
 			</File>
 			<File
 				RelativePath=".\VFS\FileSystem.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Render\OpenGL\GLRenderSystem.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Render\OpenGL\GLTexture.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Render\OpenGL\GLTextureManager.h"
+				>
+			</File>
+			<File
+				RelativePath=".\SceneManager\Light.h"
 				>
 			</File>
 			<File
@@ -301,6 +417,14 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Math\Matrix.h"
+				>
+			</File>
+			<File
+				RelativePath=".\ResourceManage\Mesh.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Platform\Platform.h"
 				>
 			</File>
@@ -313,6 +437,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Math\Quaternion.h"
+				>
+			</File>
+			<File
 				RelativePath=".\VFS\RawDir.h"
 				>
 			</File>
@@ -322,6 +450,34 @@
 			</File>
 			<File
 				RelativePath=".\VFS\RawFileSystem.h"
+				>
+			</File>
+			<File
+				RelativePath=".\SceneManager\Renderable.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Render\RenderCapabilities.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Render\RenderContext.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Render\RenderSupport.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Render\RenderSystem.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Render\RenderTarget.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Render\RenderWindow.h"
 				>
 			</File>
 			<File
@@ -341,6 +497,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\SceneManager\SceneManager.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Main\SharedPtr.h"
 				>
 			</File>
@@ -353,11 +513,31 @@
 				>
 			</File>
 			<File
+				RelativePath=".\SceneManager\SubEntity.h"
+				>
+			</File>
+			<File
+				RelativePath=".\ResourceManage\SubMesh.h"
+				>
+			</File>
+			<File
+				RelativePath=".\ResourceManage\Texture.h"
+				>
+			</File>
+			<File
+				RelativePath=".\ResourceManage\TextureManager.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Main\Timer.h"
 				>
 			</File>
 			<File
 				RelativePath=".\Platform\Win32\TimerImp.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Math\Vector.h"
 				>
 			</File>
 			<File

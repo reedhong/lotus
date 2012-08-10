@@ -7,6 +7,9 @@
 *********************************************************************/
 
 #include "RawFileSystem.h"
+#include "RawFile.h"
+#include "RawDir.h"
+#include "Main/SharedPtr.h"
 
 namespace Lotus {
 	RawFileSystem::RawFileSystem()
@@ -21,10 +24,12 @@ namespace Lotus {
 
 	FilePtr RawFileSystem::open(const String&  path) 
 	{
-		return 0;
+		RawFile* pFile = LOTUS_NEW RawFile(path);		
+		return SharedPtr<RawFile>(pFile);
 	}
 	DirPtr RawFileSystem::openDir(const String&path)
 	{
-		return 0;
+		RawDir* pDir = LOTUS_NEW RawDir(path);		
+		return SharedPtr<RawDir>(pDir);
 	}	
 }  // end Lotus

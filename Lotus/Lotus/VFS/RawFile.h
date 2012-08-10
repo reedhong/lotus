@@ -9,6 +9,8 @@
 #ifndef __Lotus_RawFile_H__
 #define __Lotus_RawFile_H__
 
+#include "File.h"
+
 namespace Lotus {
 	class RawFile: public File
 	{
