@@ -7,7 +7,6 @@
 #ifndef __Lotus_ResourceManagers_H__
 #define __Lotus_ResourceManagers_H__
 
-#include "VFS/Archive.h"
 
 namespace Lotus {
 	class ResourceManagers
@@ -16,7 +15,7 @@ namespace Lotus {
 		ResourceManagers();
 		~ResourceManagers();
 	private:
-		map<String, Archive*> mResourceLocationIndex;
+		//map<String, Archive*> mResourceLocationIndex;
 	};
 }
 

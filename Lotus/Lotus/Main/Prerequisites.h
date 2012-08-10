@@ -28,9 +28,22 @@ namespace Lotus {
 #endif
 #define snprintf _snprintf
 
+#if LOTUS_DOUBLE_PRECISION == 1
+	/** Software floating point type.
+	@note Not valid as a pointer to GPU buffers / parameters
+	*/
+    typedef double Real;
+#else
+	/** Software floating point type.
+	@note Not valid as a pointer to GPU buffers / parameters
+	*/
+    typedef float Real;
+#endif
+
 // 类型声明
 typedef vector<String> StringVector;
 typedef SharedPtr<StringVector> StringVectorPtr;
+
 
 
 // 预先声明

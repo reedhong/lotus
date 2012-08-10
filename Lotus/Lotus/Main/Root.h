@@ -8,11 +8,38 @@
 
 #include "Singleton.h"
 
+#include "Prerequisites.h"
+#include "Render/RenderSystem.h"
+#include "Render/RenderWindow.h"
+#include "Log/LoggerManager.h"
+#include "VFS/VFS.h"
+#include "SceneManager/SceneManager.h"
+#include "Timer.h"
+
 namespace Lotus
 {
 	class Root: public Singleton<Root>
 	{
+	private:
+		RenderSystem*		mRender;
 
+		SceneManager*		mSceneMgr;
+		LoggerManager*		mLoggerManager;
+		VFS*							mVFS;
+
+		bool							mIsInitialised;
+		bool							mQueuedEnd;
+
+		Timer*						mTimer;
+		String							mConfigFileName;
+	public:
+		Root(const String& configFileName, const String& logFileName);
+		~Root();
+
+		RenderWindow* initialise(bool autoCreateWindow, const String& windowTitle);
+
+		void startRendering(void);
+		bool renderOneFrame();
 	};
 
 }
