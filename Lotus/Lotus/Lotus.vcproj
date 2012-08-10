@@ -191,6 +191,14 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Render\OpenGLES2\GLES2Texture.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Render\OpenGLES\GLESTexture.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\Render\OpenGL\GLRenderSystem.cpp"
 				>
 			</File>
@@ -382,6 +390,14 @@
 			</File>
 			<File
 				RelativePath=".\VFS\FileSystem.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Render\OpenGLES2\GLES2Texture.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Render\OpenGLES\GLESTexture.h"
 				>
 			</File>
 			<File

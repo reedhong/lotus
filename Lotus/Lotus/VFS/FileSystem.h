@@ -22,7 +22,18 @@ namespace Lotus {
 		~FileSystem();
 		virtual const String& getType() const = 0;
 		virtual FilePtr open(const String&  path) const = 0;
+
 		virtual DirPtr openDir(const String&path) const = 0;
+
+		// 目录操作
+		virtual StringVectorPtr listDir(const String& path) const = 0;
+		virtual bool mkDir(const String& path) const = 0;
+		virtual bool rmDir(const String& path) const = 0;
+
+		// 路径相关操作
+		virtual bool isPath(const string& path) const = 0;
+		virtual bool joinPath(const string& path1, const String &path2);
+
 	};
 }
 

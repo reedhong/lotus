@@ -17,10 +17,12 @@ namespace Lotus {
 	protected:
 		String		mPath;
 	public :
-		Dir() {}
+		Dir(String path):mPath(path) {}
 		~Dir() {}
-		
-		bool exists(const String& path);
+		/*
+		 * 列出子目录
+		 */
+		virtual StringVectorPtr listDir() = 0;		
 	};
 
 	typedef SharedPtr<Dir> DirPtr;
