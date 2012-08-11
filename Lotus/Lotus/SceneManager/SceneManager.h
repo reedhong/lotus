@@ -21,6 +21,7 @@ namespace Lotus {
 	protected:
 		Camera*		mCamera;
 		vector<Entity*>	mEntities;
+		RenderSystem*	mRender;
 	public:
 		SceneManager();
 		virtual ~SceneManager();
@@ -28,6 +29,7 @@ namespace Lotus {
 		virtual bool  _renderScene();
 		virtual Entity*  createEntity(const String& entityName, const String& meshName);
 		virtual Entity*  createEntity(const String& meshName);
+		virtual void setRender(RenderSystem* render);
 
 	};
 }

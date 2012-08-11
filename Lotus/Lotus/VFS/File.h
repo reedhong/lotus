@@ -68,7 +68,7 @@ namespace Lotus {
 		@param delim The delimiter to stop at
 		@return The number of bytes read, excluding the terminating character
 		*/
-		virtual size_t readLine(char* buf, size_t maxCount, const String& delim = "\n");
+		virtual size_t readLine(char* buf, size_t maxCount, const String& delim = "\n") = 0;
 		
 	    /** Returns a String containing the next line of data, optionally 
 		    trimmed for whitespace. 
@@ -84,14 +84,14 @@ namespace Lotus {
 		    trimAfter If true, the line is trimmed for whitespace (as in 
 		    String.trim(true,true))
 	    */
-	    virtual String getLine( bool trimAfter = true );
+	    virtual String getLine( bool trimAfter = true ) = 0;
 
 	    /** Returns a String containing the entire stream. 
 	    @remarks
 		    This is a convenience method for text streams only, allowing you to 
 		    retrieve a String object containing all the data in the stream.
 	    */
-	    virtual String getAsString(void);
+	    virtual String getAsString(void) = 0;
 
 		/** Skip a single line from the stream.
         @note
@@ -100,7 +100,7 @@ namespace Lotus {
 		@param delim The delimiter(s) to stop at
 		@return The number of bytes skipped
 		*/
-		virtual size_t skipLine(const String& delim = "\n");
+		virtual size_t skipLine(const String& delim = "\n") = 0;
 
 		/** Skip a defined number of bytes. This can also be a negative value, in which case
 		the file pointer rewinds a defined number of bytes. */

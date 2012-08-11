@@ -10,5 +10,6 @@
 #define LOTUS_CONFIG_LITTLE_ENDIAN
 #define LOTUS_PROFILING 1
 #define LOTUS_DOUBLE_PRECISION 0	// 浮点数的精度
+#define ENABLE_GL_CHECK 1
 
 #endif

@@ -13,20 +13,19 @@ namespace Lotus{
 
 		mTimer = LOTUS_NEW Timer();
 		mVFS = LOTUS_NEW VFS();
+
+		mSceneMgr = LOTUS_NEW SceneManager();
+		//mRender->init();
 	}
 
 	Root::~Root()
 	{
-
+		// TODO:
 	}
 
-	RenderWindow* Root::initialise(bool autoCreateWindow, const String& windowTitle)
-	{
-		return NULL;
-	}
 	void Root::startRendering(void)
 	{
-		mRender->init();
+		
 
 		// Clear event times
 		//clearEventTimes();
@@ -48,5 +47,12 @@ namespace Lotus{
 	{
 		bool bRet = mSceneMgr->_renderScene();
 		return bRet;
+	}
+
+	void Root::setRender(RenderSystem* render)
+	{
+		mRender = render;
+		ASSERT(mSceneMgr != 0);
+		mSceneMgr->setRender(render);
 	}
 }

@@ -7,7 +7,16 @@
 *********************************************************************/
 
 #include "RenderSystem.h"
+#include "RenderCommon.h"
 
 namespace Lotus {
+	RenderSystem::RenderSystem()
+	{
 
+	}
+
+	RenderSystem::~RenderSystem()
+	{
+
+	}
 }

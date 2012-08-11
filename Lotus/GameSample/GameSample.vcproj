@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9.00"
-	Name="Test"
-	ProjectGUID="{D3BEDE20-AB30-4E4E-91D0-F406F381E547}"
-	RootNamespace="Test"
+	Name="GameSample"
+	ProjectGUID="{F917C92C-9D79-4053-94D4-7ED7E370D883}"
+	RootNamespace="GameSample"
 	TargetFrameworkVersion="131072"
 	>
 	<Platforms>
@@ -163,35 +163,11 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath=".\testConfigParser.cpp"
+				RelativePath=".\Game.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\testLogger.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\testProfile.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\testSharedPtr.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\testSingleton.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\testStringUtil.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\testTimer.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\testVFS.cpp"
+				RelativePath=".\main.cpp"
 				>
 			</File>
 		</Filter>
@@ -201,11 +177,7 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
-				RelativePath=".\main.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\test.h"
+				RelativePath=".\Game.h"
 				>
 			</File>
 		</Filter>

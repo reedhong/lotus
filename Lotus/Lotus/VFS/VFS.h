@@ -14,9 +14,16 @@
 #include "File.h"
 #include "Dir.h"
 
-namespace Lotus {
+namespace Lotus {	
+	const static String RAW_FS = "raw";
 	class VFS: public Singleton<VFS>
 	{
+	public:
+	
+	private:
+		map<String, FileSystemPtr>		mMountPointMap;	// 建立mount point-> fs的映射
+		map<String, String>					mPathMap;	// 建立mount　point->Path的映射
+		map<String, FileSystemPtr>		mFileSystemMap;		// 所支持的fsType->fs的映射
 	public:
 		VFS();
 		virtual ~VFS();
@@ -24,7 +31,7 @@ namespace Lotus {
 		/*
 		 * 加载新的文件系统
 		 */
-		bool mount(const String& path, const String& mountPoint, const String& fsType);
+		bool mount(const String& abspath, const String& mountPoint, const String& fsType);
 
 		/*
 		 * 添加文件系统
@@ -34,14 +41,18 @@ namespace Lotus {
 		/*
 		 * @path: 为加载到mountPoint的相对路径，这里我们均采取Linux的命令模式 actor/monster/test.xml
 		 */
-		FilePtr	 open(const String& relativePath, const String& mountPoint);
-		FilePtr open(const String& absolutePath);
+		FilePtr	 open( const String& mountPoint, const String& relpath);
+
+		/*
+		 * 虚拟的绝对路径
+		 */
+		FilePtr open(const String& absPath);
 
 		/*
 		 * 打开某个目录项
 		 */
-		DirPtr openDir(const String&path, const String& mountPoint);
-		DirPtr openDir(const String& absolutePath);
+		//DirPtr openDir(const String&path, const String& mountPoint);
+		//DirPtr openDir(const String& absolutePath);
 	};
 }
 

@@ -19,10 +19,6 @@ namespace Lotus {
 	public :
 		Dir(String path):mPath(path) {}
 		~Dir() {}
-		/*
-		 * 列出子目录
-		 */
-		virtual StringVectorPtr listDir() = 0;		
 	};
 
 	typedef SharedPtr<Dir> DirPtr;

@@ -9,6 +9,7 @@
 namespace Lotus {
 
 	class ResourceManager{
+	public:
 		ResourceManager();
 		~ResourceManager();
 	};

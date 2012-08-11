@@ -9,7 +9,7 @@
 #ifndef __Lotus_Texture_H__
 #define __Lotus_Texture_H__
 
-#include 
+#include "Resource.h"
 
 namespace Lotus {
 	class Texture: public Resource 

@@ -9,5 +9,8 @@
 #include "RawDir.h"
 
 namespace Lotus {
+	RawDir::~RawDir()
+	{
 
+	}
 }

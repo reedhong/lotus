@@ -10,6 +10,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test", "Test\Test.vcproj", 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lotus", "Lotus\Lotus.vcproj", "{F77331B7-6FEA-43A7-8E45-C2A8748DA43A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GameSample", "GameSample\GameSample.vcproj", "{F917C92C-9D79-4053-94D4-7ED7E370D883}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F77331B7-6FEA-43A7-8E45-C2A8748DA43A} = {F77331B7-6FEA-43A7-8E45-C2A8748DA43A}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -28,6 +33,10 @@ Global
 		{F77331B7-6FEA-43A7-8E45-C2A8748DA43A}.Debug|Win32.Build.0 = Debug|Win32
 		{F77331B7-6FEA-43A7-8E45-C2A8748DA43A}.Release|Win32.ActiveCfg = Release|Win32
 		{F77331B7-6FEA-43A7-8E45-C2A8748DA43A}.Release|Win32.Build.0 = Release|Win32
+		{F917C92C-9D79-4053-94D4-7ED7E370D883}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F917C92C-9D79-4053-94D4-7ED7E370D883}.Debug|Win32.Build.0 = Debug|Win32
+		{F917C92C-9D79-4053-94D4-7ED7E370D883}.Release|Win32.ActiveCfg = Release|Win32
+		{F917C92C-9D79-4053-94D4-7ED7E370D883}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

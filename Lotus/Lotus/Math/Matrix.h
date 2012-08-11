@@ -15,14 +15,14 @@ namespace Lotus {
 	{
 	public:
 		inline Matrix4(){}
-		~Matrix4();
+		~Matrix4(){}
 	};	// end Matrix4
 
 	class Matrix3
 	{
 	public:
 		inline Matrix3(){}
-		~Matrix3();
+		~Matrix3(){};
 	};	// end Matrix3
 
 } // end Lotus

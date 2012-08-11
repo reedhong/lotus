@@ -116,6 +116,22 @@ namespace Lotus {
 		}
 		return ret;
 	}
+
+	String RawFile::getLine( bool trimAfter)
+	{
+		return "";
+	}
+
+
+	String RawFile::getAsString(void)
+	{
+		return "";
+	}
+
+	size_t RawFile::skipLine(const String& delim)
+	 {
+		return 0;
+	 }
 	//-----------------------------------------------------------------------
 	void RawFile::skip(long count)
 	{

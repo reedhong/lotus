@@ -1,6 +1,6 @@
 /********************************************************************
 	created:	2012/08/10 
-	filename: 	ColourValue.h
+	filename: 	Color.h
 	author:		reedhong 
 	
 	purpose:	color
@@ -12,6 +12,13 @@
 namespace Lotus {
 	class Color
 	{	
+	public:
+		static const Color ZERO;
+		static const Color Black;
+		static const Color White;
+		static const Color Red;
+		static const Color Green;
+		static const Color Blue;
 	public:
 		float r,g,b,a;
 	public:	

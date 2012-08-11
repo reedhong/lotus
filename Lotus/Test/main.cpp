@@ -28,6 +28,11 @@ int main(int argc, char**argv)
 #ifdef TEST_PROFILE
 	testProfile();
 #endif
+
+	 testSharedPtr();
+
+	 testVFS();
+
 	system("pause");
 	return 0;
 }

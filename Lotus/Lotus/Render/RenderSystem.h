@@ -13,7 +13,7 @@
 #include "Math/Matrix.h"
 #include "ResourceManage/TextureManager.h"
 #include "RenderSupport.h"
-#include "RenderContext.h"
+//#include "RenderContext.h"
 #include "RenderCapabilities.h"
 #include "Main/Color.h"
 
@@ -36,21 +36,19 @@ namespace Lotus {
 		// system attribute
 		RenderCapabilities*	mCapabilities;
 		RenderSupport*						mSupport;
-		RenderContext*						mContext;
+		//RenderContext*						mContext;
 
 		// matrix
 		Matrix4	mVeiwMatrix;
 		Matrix4	mWorldMatrix;
 		Matrix4	mTextureMatrix;
 
-		// check if the system has already been initialised
-		bool mInitialised;
 
 	public:
 		RenderSystem();
 		virtual ~RenderSystem();
 		virtual const String& getName(void) const = 0;
-		virtual bool init();
+
 		/*
 		 * set material
 		 */
@@ -60,6 +58,10 @@ namespace Lotus {
 			const Color &emissive, Real shininess,
 			TrackVertexColourType tracking);
 #endif
+
+		virtual void clearFrameBuffer(unsigned int bufferMask, 
+			const Color& color = Color::Black, 
+			Real depth = 1.0f, unsigned short stencil = 0) = 0;
 	};
 }
 

@@ -235,6 +235,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\VFS\Path.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\Profile\Profiler.cpp"
 				>
 			</File>
@@ -268,14 +272,6 @@
 			</File>
 			<File
 				RelativePath=".\Render\RenderSystem.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\Render\RenderTarget.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\Render\RenderWindow.cpp"
 				>
 			</File>
 			<File
@@ -441,6 +437,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\VFS\Path.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Platform\Platform.h"
 				>
 			</File>
@@ -477,7 +477,7 @@
 				>
 			</File>
 			<File
-				RelativePath=".\Render\RenderContext.h"
+				RelativePath=".\Render\RenderCommon.h"
 				>
 			</File>
 			<File
@@ -486,14 +486,6 @@
 			</File>
 			<File
 				RelativePath=".\Render\RenderSystem.h"
-				>
-			</File>
-			<File
-				RelativePath=".\Render\RenderTarget.h"
-				>
-			</File>
-			<File
-				RelativePath=".\Render\RenderWindow.h"
 				>
 			</File>
 			<File

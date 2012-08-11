@@ -17,8 +17,13 @@ namespace Lotus {
 	public: 
 		RawFileSystem();
 		virtual ~RawFileSystem();
-		virtual FilePtr open(const String&  path) ;
-		virtual DirPtr openDir(const String&path);
+		virtual FilePtr open(const String&  basepath, const String& relpath) const;
+		virtual DirPtr openDir(const String&path) const;
+
+		// Ä¿Â¼²Ù×÷
+		virtual void  listDir(const String& path, StringVector* paths) const;
+		virtual bool mkDir(const String& path) const ;
+		virtual bool rmDir(const String& path) const;
 	};
 }
 

@@ -39,52 +39,14 @@ namespace Lotus {
 		*/
 		virtual size_t write(const void* buf, size_t count);
 
-		/** Get a single line from the stream.
-		@remarks
-			The delimiter character is not included in the data
-			returned, and it is skipped over so the next read will occur
-			after it. The buffer contents will include a
-			terminating character.
-        @note
-            If you used this function, you <b>must</b> open the stream in <b>binary mode</b>,
-            otherwise, it'll produce unexpected results.
-		@param buf Reference to a buffer pointer
-		@param maxCount The maximum length of data to be read, excluding the terminating character
-		@param delim The delimiter to stop at
-		@return The number of bytes read, excluding the terminating character
-		*/
 		virtual size_t readLine(char* buf, size_t maxCount, const String& delim = "\n");
 		
-	    /** Returns a String containing the next line of data, optionally 
-		    trimmed for whitespace. 
-	    @remarks
-		    This is a convenience method for text streams only, allowing you to 
-		    retrieve a String object containing the next line of data. The data
-		    is read up to the next newline character and the result trimmed if
-		    required.
-        @note
-            If you used this function, you <b>must</b> open the stream in <b>binary mode</b>,
-            otherwise, it'll produce unexpected results.
-	    @param 
-		    trimAfter If true, the line is trimmed for whitespace (as in 
-		    String.trim(true,true))
-	    */
+
 	    virtual String getLine( bool trimAfter = true );
 
-	    /** Returns a String containing the entire stream. 
-	    @remarks
-		    This is a convenience method for text streams only, allowing you to 
-		    retrieve a String object containing all the data in the stream.
-	    */
+
 	    virtual String getAsString(void);
 
-		/** Skip a single line from the stream.
-        @note
-            If you used this function, you <b>must</b> open the stream in <b>binary mode</b>,
-            otherwise, it'll produce unexpected results.
-		@param delim The delimiter(s) to stop at
-		@return The number of bytes skipped
-		*/
 		virtual size_t skipLine(const String& delim = "\n");
 
 		/** Skip a defined number of bytes. This can also be a negative value, in which case

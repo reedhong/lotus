@@ -34,4 +34,9 @@ namespace Lotus {
 	{
 		return 0;
 	}
+
+	void SceneManager::setRender(RenderSystem* render)
+	{
+		mRender = render;
+	}
 }

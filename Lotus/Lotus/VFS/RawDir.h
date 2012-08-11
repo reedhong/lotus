@@ -14,7 +14,7 @@ namespace Lotus {
 	class RawDir : public Dir 
 	{
 	public:
-		RawDir(const String path);
+		RawDir(const String path):Dir(path) {}
 		virtual ~RawDir();
 	};
 }

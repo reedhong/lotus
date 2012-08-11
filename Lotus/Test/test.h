@@ -16,4 +16,7 @@ void testStringUtil();
 void testTimer();
 void testProfile();
 
+void testSharedPtr();
+void testVFS();
+
 #endif
