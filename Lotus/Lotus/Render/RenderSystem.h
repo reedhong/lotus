@@ -16,6 +16,8 @@
 //#include "RenderContext.h"
 #include "RenderCapabilities.h"
 #include "Main/Color.h"
+#include "Viewport.h"
+#include "Camera.h"
 
 
 namespace Lotus {
@@ -43,12 +45,15 @@ namespace Lotus {
 		Matrix4	mWorldMatrix;
 		Matrix4	mTextureMatrix;
 
-
+		// view port:
+		Viewport	mViewport;
+		Camera		mCamera;
 	public:
 		RenderSystem();
 		virtual ~RenderSystem();
 		virtual const String& getName(void) const = 0;
-
+		virtual  void test(void ) const  = 0;
+		virtual void drawCoordinateSystem(int tileSize=10) =0;
 		/*
 		 * set material
 		 */

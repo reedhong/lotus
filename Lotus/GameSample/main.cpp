@@ -55,7 +55,9 @@ GLvoid ReSizeGLScene(GLsizei width, GLsizei height)		// 重置OpenGL窗口大小
 int Init(GLvoid)										// 此处开始对OpenGL进行所有设置
 {
 	g_game = new Game();
-	return g_game->init();
+	g_game->startup(800,600);
+
+	return 1;
 }
 
 
@@ -351,10 +353,6 @@ int WINAPI WinMain(HINSTANCE	hInstance,			// 当前窗口实例
 		return 0;									// 失败退出
 	}
 
-	g_game->start();
-
-#if 0
-
 	while(!done)									// 保持循环直到 done=TRUE
 	{
 		if (PeekMessage(&msg,NULL,0,0,PM_REMOVE))	// 有消息在等待吗?
@@ -380,7 +378,7 @@ int WINAPI WinMain(HINSTANCE	hInstance,			// 当前窗口实例
 				}
 				else								// 不是退出的时候，刷新屏幕
 				{
-					DrawGLScene();					// 绘制场景
+					g_game->frame();				// 绘制场景
 					SwapBuffers(hDC);				// 交换缓存 (双缓存)
 				}
 			}
@@ -398,7 +396,6 @@ int WINAPI WinMain(HINSTANCE	hInstance,			// 当前窗口实例
 			}
 		}
 	}
-#endif
 	// 关闭程序
 	KillGLWindow();									// 销毁窗口
 	return 0;// (msg.wParam);							// 退出程序

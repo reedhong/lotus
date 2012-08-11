@@ -12,8 +12,9 @@
 #include "Main/Prerequisites.h"
 
 #include "SceneManager.h"
-#include "Camera.h"
+#include "Render/Camera.h"
 #include "Entity.h"
+#include "Render/RenderSystem.h"
 
 namespace Lotus {
 	class SceneManager 

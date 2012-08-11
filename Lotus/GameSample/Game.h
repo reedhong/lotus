@@ -15,8 +15,15 @@ public:
 	Game();
 	~Game();
 public:
-	bool init();
-	void start();
+	void startup(int width,int height,float scale = 1.0f);
+
+	void end();
+
+	void frame();
+
+	void pause();
+
+	void resume();
 };
 
 #endif

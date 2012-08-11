@@ -23,25 +23,6 @@ namespace Lotus{
 		// TODO:
 	}
 
-	void Root::startRendering(void)
-	{
-		
-
-		// Clear event times
-		//clearEventTimes();
-
-		// Infinite loop, until broken out of by frame listeners
-		// or break out by calling queueEndRendering()
-		mQueuedEnd = false;
-		while( !mQueuedEnd )
-		{
-			//Pump messages in all registered RenderWindow windows
-			//WindowEventUtilities::messagePump();
-
-			if (!renderOneFrame())
-				break;
-		}
-	}
 
 	bool Root::renderOneFrame()
 	{

@@ -11,6 +11,8 @@
 #include "Main/Root.h"
 #include "Render/OpenGL/GLRenderSystem.h"
 
+#include <GL/glew.h>
+
 using namespace Lotus;
 
 Game::Game()
@@ -23,35 +25,40 @@ Game::~Game()
 
 }
 
-bool Game::init()
+void Game::startup(int width,int height,float scale)
 {
 	Root* root  = new Root("./main.cfg", "root.log");
 	GLRenderSystem* render = new GLRenderSystem();
 	root->setRender(render);
+	
+	glViewport(0,0,800,600);						// 重置当前的视口
 
-	return true;
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+	glOrtho(-20.0, 20.0, -20.0, 20.0, -20.0, 20.0);
+
 }
 
-void Game::start()
+void Game::end()
 {
-	MSG msg;
-	ZeroMemory(&msg, sizeof(MSG));
 
-	while (TRUE)
-	{
-		//		AxProfile::AxProfile_PushNode("Msg");
-		//读取出消息队列中的所有消息并处理
-		while(PeekMessage(&msg, NULL, 0, 0, PM_REMOVE)) 
-		{ 
-			//如果是退出消息,退出
-			if (msg.message == WM_QUIT)  return;
+}
 
-			//处理其他消息
-			TranslateMessage(&msg);
-			DispatchMessage(&msg);
-		};
-		
-		if( !Root::Instance()->renderOneFrame() )
-			break;
-	}
+void Game::frame()
+{
+	gluLookAt(0,0,100, 0, 0, 0, 0, 1, 0);
+	glLoadIdentity();		
+	Root::Instance()->renderOneFrame();
+}
+
+void Game::pause()
+{
+
+}
+
+void Game::resume()
+{
+
 }

@@ -35,7 +35,6 @@ namespace Lotus
 		Root(const String& configFileName, const String& logFileName);
 		~Root();
 
-		void startRendering(void);
 		bool renderOneFrame();
 		void setRender(RenderSystem* render);
 	};

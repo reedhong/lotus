@@ -9,6 +9,8 @@
 #include "GLRenderSystem.h"
 #include "Log/LoggerManager.h"
 #include "GL/glew.h"
+#include "GLCommon.h"
+#include "Render/RenderCommon.h"
 
 namespace Lotus {
 	GLRenderSystem::GLRenderSystem()
@@ -21,6 +23,7 @@ namespace Lotus {
 	{
 
 	}
+
 
 	const String& GLRenderSystem::getName(void) const
 	{
@@ -65,4 +68,82 @@ namespace Lotus {
 		glClear(flags);
 		GL_CHECK_ERROR;
 	}
-}
+
+	void GLRenderSystem::test() const
+	{
+		gluLookAt(5,5,5, 0, 0, 0, 0, 1, 0);
+		glLoadIdentity();
+		glColor3ub(255, 0, 0);
+		glBegin(GL_LINES); // x : R
+
+		glVertex3i(-10,0,0);
+		glVertex3i(10,0,0);
+		glEnd();
+		glColor3ub(0, 0 ,0);
+		glBegin(GL_LINES); // y : G
+		glVertex3i(0,10,0);
+		glVertex3i(0,-10,0);
+		glEnd();
+		glColor3ub(0,0,255);
+		glBegin(GL_LINES); // z: B
+		glVertex3i(0,0,-10);
+		glVertex3i(0,0,10);
+		glEnd();					
+		//glutWireCube(1.0);
+
+		glFlush();
+	}
+
+	void GLRenderSystem::drawCoordinateSystem(int tileSize)
+	{
+
+		glDisable( GL_TEXTURE_2D );
+		glColor4f(1.0, 0,0,1);
+		glBegin(GL_LINES); // x : R
+
+		glVertex3i(-10000,0,0);
+		glVertex3i(10000,0,0);
+		glEnd();
+		glColor4f(0,1.0,0,1);
+		glBegin(GL_LINES); // y : G
+		glVertex3i(0,100000,0);
+		glVertex3i(0,-10000,0);
+		glEnd();
+		glColor4f(0,0,1,1);
+		glBegin(GL_LINES); // z: B
+		glVertex3i(0,0,-10000);
+		glVertex3i(0,0,100000);
+		glEnd();
+#if 0
+		GLColor(0xFF000000);
+		//glLineWidth(5);
+		glBegin(GL_LINES); // point
+		glVertex3i(m_camera.x,m_camera.y,m_camera.z);
+		glVertex3i((int)m_pointX, (int)m_pointY, (int)m_pointZ);
+		glEnd();
+		GLColor(0xFFFFFF00);
+		glBegin(GL_LINES); // camera
+		//gluLookAt(m_camera.x,  m_camera.y, m_camera.z,m_camera.x,  m_camera.y, 0, 0,1,0);
+		glVertex3i(m_camera.x,m_camera.y,m_camera.z);
+		glVertex3i(m_camera.x,m_camera.y, 100);
+		glEnd();
+#endif
+#if 1
+		glColor4f(1,1,1,1); // »ÒÉ«
+		//glPushMatrix();
+		//int MAX_LEN = 5120;
+		for(int i = -5120; i <= 5120; i += tileSize)
+		{
+			if( i ==0) continue;
+			glBegin(GL_LINES);				
+			glVertex3f(-5120, i, 0);					
+			glVertex3f(5120, i, 0);
+			glVertex3f(i, -5120,0);							
+			glVertex3f(i, 5120,0);
+			glEnd();
+		}
+		//glPopMatrix();
+#endif
+		glEnable( GL_TEXTURE_2D );	
+	}
+}  // end Lotus

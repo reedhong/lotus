@@ -3,11 +3,13 @@
 	filename: 	Camera.h
 	author:		reedhong 
 	
-	purpose:	Camera
+	purpose:	ÉãÏñ»ú
 *********************************************************************/
 
 #ifndef __Lotus_Camera_H__
 #define __Lotus_Camera_H__
+
+#include "Main/SharedPtr.h"
 
 namespace Lotus {
 	class Camera 
@@ -16,6 +18,8 @@ namespace Lotus {
 		Camera();
 		~Camera();
 	};
+
+	typedef SharedPtr<Camera> CameraPtr;
 }
 
 #endif

@@ -155,7 +155,11 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath=".\SceneManager\Camera.cpp"
+				RelativePath=".\Render\Camera.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Render\CameraController.cpp"
 				>
 			</File>
 			<File
@@ -334,6 +338,10 @@
 				RelativePath=".\VFS\VFS.cpp"
 				>
 			</File>
+			<File
+				RelativePath=".\Render\Viewport.cpp"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="Í·ÎÄ¼þ"
@@ -345,7 +353,11 @@
 				>
 			</File>
 			<File
-				RelativePath=".\SceneManager\Camera.h"
+				RelativePath=".\Render\Camera.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Render\CameraController.h"
 				>
 			</File>
 			<File
@@ -389,11 +401,27 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Render\OpenGL\GL\gl.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Render\OpenGL\GLCommon.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Render\OpenGLES2\GLES2Texture.h"
 				>
 			</File>
 			<File
 				RelativePath=".\Render\OpenGLES\GLESTexture.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Render\OpenGL\GL\glew.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Render\OpenGL\GL\glext.h"
 				>
 			</File>
 			<File
@@ -406,6 +434,18 @@
 			</File>
 			<File
 				RelativePath=".\Render\OpenGL\GLTextureManager.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Render\OpenGL\GL\glxew.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Render\OpenGL\GL\glxext.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Render\OpenGL\GL\glxtokens.h"
 				>
 			</File>
 			<File
@@ -550,6 +590,18 @@
 			</File>
 			<File
 				RelativePath=".\VFS\VFS.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Render\Viewport.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Render\OpenGL\GL\wglew.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Render\OpenGL\GL\wglext.h"
 				>
 			</File>
 		</Filter>

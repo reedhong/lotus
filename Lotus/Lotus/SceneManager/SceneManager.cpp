@@ -7,6 +7,7 @@
 *********************************************************************/
 
 #include "SceneManager.h"
+#include "Render/RenderCommon.h"
 
 namespace Lotus {
 
@@ -22,6 +23,10 @@ namespace Lotus {
 
 	bool  SceneManager::_renderScene()
 	{
+		mRender->clearFrameBuffer(FBT_COLOUR|FBT_DEPTH, 
+			Color::White, 1.0f);
+		mRender->test();
+		mRender->drawCoordinateSystem();
 		return true;
 	}
 
