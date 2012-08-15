@@ -33,7 +33,7 @@ namespace Lotus {
 	}
 
 	void GLRenderSystem::clearFrameBuffer(unsigned int bufferMask, const Color& color, 
-		Real depth, unsigned short stencil)
+		float depth, unsigned short stencil)
 	{
 		GLbitfield flags = 0;
 		if (bufferMask & FBT_COLOUR)

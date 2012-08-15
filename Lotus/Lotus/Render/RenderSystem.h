@@ -66,7 +66,7 @@ namespace Lotus {
 
 		virtual void clearFrameBuffer(unsigned int bufferMask, 
 			const Color& color = Color::Black, 
-			Real depth = 1.0f, unsigned short stencil = 0) = 0;
+			float depth = 1.0f, unsigned short stencil = 0) = 0;
 	};
 }
 

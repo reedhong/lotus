@@ -22,7 +22,7 @@ namespace Lotus {
 		virtual const String& getName(void) const;
 		virtual void clearFrameBuffer(unsigned int bufferMask, 
 			const Color& color = Color::Black, 
-			Real depth = 1.0f, unsigned short stencil = 0);
+			float depth = 1.0f, unsigned short stencil = 0);
 
 		virtual void test(void ) const;
 		virtual void drawCoordinateSystem(int tileSize=5);
