@@ -10,7 +10,7 @@
 #define __Lotus_RenderSystem_H__
 
 #include "Main/Prerequisites.h"
-#include "Math/Matrix.h"
+#include "Math/Matrix4.h"
 #include "ResourceManage/TextureManager.h"
 #include "RenderSupport.h"
 //#include "RenderContext.h"

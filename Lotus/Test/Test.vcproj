@@ -171,6 +171,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\testMath.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\testProfile.cpp"
 				>
 			</File>

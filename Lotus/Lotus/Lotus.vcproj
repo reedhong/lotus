@@ -231,7 +231,11 @@
 				>
 			</File>
 			<File
-				RelativePath=".\Math\Matrix.cpp"
+				RelativePath=".\Math\Matrix3.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Math\Matrix4.cpp"
 				>
 			</File>
 			<File
@@ -469,7 +473,11 @@
 				>
 			</File>
 			<File
-				RelativePath=".\Math\Matrix.h"
+				RelativePath=".\Math\Matrix3.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Math\Matrix4.h"
 				>
 			</File>
 			<File

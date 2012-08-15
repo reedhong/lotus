@@ -8,3 +8,7 @@
 
 #include "Math.h"
 
+
+namespace Lotus {
+
+}

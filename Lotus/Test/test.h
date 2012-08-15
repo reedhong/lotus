@@ -19,4 +19,6 @@ void testProfile();
 void testSharedPtr();
 void testVFS();
 
+void testMath();
+
 #endif

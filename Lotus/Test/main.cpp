@@ -32,7 +32,7 @@ int main(int argc, char**argv)
 	 testSharedPtr();
 
 	 testVFS();
-
+	testMath();
 	system("pause");
 	return 0;
 }
