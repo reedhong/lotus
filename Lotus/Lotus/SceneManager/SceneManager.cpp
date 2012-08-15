@@ -25,8 +25,8 @@ namespace Lotus {
 	{
 		mRender->clearFrameBuffer(FBT_COLOUR|FBT_DEPTH, 
 			Color::White, 1.0f);
-		mRender->test();
-		mRender->drawCoordinateSystem();
+		//mRender->test();
+		//mRender->drawCoordinateSystem();
 		return true;
 	}
 

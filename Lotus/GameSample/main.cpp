@@ -5,18 +5,8 @@
  *		这份文档是由DancingWind翻译的，如果有什么错误请e-mail:zhouwei02@mails.tsinghua.edu.cn
  */
 
-/*********************包含链接的库文件*******************************************************************************************/
-#pragma comment( lib, "opengl32.lib" )				
-#pragma comment( lib, "glu32.lib" )	
-#pragma comment( lib, "glut32.lib")
-#pragma comment( lib, "glew32.lib")
-#pragma comment( lib, "glaux.lib")
-#pragma comment( lib, "vfw32.lib" )	
-/********************************************************************************************************************************/
-
 #include <windows.h>		// Windows的头文件
-#include <GL/glew.h>			// 包含最新的gl.h,glu.h库
-#include <GL/glut.h>			// 包含OpenGL实用库
+
 
 
 HDC			hDC=NULL;		// 窗口着色描述表句柄
@@ -31,38 +21,29 @@ LRESULT	CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);	// WndProc的定义
 
 #include "Game.h"
 
-Game* g_game;
+Game* g_game = 0;
 
-GLvoid ReSizeGLScene(GLsizei width, GLsizei height)		// 重置OpenGL窗口大小
+void ReSizeGLScene(int width, int height)		// 重置OpenGL窗口大小
 {
-	if (height==0)										// 防止被零除
-	{
-		height=1;										// 将Height设为1
+	if(g_game == 0){
+		g_game = new Game();
 	}
-
-	glViewport(0,0,width,height);						// 重置当前的视口
-
-	glMatrixMode(GL_PROJECTION);						// 选择投影矩阵
-	glLoadIdentity();									// 重置投影矩阵
-
-	// 设置视口的大小
-	gluPerspective(45.0f,(GLfloat)width/(GLfloat)height,0.1f,100.0f);
-
-	glMatrixMode(GL_MODELVIEW);							// 选择模型观察矩阵
-	glLoadIdentity();									// 重置模型观察矩阵
+	g_game->resize(width, height);
 }
 
-int Init(GLvoid)										// 此处开始对OpenGL进行所有设置
+int Init(void)										// 此处开始对OpenGL进行所有设置
 {
-	g_game = new Game();
-	g_game->startup(800,600);
+	if(g_game == 0){
+		g_game = new Game();
+	}	
+	g_game->startup(800,800);
 
 	return 1;
 }
 
 
 
-GLvoid KillGLWindow(GLvoid)								// 正常销毁窗口
+void KillGLWindow(void)								// 正常销毁窗口
 {
 	if (fullscreen)										// 我们处于全屏模式吗?
 	{
@@ -112,7 +93,7 @@ GLvoid KillGLWindow(GLvoid)								// 正常销毁窗口
  
 BOOL CreateGLWindow(char* title, int width, int height, int bits, bool fullscreenflag)
 {
-	GLuint		PixelFormat;			// 保存查找匹配的结果
+	unsigned int		PixelFormat;			// 保存查找匹配的结果
 	WNDCLASS	wc;						// 窗口类结构
 	DWORD		dwExStyle;				// 扩展窗口风格
 	DWORD		dwStyle;				// 窗口风格
@@ -348,7 +329,7 @@ int WINAPI WinMain(HINSTANCE	hInstance,			// 当前窗口实例
 
 	fullscreen = false;
 	// 创建OpenGL窗口
-	if (!CreateGLWindow("Game Sample",800,600,16,fullscreen))
+	if (!CreateGLWindow("Game Sample",800,800,16,fullscreen))
 	{
 		return 0;									// 失败退出
 	}

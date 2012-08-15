@@ -17,6 +17,8 @@ public:
 public:
 	void startup(int width,int height,float scale = 1.0f);
 
+	void resize(int w, int h);
+
 	void end();
 
 	void frame();

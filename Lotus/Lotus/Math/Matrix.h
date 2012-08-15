@@ -11,9 +11,15 @@
 
 #include "Main/Prerequisites.h"
 namespace Lotus {
+	/*
+	 * 
+	 */
 	class Matrix4
 	{
 	public:
+		float		m[16]; 
+	public:
+		
 		inline Matrix4(){}
 		~Matrix4(){}
 	};	// end Matrix4

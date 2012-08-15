@@ -13,12 +13,16 @@ namespace Lotus {
 	class Viewport 
 	{
 	public:
-		int mWidth;
-		int mHeight;
-		void setWH(int w, int h)
+		int	left;
+		int	top;
+		int	width;
+		int	height;
+		void set(int l, int t, int w, int h)
 		{
-			mWidth = w;
-			mHeight = h;
+			left = l;
+			top = t;
+			width = w;
+			height = h;
 		}
 	};
 }

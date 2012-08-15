@@ -25,7 +25,7 @@ namespace Lotus {
 			Real depth = 1.0f, unsigned short stencil = 0);
 
 		virtual void test(void ) const;
-		virtual void drawCoordinateSystem(int tileSize=10);
+		virtual void drawCoordinateSystem(int tileSize=5);
 	};
 }
 

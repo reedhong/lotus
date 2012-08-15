@@ -9,7 +9,10 @@
 #ifndef __Lotus_Math_H__
 #define __Lotus_Math_H__
 
+#include <math.h>
+
 namespace Lotus {
+	#define EPSINON 0.00001
 
 }
 
