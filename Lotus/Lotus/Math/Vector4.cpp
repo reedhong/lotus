@@ -1,15 +1,13 @@
 /********************************************************************
-	created:	2012/08/14 
-	filename: 	Vector.cpp
+	created:	2012/08/16 
+	filename: 	Vector4.cpp
 	author:		reedhong 
 	
 	purpose:	
 *********************************************************************/
 
-#include "Vector.h"
+#include "Vector4.h"
 
-namespace Lotus 
-{
-	 const Vector3 Vector3::ZeroVector(0.0, 0.0, 0.0);
+namespace Lotus {
+	const Vector4 Vector4::ZERO(0.0, 0.0, 0.0, 0.0);
 }
-

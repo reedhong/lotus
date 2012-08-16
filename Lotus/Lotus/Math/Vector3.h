@@ -6,8 +6,8 @@
 	purpose:	向量相关操作
 *********************************************************************/
 
-#ifndef __Lotus_Vector_H__
-#define __Lotus_Vector_H__
+#ifndef __Lotus_Vector3_H__
+#define __Lotus_Vector3_H__
 
 #include "Main/Prerequisites.h"
 #include "Math.h"
@@ -24,7 +24,7 @@ namespace Lotus {
 
 	class Vector3 
 	{
-	public:
+	public:		
 		float x, y, z;
 	public:
 		 Vector3() {}
@@ -34,7 +34,7 @@ namespace Lotus {
 		// 拷贝构造函数
 		Vector3(const Vector3& a): x(a.x), y(a.y), z(a.z) {}
 
-		Vector3(float rx, float ry, float rz): x(rz), y(ry), z(rz) {}
+		Vector3(float rx, float ry, float rz): x(rx), y(ry), z(rz) {}
 		
 		Vector3& operator = (const Vector3& a)
 		{
@@ -153,17 +153,22 @@ namespace Lotus {
 			return sqrt(dx*dx + dy*dy + dz*dz);
 		}
 
-		static const Vector3 ZeroVector;
-	}; // end Vector3
+		static const Vector3 ZERO;
+		static const Vector3 UNIT_X;
+		static const Vector3 UNIT_Y;
+		static const Vector3 UNIT_Z;
+		static const Vector3 NEGATIVE_UNIT_X;
+		static const Vector3 NEGATIVE_UNIT_Y;
+		static const Vector3 NEGATIVE_UNIT_Z;
+		static const Vector3 UNIT_SCALE;
 
-	class Vector4
-	{
-	public:
-		float x, y, z, w;
-	public:
-		inline Vector4() {}
-		~Vector4() {}
-	}; // end Vector4
+		inline  friend std::ostream& operator <<
+			( std::ostream& o, const Vector3& v )
+		{
+			o << "Vector3(" << v.x << ", " << v.y << ", " << v.z << ")";
+			return o;
+		}
+	}; // end Vector3
 }
 
 #endif

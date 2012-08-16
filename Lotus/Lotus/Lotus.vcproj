@@ -335,7 +335,11 @@
 				>
 			</File>
 			<File
-				RelativePath=".\Math\Vector.cpp"
+				RelativePath=".\Math\Vector3.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Math\Vector4.cpp"
 				>
 			</File>
 			<File
@@ -593,7 +597,11 @@
 				>
 			</File>
 			<File
-				RelativePath=".\Math\Vector.h"
+				RelativePath=".\Math\Vector3.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Math\Vector4.h"
 				>
 			</File>
 			<File
