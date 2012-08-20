@@ -32,7 +32,7 @@ namespace Lotus {
 
 		Vector3 newUp = Vector3::corss(side, forward);
 		//yVec3.normalize();
-		// 由于右乘，所以是这么个放防止
+		// 由于右乘，所以是这么个放放置
 		mViewMatrix4.set(
 			side.x, side.y,  side.z, mEye*side,
 			newUp.x, newUp.y, newUp.z, mEye*newUp,
@@ -48,6 +48,6 @@ namespace Lotus {
 
 	void Camera::project(float fov, float aspect, float near, float far)
 	{
-
+		
 	}
 }
