@@ -248,7 +248,7 @@ namespace Lotus {
 
 		// 逆矩阵
 		// 如果不存在，则返回ZERO
-		Matrix4 inverse(float fEPSILON = EPSINON) const 
+		Matrix4 inverse(float fEPSILON = Math::EPSINON) const 
 		{
 			Matrix4 rkInverse;
 
@@ -290,7 +290,7 @@ namespace Lotus {
 
 			float fDet =m[0]*rkInverse.m[0] + m[1]*rkInverse.m[4] + m[2]*rkInverse.m[8] + m[3]*rkInverse.m[12];
 
-			if ( abs(fDet) <= EPSINON )
+			if ( abs(fDet) <= Math::EPSINON )
 				return ZERO;
 
 			float fInvDet = 1.0f/fDet;

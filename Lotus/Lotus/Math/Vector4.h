@@ -70,7 +70,7 @@ namespace Lotus {
 
 		Vector4 operator /(float a) const 
 		{			
-			ASSERT(fabs(a) > EPSINON);
+			ASSERT(fabs(a) > Math::EPSINON);
 			float oneVerA = 1.0f/a; 
 			return Vector4(x*oneVerA, y*oneVerA, z*oneVerA, w*oneVerA);
 		}
@@ -95,7 +95,7 @@ namespace Lotus {
 
 		Vector4& operator /=(float a)  
 		{			
-			ASSERT(fabs(a) > EPSINON);
+			ASSERT(fabs(a) > Math::EPSINON);
 			float oneVerA = 1.0f/a; 
 			x *= oneVerA; y *= oneVerA;  z *= oneVerA; w*= oneVerA;
 			return *this;
@@ -105,7 +105,7 @@ namespace Lotus {
 		void normalize()
 		{
 			float magSq = x*x + y*y + z*z + w*w;
-			if( magSq >EPSINON ){
+			if( magSq >Math::EPSINON ){
 				float oneOverMag = 1.0f/sqrt(magSq);
 				x *= oneOverMag;
 				y *= oneOverMag;

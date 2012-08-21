@@ -215,6 +215,14 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Input\InputEngine.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Input\KeyEvent.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\SceneManager\Light.cpp"
 				>
 			</File>
@@ -240,6 +248,10 @@
 			</File>
 			<File
 				RelativePath=".\ResourceManage\Mesh.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Input\MotionEvent.cpp"
 				>
 			</File>
 			<File
@@ -332,6 +344,10 @@
 			</File>
 			<File
 				RelativePath=".\Platform\Win32\Timer.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Math\Vector2.cpp"
 				>
 			</File>
 			<File
@@ -457,6 +473,14 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Input\InputEngine.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Input\KeyEvent.h"
+				>
+			</File>
+			<File
 				RelativePath=".\SceneManager\Light.h"
 				>
 			</File>
@@ -486,6 +510,10 @@
 			</File>
 			<File
 				RelativePath=".\ResourceManage\Mesh.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Input\MotionEvent.h"
 				>
 			</File>
 			<File
@@ -594,6 +622,10 @@
 			</File>
 			<File
 				RelativePath=".\Platform\Win32\TimerImp.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Math\Vector2.h"
 				>
 			</File>
 			<File

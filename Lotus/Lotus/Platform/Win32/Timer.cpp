@@ -9,200 +9,200 @@
  
 namespace Lotus{
 
-//-------------------------------------------------------------------------
-Timer::Timer()
-	: mTimerMask( 0 )
-{
-	reset();
-}
-
-//-------------------------------------------------------------------------
-Timer::~Timer()
-{
-}
-
-//-------------------------------------------------------------------------
-bool Timer::setOption( const String & key, const void * val )
-{
-
-	if ( key == "QueryAffinityMask" )
+	//-------------------------------------------------------------------------
+	Timer::Timer()
+		: mTimerMask( 0 )
 	{
-		// Telling timer what core to use for a timer read
-		DWORD newTimerMask = * static_cast < const DWORD * > ( val );
+		reset();
+	}
 
+	//-------------------------------------------------------------------------
+	Timer::~Timer()
+	{
+	}
+
+	//-------------------------------------------------------------------------
+	bool Timer::setOption( const String & key, const void * val )
+	{
+
+		if ( key == "QueryAffinityMask" )
+		{
+			// Telling timer what core to use for a timer read
+			DWORD newTimerMask = * static_cast < const DWORD * > ( val );
+
+			// Get the current process core mask
+			DWORD_PTR procMask;
+			DWORD_PTR sysMask;
+			GetProcessAffinityMask(GetCurrentProcess(), &procMask, &sysMask);
+
+			// If new mask is 0, then set to default behavior, otherwise check
+			// to make sure new timer core mask overlaps with process core mask
+			// and that new timer core mask is a power of 2 (i.e. a single core)
+			if( ( newTimerMask == 0 ) ||
+				( ( ( newTimerMask & procMask ) != 0 ) && Bitwise::isPO2( newTimerMask ) ) )
+			{
+				mTimerMask = newTimerMask;
+				return true;
+			}
+		}
+
+
+		return false;
+	}
+
+	//-------------------------------------------------------------------------
+	void Timer::reset()
+	{
 		// Get the current process core mask
 		DWORD_PTR procMask;
 		DWORD_PTR sysMask;
 		GetProcessAffinityMask(GetCurrentProcess(), &procMask, &sysMask);
 
-		// If new mask is 0, then set to default behavior, otherwise check
-		// to make sure new timer core mask overlaps with process core mask
-		// and that new timer core mask is a power of 2 (i.e. a single core)
-		if( ( newTimerMask == 0 ) ||
-			( ( ( newTimerMask & procMask ) != 0 ) && Bitwise::isPO2( newTimerMask ) ) )
+		// If procMask is 0, consider there is only one core available
+		// (using 0 as procMask will cause an infinite loop below)
+		if (procMask == 0)
+			procMask = 1;
+
+		// Find the lowest core that this process uses
+		if( mTimerMask == 0 )
 		{
-			mTimerMask = newTimerMask;
-			return true;
+			mTimerMask = 1;
+			while( ( mTimerMask & procMask ) == 0 )
+			{
+				mTimerMask <<= 1;
+			}
 		}
+
+		HANDLE thread = GetCurrentThread();
+
+		// Set affinity to the first core
+		DWORD_PTR oldMask = SetThreadAffinityMask(thread, mTimerMask);
+
+		// Get the constant frequency
+		QueryPerformanceFrequency(&mFrequency);
+
+		// Query the timer
+		QueryPerformanceCounter(&mStartTime);
+		mStartTick = GetTickCount();
+
+		// Reset affinity
+		SetThreadAffinityMask(thread, oldMask);
+
+		mLastTime = 0;
+		mZeroClock = clock();
 	}
 
-
-	return false;
-}
-
-//-------------------------------------------------------------------------
-void Timer::reset()
-{
-    // Get the current process core mask
-	DWORD_PTR procMask;
-	DWORD_PTR sysMask;
-	GetProcessAffinityMask(GetCurrentProcess(), &procMask, &sysMask);
-
-	// If procMask is 0, consider there is only one core available
-	// (using 0 as procMask will cause an infinite loop below)
-	if (procMask == 0)
-		procMask = 1;
-
-	// Find the lowest core that this process uses
-	if( mTimerMask == 0 )
+	//-------------------------------------------------------------------------
+	unsigned long Timer::getMilliseconds()
 	{
-		mTimerMask = 1;
-		while( ( mTimerMask & procMask ) == 0 )
+		LARGE_INTEGER curTime;
+
+		HANDLE thread = GetCurrentThread();
+
+		// Set affinity to the first core
+		DWORD_PTR oldMask = SetThreadAffinityMask(thread, mTimerMask);
+
+		// Query the timer
+		QueryPerformanceCounter(&curTime);
+
+		// Reset affinity
+		SetThreadAffinityMask(thread, oldMask);
+
+		LONGLONG newTime = curTime.QuadPart - mStartTime.QuadPart;
+	    
+		// scale by 1000 for milliseconds
+		unsigned long newTicks = (unsigned long) (1000 * newTime / mFrequency.QuadPart);
+
+		// detect and compensate for performance counter leaps
+		// (surprisingly common, see Microsoft KB: Q274323)
+		unsigned long check = GetTickCount() - mStartTick;
+		signed long msecOff = (signed long)(newTicks - check);
+		if (msecOff < -100 || msecOff > 100)
 		{
-			mTimerMask <<= 1;
+			// We must keep the timer running forward :)
+			LONGLONG adjust = (std::min)(msecOff * mFrequency.QuadPart / 1000, newTime - mLastTime);
+			mStartTime.QuadPart += adjust;
+			newTime -= adjust;
+
+			// Re-calculate milliseconds
+			newTicks = (unsigned long) (1000 * newTime / mFrequency.QuadPart);
 		}
+
+		// Record last time for adjust
+		mLastTime = newTime;
+
+		return newTicks;
 	}
 
-	HANDLE thread = GetCurrentThread();
+	//-------------------------------------------------------------------------
+	unsigned long Timer::getMicroseconds()
+	{
+		LARGE_INTEGER curTime;
 
-	// Set affinity to the first core
-	DWORD_PTR oldMask = SetThreadAffinityMask(thread, mTimerMask);
+		HANDLE thread = GetCurrentThread();
 
-	// Get the constant frequency
-	QueryPerformanceFrequency(&mFrequency);
+		// Set affinity to the first core
+		DWORD_PTR oldMask = SetThreadAffinityMask(thread, mTimerMask);
 
-	// Query the timer
-	QueryPerformanceCounter(&mStartTime);
-	mStartTick = GetTickCount();
+		// Query the timer
+		QueryPerformanceCounter(&curTime);
 
-	// Reset affinity
-	SetThreadAffinityMask(thread, oldMask);
+		// Reset affinity
+		SetThreadAffinityMask(thread, oldMask);
 
-	mLastTime = 0;
-	mZeroClock = clock();
-}
+		LONGLONG newTime = curTime.QuadPart - mStartTime.QuadPart;
+	    
+		// get milliseconds to check against GetTickCount
+		unsigned long newTicks = (unsigned long) (1000 * newTime / mFrequency.QuadPart);
+	    
+		// detect and compensate for performance counter leaps
+		// (surprisingly common, see Microsoft KB: Q274323)
+		unsigned long check = GetTickCount() - mStartTick;
+		signed long msecOff = (signed long)(newTicks - check);
+		if (msecOff < -100 || msecOff > 100)
+		{
+			// We must keep the timer running forward :)
+			LONGLONG adjust = (std::min)(msecOff * mFrequency.QuadPart / 1000, newTime - mLastTime);
+			mStartTime.QuadPart += adjust;
+			newTime -= adjust;
+		}
 
-//-------------------------------------------------------------------------
-unsigned long Timer::getMilliseconds()
-{
-    LARGE_INTEGER curTime;
+		// Record last time for adjust
+		mLastTime = newTime;
 
-	HANDLE thread = GetCurrentThread();
+		// scale by 1000000 for microseconds
+		unsigned long newMicro = (unsigned long) (1000000 * newTime / mFrequency.QuadPart);
 
-	// Set affinity to the first core
-	DWORD_PTR oldMask = SetThreadAffinityMask(thread, mTimerMask);
+		return newMicro;
+	}
 
-	// Query the timer
-	QueryPerformanceCounter(&curTime);
+	//-------------------------------------------------------------------------
+	unsigned long Timer::getMillisecondsCPU()
+	{
+		clock_t newClock = clock();
+		return (unsigned long)( (float)( newClock - mZeroClock ) / ( (float)CLOCKS_PER_SEC / 1000.0 ) ) ;
+	}
 
-	// Reset affinity
-	SetThreadAffinityMask(thread, oldMask);
+	//-------------------------------------------------------------------------
+	unsigned long Timer::getMicrosecondsCPU()
+	{
+		clock_t newClock = clock();
+		return (unsigned long)( (float)( newClock - mZeroClock ) / ( (float)CLOCKS_PER_SEC / 1000000.0 ) ) ;
+	}
 
-    LONGLONG newTime = curTime.QuadPart - mStartTime.QuadPart;
-    
-    // scale by 1000 for milliseconds
-    unsigned long newTicks = (unsigned long) (1000 * newTime / mFrequency.QuadPart);
+	String Timer::nowString(const char* format)
+	{
+		time_t tt = time(NULL);
 
-    // detect and compensate for performance counter leaps
-    // (surprisingly common, see Microsoft KB: Q274323)
-    unsigned long check = GetTickCount() - mStartTick;
-    signed long msecOff = (signed long)(newTicks - check);
-    if (msecOff < -100 || msecOff > 100)
-    {
-        // We must keep the timer running forward :)
-        LONGLONG adjust = (std::min)(msecOff * mFrequency.QuadPart / 1000, newTime - mLastTime);
-        mStartTime.QuadPart += adjust;
-        newTime -= adjust;
+		char timeStr[32];
+		strftime(timeStr, 32, format, localtime(&tt));
 
-        // Re-calculate milliseconds
-        newTicks = (unsigned long) (1000 * newTime / mFrequency.QuadPart);
-    }
+		return timeStr;
+	}
 
-    // Record last time for adjust
-    mLastTime = newTime;
-
-    return newTicks;
-}
-
-//-------------------------------------------------------------------------
-unsigned long Timer::getMicroseconds()
-{
-    LARGE_INTEGER curTime;
-
-	HANDLE thread = GetCurrentThread();
-
-	// Set affinity to the first core
-	DWORD_PTR oldMask = SetThreadAffinityMask(thread, mTimerMask);
-
-	// Query the timer
-	QueryPerformanceCounter(&curTime);
-
-	// Reset affinity
-	SetThreadAffinityMask(thread, oldMask);
-
-	LONGLONG newTime = curTime.QuadPart - mStartTime.QuadPart;
-    
-    // get milliseconds to check against GetTickCount
-    unsigned long newTicks = (unsigned long) (1000 * newTime / mFrequency.QuadPart);
-    
-    // detect and compensate for performance counter leaps
-    // (surprisingly common, see Microsoft KB: Q274323)
-    unsigned long check = GetTickCount() - mStartTick;
-    signed long msecOff = (signed long)(newTicks - check);
-    if (msecOff < -100 || msecOff > 100)
-    {
-        // We must keep the timer running forward :)
-        LONGLONG adjust = (std::min)(msecOff * mFrequency.QuadPart / 1000, newTime - mLastTime);
-        mStartTime.QuadPart += adjust;
-        newTime -= adjust;
-    }
-
-    // Record last time for adjust
-    mLastTime = newTime;
-
-    // scale by 1000000 for microseconds
-    unsigned long newMicro = (unsigned long) (1000000 * newTime / mFrequency.QuadPart);
-
-    return newMicro;
-}
-
-//-------------------------------------------------------------------------
-unsigned long Timer::getMillisecondsCPU()
-{
-	clock_t newClock = clock();
-	return (unsigned long)( (float)( newClock - mZeroClock ) / ( (float)CLOCKS_PER_SEC / 1000.0 ) ) ;
-}
-
-//-------------------------------------------------------------------------
-unsigned long Timer::getMicrosecondsCPU()
-{
-	clock_t newClock = clock();
-	return (unsigned long)( (float)( newClock - mZeroClock ) / ( (float)CLOCKS_PER_SEC / 1000000.0 ) ) ;
-}
-
-String Timer::nowString(const char* format)
-{
-	time_t tt = time(NULL);
-
-	char timeStr[32];
-	strftime(timeStr, 32, format, localtime(&tt));
-
-	return timeStr;
-}
-
-void Timer::sleep(unsigned long milliSeconds)
-{
-	Sleep(milliSeconds);
-}
+	void Timer::sleep(unsigned long milliSeconds)
+	{
+		Sleep(milliSeconds);
+	}
 
 };

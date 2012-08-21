@@ -7,6 +7,7 @@
 
 #include <windows.h>		// Windows的头文件
 
+#include "Input/InputEngine.h"
 
 
 HDC			hDC=NULL;		// 窗口着色描述表句柄
@@ -313,6 +314,25 @@ LRESULT CALLBACK WndProc(	HWND	hWnd,			// 窗口的句柄
 			ReSizeGLScene(LOWORD(lParam),HIWORD(lParam));  // LoWord=Width,HiWord=Height
 			return 0;								// 返回
 		}
+		case WM_CHAR:
+			{
+				InputEngine::Instance()->addEvent(wParam);
+			}
+			break;
+		case WM_LBUTTONUP:
+			{
+				int y = (lParam >> 16) & 0xFFFF;
+				int x = lParam & 0xFFFF;				
+				InputEngine::Instance()->addEvent(Touch_End, x, y);
+			}
+			break;
+		case WM_LBUTTONDOWN:
+			{
+				int y = (lParam >> 16) & 0xFFFF;
+				int x = lParam & 0xFFFF;				
+				InputEngine::Instance()->addEvent(Touch_Down, x, y);
+			}
+			break;
 	}
 
 	// 向 DefWindowProc传递所有未处理的消息。

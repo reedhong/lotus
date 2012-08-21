@@ -28,15 +28,14 @@ namespace Lotus {
 		Vector3			mEye;
 		Vector3			mCenter;
 		Vector3			mUp;
+		Matrix4			mViewMatrix4;	// 视图矩阵
 
-		Matrix4			mViewMatrix4;
-
-		// 投影矩阵属性
+		// 投影矩阵属性， 此处直接采取透视投影的计算规则，没有设计正交投影
 		float				mFov;		// 视场
 		float				mAspect;
 		float				mNear;
 		float				mFar;
-		Matrix4			mProjectMatrix;
+		Matrix4			mProjectMatrix4;	// 投影矩阵
 
 	};
 

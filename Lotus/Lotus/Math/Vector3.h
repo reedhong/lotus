@@ -1,8 +1,7 @@
 /********************************************************************
 	created:	2012/08/10 
 	filename: 	Vector.h
-	author:		reedhong 
-	
+	author:		reedhong 	
 	purpose:	向量相关操作
 *********************************************************************/
 
@@ -13,15 +12,6 @@
 #include "Math.h"
 
 namespace Lotus {
-	class Vector2 
-	{
-	public:
-		float x, y;
-	public:
-		inline Vector2() {}
-		~Vector2() {}
-	}; // end Vector2
-
 	class Vector3 
 	{
 	public:		
@@ -80,7 +70,7 @@ namespace Lotus {
 
 		Vector3 operator /(float a) const 
 		{			
-			ASSERT(fabs(a) > EPSINON);
+			ASSERT(fabs(a) > Math::EPSINON);
 			float oneVerA = 1.0f/a; 
 			return Vector3(x*oneVerA, y*oneVerA, z*oneVerA);
 		}
@@ -105,7 +95,7 @@ namespace Lotus {
 
 		Vector3& operator /=(float a)  
 		{			
-			ASSERT(fabs(a) > EPSINON);
+			ASSERT(fabs(a) > Math::EPSINON);
 			float oneVerA = 1.0f/a; 
 			x *= oneVerA; y *= oneVerA;  z *= oneVerA;
 			return *this;
@@ -115,7 +105,7 @@ namespace Lotus {
 		void normalize()
 		{
 			float magSq = x*x + y*y + z*z;
-			if( magSq >EPSINON ){
+			if( magSq >Math::EPSINON ){
 				float oneOverMag = 1.0f/sqrt(magSq);
 				x *= oneOverMag;
 				y *= oneOverMag;

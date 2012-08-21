@@ -13,12 +13,19 @@
 #include "Render/Camera.h"
 
 #include <GL/glew.h>
+#include "Input/InputEngine.h"
 
 using namespace Lotus;
 
 Game::Game()
 {
+	InputEngine* inputEngine = new InputEngine();
+	InputEngine::Instance()->setKeyListener(this);
+	InputEngine::Instance()->setMotionListener(this);
 
+	Camera* camera = new Camera();
+	mCameraPtr = SharedPtr<Camera>(camera);
+	mCameraController.attachCamera(mCameraPtr);
 }
 
 Game::~Game()
@@ -40,7 +47,14 @@ void Game::resize(int w, int h)
 	glViewport(0, 0, (GLsizei)w, (GLsizei)h);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
+#if 1
+	Camera camera;
+	camera.project(60.0, (GLfloat)w/(GLfloat)h, 1.0, 1000.0);
+#else
 	gluPerspective(60.0, (GLfloat)w/(GLfloat)h, 1.0, 1000.0);
+#endif
+	GLfloat mat[16];
+	glGetFloatv(GL_PROJECTION_MATRIX, mat);
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 }
@@ -112,6 +126,8 @@ void Game::frame()
 	glFlush();
 #endif
 	glFlush();
+
+	InputEngine::Instance()->update();
 }
 
 void Game::pause()
@@ -122,4 +138,43 @@ void Game::pause()
 void Game::resume()
 {
 
+}
+
+
+bool Game::captureKey(const KeyEvent& event)
+{
+	unsigned char key = event.mKey;
+	switch(key){
+		case 'A':
+		case 'a':
+			mCameraController.handleAction(FirstPersonCameraController::eMoveLeft);
+			break;
+		case 'D':
+		case 'd':
+			mCameraController.handleAction(FirstPersonCameraController::eMoveRight);
+			break;
+		case 'W':
+		case 'w':
+			mCameraController.handleAction(FirstPersonCameraController::eForward);
+			break;
+		case 'S':
+		case 's':
+			mCameraController.handleAction(FirstPersonCameraController::eBackward);
+			break;
+		case 'Q':
+		case 'q':
+			mCameraController.handleAction(FirstPersonCameraController::eRollLeft);
+			break;
+		case 'E':
+		case 'e':
+			mCameraController.handleAction(FirstPersonCameraController::eMoveRight);
+			break;
+
+	}
+	return true;
+}
+
+bool Game::captureMotion(const MotionEvent& event)
+{
+	return true;
 }

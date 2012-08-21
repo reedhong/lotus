@@ -11,6 +11,7 @@
 
 #include "Main/Prerequisites.h"
 #include "Vector3.h"
+#include "Math.h"
 
 namespace Lotus {
 	/*
@@ -184,7 +185,7 @@ namespace Lotus {
 
 		// 逆矩阵
 		// 如果不存在，则返回ZERO
-		inline Matrix3 inverse(float fEPSILON = EPSINON) const 
+		inline Matrix3 inverse(float fEPSILON = Math::EPSINON) const 
 		{
 			Matrix3 rkInverse;
 
@@ -207,7 +208,7 @@ namespace Lotus {
 				this->m[3]*rkInverse.m[1] +
 				this->m[6]*rkInverse.m[2];
 
-			if ( abs(fDet) <= EPSINON )
+			if ( abs(fDet) <= Math::EPSINON )
 				return ZERO;
 
 			float fInvDet = 1.0f/fDet;
