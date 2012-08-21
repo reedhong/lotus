@@ -38,7 +38,7 @@ void Game::startup(int width,int height,float scale)
 	Root* root  = new Root("./main.cfg", "root.log");
 	GLRenderSystem* render = new GLRenderSystem();
 	root->setRender(render);
-
+	
 
 }
 
@@ -49,7 +49,8 @@ void Game::resize(int w, int h)
 	glLoadIdentity();
 #if 1
 	Camera camera;
-	camera.project(60.0, (GLfloat)w/(GLfloat)h, 1.0, 1000.0);
+	mCameraPtr->project(60.0, (GLfloat)w/(GLfloat)h, 1.0, 1000.0);
+	mCameraPtr->lookAt(Vector3(5,10,10),  Vector3( 0.0,0.0,0.0), Vector3(0.0,1.0,0.0));
 #else
 	gluPerspective(60.0, (GLfloat)w/(GLfloat)h, 1.0, 1000.0);
 #endif
@@ -70,8 +71,8 @@ void Game::frame()
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();		
 	//gluLookAt(5,10,10,  0.0,0.0,0.0, 0.0,1.0,0.0);
-	Camera camera;
-	camera.lookAt(Vector3(5,10,10),  Vector3( 0.0,0.0,0.0), Vector3(0.0,1.0,0.0));
+	mCameraPtr->lookAt(mCameraPtr->mEye,  mCameraPtr->mCenter, 
+		mCameraPtr->mUp);
 	GLfloat mat[16];
 	glGetFloatv(GL_MODELVIEW_MATRIX, mat);
 	Root::Instance()->renderOneFrame();
