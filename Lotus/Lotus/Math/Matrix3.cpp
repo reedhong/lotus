@@ -18,4 +18,10 @@ namespace Lotus {
 		1, 0, 0, 
 		0, 1, 0, 
 		0, 0, 1);
+
+	void Matrix3::QDUDecomposition (Matrix3& kQ,
+		Vector3& kD, Vector3& kU) const
+	{
+		//http://zh.wikipedia.org/wiki/Gram-Schmidt%E6%AD%A3%E4%BA%A4%E5%8C%96
+	}
 }

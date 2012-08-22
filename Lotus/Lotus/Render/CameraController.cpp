@@ -80,7 +80,7 @@ namespace Lotus {
 			return ;
 
 		float second = 0.1f;
-		float elapsed_time = 0.01f;
+		float elapsed_time = 0.05f;
 		float const scaler = elapsed_time * 10;
 
 		switch (action)

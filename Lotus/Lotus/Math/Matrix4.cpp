@@ -27,7 +27,7 @@ namespace Lotus {
 		0, 0, 1, 0,
 		0, 0, 0, 1 );
 
-	void Math::decomposition(Vector3& position, Vector3& scale, Quaternion& orientation) const
+	void Matrix4::decomposition(Vector3& position, Vector3& scale, Quaternion& orientation) const
 	{
 
 	}
@@ -36,10 +36,12 @@ namespace Lotus {
 	/* 
 	 * 实现算法来自Ogre中makeViewMatrix
 	 */
-	Matrix4 Matrix4::MakeMatrix4(const Vector3& position, const Quaternion& orientation)
+	Matrix4 Matrix4::MakeViewMatrix(const Vector3& position, const Quaternion& orientation)
 	{
 		Matrix4 m4;
-
+		//	// http://www.euclideanspace.com/maths/geometry/rotations/conversions/quaternionToMatrix/index.htm
+		// http://www.euclideanspace.com/maths/geometry/rotations/conversions/quaternionToMatrix/index.htm
+		// http://www.flipcode.com/documents/matrfaq.html
 		// View matrix is:
 		//
 		//  [ Lx  Uy  Dz  Tx  ]
@@ -50,8 +52,7 @@ namespace Lotus {
 		// Where T = -(Transposed(Rot) * Pos)
 
 		// This is most efficiently done using 3x3 Matrices
-		Matrix3 rot;
-		orientation.toRotationMatrix(rot);
+		Matrix3 rot = orientation.toRotationMatrix();
 
 		// Make the translation relative to new axes
 		Matrix3 rotT = rot.transpose();
@@ -63,5 +64,7 @@ namespace Lotus {
 		m4[0][3] = trans.x;
 		m4[1][3] = trans.y;
 		m4[2][3] = trans.z;
+
+		return m4;
 	}
 }

@@ -88,12 +88,26 @@ namespace Lotus {
 			memcpy(_m,rkMatrix._m,SIZE*sizeof(float));
 		}
 
+		inline Matrix4(const Matrix3& m3x3)
+		{
+			operator=(IDENTITY);
+			operator=(m3x3);
+		}
 		// assignment and comparison
 		inline Matrix4& operator= (const Matrix4& rkMatrix)
 		{
 			memcpy(_m,rkMatrix._m,SIZE*sizeof(float));
 			return *this;
 		}
+
+        /** Assignment from 3x3 matrix.
+        */
+        inline void operator = ( const Matrix3& mat3 )
+        {
+            m[0][0] = mat3.m[0][0]; m[0][1] = mat3.m[0][1]; m[0][2] = mat3.m[0][2];
+            m[1][0] = mat3.m[1][0]; m[1][1] = mat3.m[1][1]; m[1][2] = mat3.m[1][2];
+            m[2][0] = mat3.m[2][0]; m[2][1] = mat3.m[2][1]; m[2][2] = mat3.m[2][2];
+        }
 
 		/** Tests 2 matrices for equality.
          */
@@ -348,7 +362,7 @@ namespace Lotus {
 		/*
 		 * 根据位置和四元向量生成一个4元矩阵
 		 */
-		static Matrix4 MakeMatrix4(const Vector3& postion, const Quaternion& orientation);
+		static Matrix4 MakeViewMatrix(const Vector3& postion, const Quaternion& orientation);
 
 		/*
 		 * 根据三元向量生出平移矩阵

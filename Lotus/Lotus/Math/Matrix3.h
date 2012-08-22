@@ -242,6 +242,9 @@ namespace Lotus {
 				<< mat.m[2][0] << ", " << mat.m[2][1] << ", " << mat.m[2][2] << ")\n";
 			return o;
 		}
+
+		void QDUDecomposition (Matrix3& kQ,
+			Vector3& kD, Vector3& kU) const;
 	};	// end Matrix3
 
 } // end Lotus
