@@ -33,16 +33,40 @@ namespace Lotus {
 		Vector3 newUp = Vector3::corss(side, forward);
 		//yVec3.normalize();
 		// 由于右乘，所以这个地方跟3D数学基础上讲的内容要转置一下
+		
 		mViewMatrix4.set(
-			side.x,			side.y,				side.z,				mEye*side,
-			newUp.x,	newUp.y,		newUp.z,		mEye*newUp,
-			-forward.x, -forward.y,	-forward.z,		mEye*forward,
+			side.x,			side.y,				side.z,				-side*mEye,
+			newUp.x,	newUp.y,		newUp.z,		-newUp*mEye,
+			-forward.x, -forward.y,	-forward.z,		forward*mEye,
 			0,					0,						0,						1
 			//0,0,0,1
 			);
+
 		glMatrixMode(GL_MODELVIEW);
-		glMultMatrixf(mViewMatrix4.m);
-		// 平移相当于上面的： mEye*side,mEye*newUp,mEye*forward,
+		glMultMatrixf(mViewMatrix4.transpose()._m);
+
+		Matrix3 m3 = mViewMatrix4.extractMatrix3();
+		Quaternion q = mViewMatrix4.extractQuaternion();
+		Matrix3 q2m = q.toRotationMatrix();
+		// 平移相当于上面的
+#if 0
+		// 旋转矩阵* 平移矩阵
+		Matrix4  mr( 
+			side.x,			side.y,				side.z,				0,
+			newUp.x,	newUp.y,		newUp.z,		0,
+			-forward.x, -forward.y,	-forward.z,		0,
+			0,					0,						0,						1
+			);
+
+		Matrix4 mt( 
+			1, 0, 0, -mEye.x,
+			0,1,0, -mEye.y,
+			0,0,1, -mEye.z,
+			0,0,0,1);
+
+		Matrix4 m = mr*mt
+#endif
+			
 		//glTranslatef(-mEye.x, -mEye.y, -mEye.z);
 		printf("x");
 	}
@@ -72,13 +96,13 @@ namespace Lotus {
 			q = -(far+near)/(far-near);
 			qn = -2*(far*near)/(far-near);
 		}
-		mViewMatrix4.set(
+		mProjectMatrix4.set(
 			w,		0,			0,			0,
 			0,			h,			0,			0,
 			0,			0,			q,			qn,
 			0,			0,			-1,			0
 			);
 		glMatrixMode(GL_PROJECTION);
-		glMultMatrixf(mViewMatrix4.m);
+		glMultMatrixf(mProjectMatrix4.transpose()._m);
 	}
 }

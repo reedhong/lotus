@@ -17,6 +17,19 @@
 
 using namespace Lotus;
 
+static void  drawGrid()
+{
+	for(float i = -500; i <= 500; i += 5)
+	{
+		glBegin(GL_LINES);
+		glColor3ub(150, 190, 150);						
+		glVertex3f(-500, 0, i);					
+		glVertex3f(500, 0, i);
+		glVertex3f(i, 0,-500);							
+		glVertex3f(i, 0, 500);
+		glEnd();
+	}
+}
 Game::Game()
 {
 	InputEngine* inputEngine = new InputEngine();
@@ -49,8 +62,9 @@ void Game::resize(int w, int h)
 	glLoadIdentity();
 #if 1
 	Camera camera;
-	mCameraPtr->project(60.0, (GLfloat)w/(GLfloat)h, 1.0, 1000.0);
-	mCameraPtr->lookAt(Vector3(5,10,10),  Vector3( 0.0,0.0,0.0), Vector3(0.0,1.0,0.0));
+	mCameraPtr->project(45.0, (GLfloat)w/(GLfloat)h, 1.0, 1000.0);
+	//mCameraPtr->lookAt(Vector3(5,10,10),  Vector3( 0.0,0.0,0.0), Vector3(0.0,1.0,0.0));
+	mCameraPtr->lookAt(Vector3(0, 2.5f, 5),  Vector3(0, 2.5f, 0), Vector3(0, 1, 0));
 #else
 	gluPerspective(60.0, (GLfloat)w/(GLfloat)h, 1.0, 1000.0);
 #endif
@@ -65,67 +79,56 @@ void Game::end()
 
 }
 
-#define MAX_LEN 100
 void Game::frame()
 {
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();		
-	//gluLookAt(5,10,10,  0.0,0.0,0.0, 0.0,1.0,0.0);
+#if 0
+	//gluLookAt(0, 2.5f, 5,  00, 2.5f, 0, 0.0,1.0,0.0);
+	gluLookAt(5,10,10, 0, 0 ,0,0, 1, 0);
+#else
 	mCameraPtr->lookAt(mCameraPtr->mEye,  mCameraPtr->mCenter, 
 		mCameraPtr->mUp);
+#endif
 	GLfloat mat[16];
 	glGetFloatv(GL_MODELVIEW_MATRIX, mat);
 	Root::Instance()->renderOneFrame();
-#if 1
-	glColor3f(1.0, 0.0, 0.0);
-	glBegin(GL_LINES); // x : R
-	glVertex3i(-MAX_LEN,0,0);
-	glVertex3i(MAX_LEN,0,0);
-	glEnd();
-	glColor3f(0.0, 1.0, 0.0);
-	glBegin(GL_LINES); // y : G
-	glVertex3i(0,MAX_LEN,0);
-	glVertex3i(0,-MAX_LEN,0);
-	glEnd();
-	glColor3f(0.0, 0.0, 1.0);
-	glBegin(GL_LINES); // z: B
-	glVertex3i(0,0,-MAX_LEN);
-	glVertex3i(0,0,MAX_LEN);
-	glEnd();
-#if 0
-	GLColor(0xFF000000);
-	//glLineWidth(5);
-	glBegin(GL_LINES); // point
-	glVertex3i(m_camera.x,m_camera.y,m_camera.z);
-	glVertex3i((int)m_pointX, (int)m_pointY, (int)m_pointZ);
-	glEnd();
-	GLColor(0xFFFFFF00);
-	glBegin(GL_LINES); // camera
-	//gluLookAt(m_camera.x,  m_camera.y, m_camera.z,m_camera.x,  m_camera.y, 0, 0,1,0);
-	glVertex3i(m_camera.x,m_camera.y,m_camera.z);
-	glVertex3i(m_camera.x,m_camera.y, 100);
-	glEnd();
-#endif
-#if 1
-	glColor3f(0.8, 0.8, 0.8);
-	//glPushMatrix();
-	//int MAX_LEN = 5120;
+	drawGrid();
 
-	for(int i = -MAX_LEN; i <= MAX_LEN; i += 1)
-	{
-		if( i ==0) continue;
-		glBegin(GL_LINES);				
-		glVertex3f(-MAX_LEN, 0, i);					
-		glVertex3f(MAX_LEN, 0, i);
-		glVertex3f(i, 0, -MAX_LEN);							
-		glVertex3f(i, 0,MAX_LEN);
-		glEnd();
-	}
-	//glPopMatrix();
-#endif
+	glTranslatef(0,1.0f,0);
+	glBegin(GL_QUADS);						
+		glColor3f(0.0f,1.0f,0.0f);			
+		glVertex3f( 1.0f, 1.0f,-1.0f);		
+		glVertex3f(-1.0f, 1.0f,-1.0f);		
+		glVertex3f(-1.0f, 1.0f, 1.0f);		
+		glVertex3f( 1.0f, 1.0f, 1.0f);		
+		glColor3f(1.0f,0.5f,0.0f);			
+		glVertex3f( 1.0f,-1.0f, 1.0f);		
+		glVertex3f(-1.0f,-1.0f, 1.0f);		
+		glVertex3f(-1.0f,-1.0f,-1.0f);		
+		glVertex3f( 1.0f,-1.0f,-1.0f);
+		glColor3f(1.0f,0.0f,0.0f);			
+		glVertex3f( 1.0f, 1.0f, 1.0f);		
+		glVertex3f(-1.0f, 1.0f, 1.0f);		
+		glVertex3f(-1.0f,-1.0f, 1.0f);		
+		glVertex3f( 1.0f,-1.0f, 1.0f);		
+		glColor3f(1.0f,1.0f,0.0f);			
+		glVertex3f( 1.0f,-1.0f,-1.0f);		
+		glVertex3f(-1.0f,-1.0f,-1.0f);		
+		glVertex3f(-1.0f, 1.0f,-1.0f);		
+		glVertex3f( 1.0f, 1.0f,-1.0f);		
+		glColor3f(0.0f,0.0f,1.0f);			
+		glVertex3f(-1.0f, 1.0f, 1.0f);		
+		glVertex3f(-1.0f, 1.0f,-1.0f);		
+		glVertex3f(-1.0f,-1.0f,-1.0f);		
+		glVertex3f(-1.0f,-1.0f, 1.0f);		
+		glColor3f(1.0f,0.0f,1.0f);			
+		glVertex3f( 1.0f, 1.0f,-1.0f);		
+		glVertex3f( 1.0f, 1.0f, 1.0f);		
+		glVertex3f( 1.0f,-1.0f, 1.0f);		
+		glVertex3f( 1.0f,-1.0f,-1.0f);		
+	glEnd();
 
-	glFlush();
-#endif
 	glFlush();
 
 	InputEngine::Instance()->update();

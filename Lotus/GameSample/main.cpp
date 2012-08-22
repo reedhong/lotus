@@ -37,7 +37,7 @@ int Init(void)										// 此处开始对OpenGL进行所有设置
 	if(g_game == 0){
 		g_game = new Game();
 	}	
-	g_game->startup(800,800);
+	g_game->startup(640,480);
 
 	return 1;
 }
@@ -349,7 +349,7 @@ int WINAPI WinMain(HINSTANCE	hInstance,			// 当前窗口实例
 
 	fullscreen = false;
 	// 创建OpenGL窗口
-	if (!CreateGLWindow("Game Sample",800,800,16,fullscreen))
+	if (!CreateGLWindow("Game Sample",640,480,16,fullscreen))
 	{
 		return 0;									// 失败退出
 	}

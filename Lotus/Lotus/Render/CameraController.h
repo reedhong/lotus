@@ -60,10 +60,9 @@ namespace Lotus {
 		void handleAction(CameraAction action);
 
 	private:
-		//float2		rot_x_;
-		//float2		rot_y_;
-		//float2		rot_z_;
-		Quaternion	mQuat;
+		// 此处我们用三元向量标识位置，四元数标识摄像机才方位
+		Vector3			mPostition;
+		Quaternion	mOrientation;
 	};
 
 }

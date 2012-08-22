@@ -98,12 +98,9 @@ void testMath()
 		1.1,2.0, 3.0, 
 		5.0, 6.0, 7.0, 
 		9.0, 10.0, 11.0);
-	float f = matrix3.ms.m11;
+
 	cout << matrix3.m[0] << endl;
 
-	Matrix3  m3 = matrix3;
-	m3.transposeSelf();
-	cout << m3.ms.m11 << endl;
 	
 	testMatrix3Multi();
 	testMatrix3Inverse();
