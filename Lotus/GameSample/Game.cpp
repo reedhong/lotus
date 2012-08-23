@@ -38,7 +38,7 @@ Game::Game()
 
 	Camera* camera = new Camera();
 	mCameraPtr = SharedPtr<Camera>(camera);
-	mCameraController.attachCamera(mCameraPtr);
+
 }
 
 Game::~Game()
@@ -64,7 +64,10 @@ void Game::resize(int w, int h)
 	Camera camera;
 	mCameraPtr->project(45.0, (GLfloat)w/(GLfloat)h, 1.0, 1000.0);
 	//mCameraPtr->lookAt(Vector3(5,10,10),  Vector3( 0.0,0.0,0.0), Vector3(0.0,1.0,0.0));
-	mCameraPtr->lookAt(Vector3(0, 2.5f, 5),  Vector3(0, 2.5f, 0), Vector3(0, 1, 0));
+	mCameraPtr->setPosition(Vector3(0,0,0));
+	mCameraPtr->lookAt(Vector3(5,10,10));
+	//mCameraPtr->lookAt(Vector3(0, 2.5f, 5),  Vector3(0, 2.5f, 0), Vector3(0, 1, 0));
+	//mCameraController.attachCamera(mCameraPtr);
 #else
 	gluPerspective(60.0, (GLfloat)w/(GLfloat)h, 1.0, 1000.0);
 #endif
@@ -87,8 +90,8 @@ void Game::frame()
 	//gluLookAt(0, 2.5f, 5,  00, 2.5f, 0, 0.0,1.0,0.0);
 	gluLookAt(5,10,10, 0, 0 ,0,0, 1, 0);
 #else
-	mCameraPtr->lookAt(mCameraPtr->mEye,  mCameraPtr->mCenter, 
-		mCameraPtr->mUp);
+	//mCameraPtr->lookAt(mCameraPtr->mEye,  mCameraPtr->mCenter, 
+	//	mCameraPtr->mUp);
 #endif
 	GLfloat mat[16];
 	glGetFloatv(GL_MODELVIEW_MATRIX, mat);

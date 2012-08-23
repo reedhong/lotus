@@ -45,11 +45,14 @@ namespace Lotus {
 
 	FirstPersonCameraController::~FirstPersonCameraController()
 	{
-
+		
 	}
 
 	void FirstPersonCameraController::attachCamera(CameraPtr   camera)
 	{
+		Vector3  scale;
+		camera->mViewMatrix4.decomposition(mPostition, scale, mOrientation);
+
 		CameraController::attachCamera(camera);
 	}
 
@@ -63,8 +66,8 @@ namespace Lotus {
 
 		//Vector3 new_eye_pos = mCameraPtr->mEye ;// TODO:+ MathLib::transform_quat(movement, inv_rot_);
 
-		mCameraPtr->lookAt(mCameraPtr->mEye+movement, movement + mCameraPtr->mCenter, 
-			mCameraPtr->mUp);
+		//mCameraPtr->lookAt(mCameraPtr->mEye+movement, movement + mCameraPtr->mCenter, 
+			//mCameraPtr->mUp);
 	
 	}
 

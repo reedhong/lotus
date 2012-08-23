@@ -29,6 +29,18 @@ namespace Lotus {
 
 	void Matrix4::decomposition(Vector3& position, Vector3& scale, Quaternion& orientation) const
 	{
+		assert(isAffine());
+
+		Matrix3 m3x3 = extractMatrix3();
+
+		Matrix3 matQ;
+		Vector3 vecU;
+		m3x3.QDUDecomposition( matQ, scale, vecU ); 
+
+		orientation = Quaternion( matQ );
+		position = Vector3( m[0][3], m[1][3], m[2][3] );
+
+		Matrix4 m4 = MakeViewMatrix(position,  orientation);
 
 	}
 
@@ -40,7 +52,6 @@ namespace Lotus {
 	{
 		Matrix4 m4;
 		//	// http://www.euclideanspace.com/maths/geometry/rotations/conversions/quaternionToMatrix/index.htm
-		// http://www.euclideanspace.com/maths/geometry/rotations/conversions/quaternionToMatrix/index.htm
 		// http://www.flipcode.com/documents/matrfaq.html
 		// View matrix is:
 		//

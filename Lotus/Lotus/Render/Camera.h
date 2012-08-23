@@ -20,15 +20,51 @@ namespace Lotus {
 	public:
 		Camera();
 		~Camera();
+		
+		void lookAt(const Vector3& eye);
+
+		void setPosition(const Vector3& vec);
+		const Vector3& getPostition(void ) const;
+
+		void setDirection(const Vector3& vec);
+		Vector3 getDirection(void) const;
+		Vector3 getUp(void) const;
+
+		// 移动操作
+		void move(const Vector3& vec);
 	
-		void lookAt(const Vector3& eye,  const Vector3& center, const Vector3& up);
+		//////////////////////////////////////////////////////////////////////////
+		// 各种旋转操作
+        /** Rolls the camera anticlockwise, around its local z axis.
+        */
+        void roll(const Radian& angle);
+
+        /** Rotates the camera anticlockwise around it's local y axis.
+        */
+        void yaw(const Radian& angle);
+
+        /** Pitches the camera up/down anticlockwise around it's local z axis.
+        */
+        void pitch(const Radian& angle);
+
+        /** Rotate the camera around an arbitrary axis.
+        */
+        void rotate(const Vector3& axis, const Radian& angle);
+
+        /** Rotate the camera around an arbitrary axis using a Quaternion.
+        */
+        void rotate(const Quaternion& q);
+		/// end rotate
+
 		void project(float fov, float aspect, float near, float far);
+		
 	public:
 		// 观察矩阵属性
-		Vector3			mEye;
-		Vector3			mCenter;
-		Vector3			mUp;
 		Matrix4			mViewMatrix4;	// 视图矩阵
+
+		Vector3			mPosition;
+		Quaternion	mOrientation;
+		
 
 		// 投影矩阵属性， 此处直接采取透视投影的计算规则，没有设计正交投影
 		float				mFov;		// 视场

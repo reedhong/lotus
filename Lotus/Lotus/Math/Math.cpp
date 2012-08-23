@@ -12,7 +12,7 @@ namespace Lotus {
 	float Math::EPSINON = 0.00001f;
 	float Math::PI =  4.0f * atan(1.0f);
 	float Math::Deg2Rad = PI/180.0f;
-	float Math::Rad2Def = 180.0f/PI;
+	float Math::Rad2Deg = 180.0f/PI;
 
 	Math::Math()
 	{

@@ -38,6 +38,9 @@ typedef SharedPtr<StringVector> StringVectorPtr;
 // Ô¤ÏÈÉùÃ÷
 class Archive;
 
+class Matrix3;
+class Quaternion;
+
 } // end Lotus
 
 #endif

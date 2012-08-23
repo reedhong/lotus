@@ -10,8 +10,9 @@
 #define __Lotus_Matrix3_H__
 
 #include "Main/Prerequisites.h"
-#include "Vector3.h"
 #include "Math.h"
+#include "Vector3.h"
+
 
 namespace Lotus {
 	/*

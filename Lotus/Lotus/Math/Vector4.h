@@ -101,6 +101,19 @@ namespace Lotus {
 			return *this;
 		}
 
+		inline float operator [] ( const size_t i ) const
+		{
+			ASSERT( i < 4 );
+
+			return *(&x+i);
+		}
+
+		inline float& operator [] ( const size_t i )
+		{
+			ASSERT( i < 4 );
+
+			return *(&x+i);
+		}
 		// 向量规范化
 		void normalize()
 		{

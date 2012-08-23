@@ -10,7 +10,8 @@
 #include "Camera.h"
 
 namespace Lotus {
-	Camera::Camera()
+	Camera::Camera():mOrientation(Quaternion::IDENTITY),
+		mPosition(Vector3::ZERO)
 	{
 		
 	}
@@ -20,55 +21,101 @@ namespace Lotus {
 
 	}
 
-	void Camera::lookAt(const Vector3& eye,  const Vector3& center, const Vector3& up)
+
+	void Camera::lookAt(const Vector3& eye)
 	{
-		mEye = eye; mCenter = center; mUp = up;
+		 this->setDirection(eye - mPosition);
+	}
 
-		Vector3 forward = mCenter - mEye;
-		forward.normalize();
+	void Camera::setPosition(const Vector3& vec)
+	{
+		mPosition = vec;
+	}
 
-		Vector3 side = Vector3::corss(forward, mUp);
-		side.normalize();
+	const Vector3& Camera::getPostition(void ) const
+	{
+		return mPosition;
+	}
 
-		Vector3 newUp = Vector3::corss(side, forward);
-		//yVec3.normalize();
-		// 由于右乘，所以这个地方跟3D数学基础上讲的内容要转置一下
+	void Camera::setDirection(const Vector3& vec)
+	{
+		// eye和position在同一个位置
+		if(vec == Vector3::ZERO) return ;
+		// Remember, camera points down -Z of local axes!
+		// Therefore reverse direction of direction vector before determining local Z
+		Vector3 zAdjustVec = -vec;
+		zAdjustVec.normalize();
+
+		Quaternion targetWorldOrientation;
+
+		Vector3 axes[3];
+		//updateView();
+		mOrientation.toAxes(axes);
+		Quaternion rotQuat;
+		if ( (axes[2]+zAdjustVec).squaredLength() <  0.00005f) 
+		{
+			// Oops, a 180 degree turn (infinite possible rotation axes)
+			// Default to yaw i.e. use current UP
+			rotQuat.fromAngleAxis(Radian(Math::PI), axes[1]);
+		}
+		else
+		{
+			// Derive shortest arc to new direction
+			rotQuat = axes[2].getRotationTo(zAdjustVec);
+
+		}
+		targetWorldOrientation = rotQuat * mOrientation;
 		
-		mViewMatrix4.set(
-			side.x,			side.y,				side.z,				-side*mEye,
-			newUp.x,	newUp.y,		newUp.z,		-newUp*mEye,
-			-forward.x, -forward.y,	-forward.z,		forward*mEye,
-			0,					0,						0,						1
-			//0,0,0,1
-			);
+		mOrientation = targetWorldOrientation;
 
-		glMatrixMode(GL_MODELVIEW);
-		glMultMatrixf(mViewMatrix4.transpose()._m);
+		Matrix4 m4 = Matrix4::MakeViewMatrix(mPosition, mOrientation);
+	}
 
-		Matrix3 m3 = mViewMatrix4.extractMatrix3();
-		Quaternion q = mViewMatrix4.extractQuaternion();
-		Matrix3 q2m = q.toRotationMatrix();
-		// 平移相当于上面的
-#if 0
-		// 旋转矩阵* 平移矩阵
-		Matrix4  mr( 
-			side.x,			side.y,				side.z,				0,
-			newUp.x,	newUp.y,		newUp.z,		0,
-			-forward.x, -forward.y,	-forward.z,		0,
-			0,					0,						0,						1
-			);
+	Vector3 Camera::getDirection(void)  const
+	{
+		// Direction points down -Z by default
+		return mOrientation * -Vector3::UNIT_Z;
+	}
 
-		Matrix4 mt( 
-			1, 0, 0, -mEye.x,
-			0,1,0, -mEye.y,
-			0,0,1, -mEye.z,
-			0,0,0,1);
+	Vector3 Camera::getUp(void) const
+	{
+		return mOrientation * Vector3::UNIT_Y;
+	}
 
-		Matrix4 m = mr*mt
-#endif
-			
-		//glTranslatef(-mEye.x, -mEye.y, -mEye.z);
-		printf("x");
+    /** Rolls the camera anticlockwise, around its local z axis.
+    */
+    void Camera::roll(const Radian& angle)
+	{
+
+	}
+
+    /** Rotates the camera anticlockwise around it's local y axis.
+    */
+    void Camera::yaw(const Radian& angle)
+	{
+
+	}
+
+    /** Pitches the camera up/down anticlockwise around it's local z axis.
+    */
+    void Camera::pitch(const Radian& angle)
+	{
+
+	}
+
+
+    /** Rotate the camera around an arbitrary axis.
+    */
+    void Camera::rotate(const Vector3& axis, const Radian& angle)
+	{
+
+	}
+
+    /** Rotate the camera around an arbitrary axis using a Quaternion.
+    */
+    void Camera::rotate(const Quaternion& q)
+	{
+
 	}
 
 	void Camera::project(float fov, float aspect, float near, float far)

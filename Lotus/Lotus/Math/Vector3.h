@@ -52,12 +52,12 @@ namespace Lotus {
 			return Vector3(-x, -y, -z);
 		}
 
-		Vector3 operator +(const Vector3 &a)
+		Vector3 operator +(const Vector3 &a) const
 		{
 			return Vector3(x+a.x, y+a.y, z+a.z);
 		}
 
-		Vector3 operator -(const Vector3 &a)
+		Vector3 operator -(const Vector3 &a) const
 		{
 			return Vector3(x-a.x, y-a.y, z-a.z);
 		}
@@ -101,6 +101,52 @@ namespace Lotus {
 			return *this;
 		}
 
+		inline float operator [] ( const size_t i ) const
+		{
+			ASSERT( i < 3 );
+
+			return *(&x+i);
+		}
+
+		inline float& operator [] ( const size_t i )
+		{
+			ASSERT( i < 3 );
+
+			return *(&x+i);
+		}
+
+		inline friend Vector3 operator + (const Vector3& lhs, const float rhs)
+		{
+			return Vector3(
+				lhs.x + rhs,
+				lhs.y + rhs,
+				lhs.z + rhs);
+		}
+
+		inline friend Vector3 operator + (const float lhs, const Vector3& rhs)
+		{
+			return Vector3(
+				lhs + rhs.x,
+				lhs + rhs.y,
+				lhs + rhs.z);
+		}
+
+		inline friend Vector3 operator - (const Vector3& lhs, const float rhs)
+		{
+			return Vector3(
+				lhs.x - rhs,
+				lhs.y - rhs,
+				lhs.z - rhs);
+		}
+
+		inline friend Vector3 operator - (const float lhs, const Vector3& rhs)
+		{
+			return Vector3(
+				lhs - rhs.x,
+				lhs - rhs.y,
+				lhs - rhs.z);
+		}
+
 		// 向量规范化
 		void normalize()
 		{
@@ -118,6 +164,29 @@ namespace Lotus {
 		{
 			return x*a.x + y*a.y + z*a.z;
 		}
+
+		inline float squaredLength () const
+		{
+			return x * x + y * y + z * z;
+		}
+		/** Returns true if this vector is zero length. */
+		inline bool isZeroLength(void) const
+		{
+			float sqlen = (x * x) + (y * y) + (z * z);
+			return (sqlen < Math::EPSINON);
+
+		}
+
+     /** Gets the shortest arc quaternion to rotate this vector to the destination
+            vector.
+        @remarks
+            If you call this with a dest vector that is close to the inverse
+            of this vector, we will rotate 180 degrees around the 'fallbackAxis'
+			(if specified, or a generated axis if not) since in this case
+			ANY axis of rotation is valid.
+        */
+        Quaternion getRotationTo(const Vector3& dest,
+			const Vector3& fallbackAxis = Vector3::ZERO) const;
 	
 		// 向量求模
 		static float mag(const Vector3 &a)
@@ -127,7 +196,7 @@ namespace Lotus {
 
 
 		// 向量叉乘
-		static Vector3 corss(const Vector3& a, const Vector3& b)
+		static Vector3 cross(const Vector3& a, const Vector3& b)
 		{
 			return Vector3(a.y*b.z - a.z*b.y,  a.z*b.x-a.x*b.z, a.x*b.y-a.y*b.x);
 		}

@@ -23,9 +23,10 @@
 #define __Lotus_Matrix4_H__
 
 #include "Main/Prerequisites.h"
+#include "Math.h"
+#include "Matrix3.h"
 #include "Vector3.h"
 #include "Vector4.h"
-#include "Matrix3.h"
 #include "Quaternion.h"
 
 namespace Lotus {
@@ -351,6 +352,15 @@ namespace Lotus {
 			return q;
 		}
 
+        /** Check whether or not the matrix is affine matrix. ÅÐ¶ÏÊÇ·ñÎª·ÂÉä
+            @remarks
+                An affine matrix is a 4x4 matrix with row 3 equal to (0, 0, 0, 1),
+                e.g. no projective coefficients.
+        */
+        inline bool isAffine(void) const
+        {
+            return m[3][0] == 0 && m[3][1] == 0 && m[3][2] == 0 && m[3][3] == 1;
+        }
 
 		void decomposition(Vector3& position, Vector3& scale, Quaternion& orientation) const;
 		

@@ -9,6 +9,10 @@
 #ifndef __Lotus_Vector2_H__
 #define __Lotus_Vector2_H__
 
+
+#include "Main/Prerequisites.h"
+#include "Math.h"
+
 namespace Lotus {
 	class Vector2 
 	{
@@ -26,6 +30,20 @@ namespace Lotus {
 		{
 			x = a.x; y = a.y; 
 			return *this;
+		}
+
+		inline float operator [] ( const size_t i ) const
+		{
+			ASSERT( i < 2 );
+
+			return *(&x+i);
+		}
+
+		inline float& operator [] ( const size_t i )
+		{
+			ASSERT( i < 2 );
+
+			return *(&x+i);
 		}
 
 		bool operator ==(const Vector2& a) const
