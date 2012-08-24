@@ -60,7 +60,7 @@ Game::Game()
 
 	Camera* camera = new Camera();
 	mCameraPtr = SharedPtr<Camera>(camera);
-	mMove = Vector3::ZERO;
+
 }
 
 Game::~Game()
@@ -131,7 +131,9 @@ void Game::frame()
 	drawGrid();
 	
 	glPushMatrix();
-	glTranslatef(mMove.x, 0, mMove.z);
+	//glTranslatef(mMove.x, 0, mMove.z);
+	Vector3 v(mCameraPtr->getPostition().x-1, 0, mCameraPtr->getPostition().z-5);
+	glTranslatef(v.x, 0, v.z);
 	Draw_Character();
 	glPopMatrix();
 
@@ -190,14 +192,14 @@ bool Game::captureKey(const KeyEvent& event)
 	unsigned char key = event.mKey;
 
 
-	float const scaler = 0.1f;
+	float const scaler = 0.2f;
 	float const angle = 0.03;
 	switch(key){
 		case 'A':
 		case 'a':
 			{
 			//mCameraPtr->rotate(Vector3(mMove.x, 1, mMove.z), Radian(angle));
-			mCameraPtr->setFixedYawAxis(false);
+			//mCameraPtr->setFixedYawAxis(false);
 			mCameraPtr->yaw(Radian(angle));//, Vector3(mMove.x, 1, mMove.z));
 			}
 			//mRotate += Radian(angle);
@@ -205,23 +207,20 @@ bool Game::captureKey(const KeyEvent& event)
 		case 'D':
 		case 'd':
 			mCameraPtr->yaw(Radian(-angle));//, Vector3(mMove.x, 1, mMove.z));
-			mCameraPtr->setFixedYawAxis(false);
+
 			//mRotate += Radian(-angle);
 			break;
 		case 'W':
 		case 'w':
 			{
 				mCameraPtr->moveRelative(Vector3(0,0, -scaler));			
-				Vector3 trans =mCameraPtr->getOrientation()* Vector3(0,0, -scaler);
-				mMove += trans;
+
 			}
 			break;
 		case 'S':
 		case 's':
 			{
 				mCameraPtr->moveRelative(Vector3(0,0, scaler));
-				Vector3 trans =mCameraPtr->getOrientation()* Vector3(0,0, scaler);
-				mMove += trans;
 			}
 			break;
 
