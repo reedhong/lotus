@@ -131,23 +131,6 @@ void Game::frame()
 	drawGrid();
 	
 	glPushMatrix();
-	//Vector3 v3 = mCameraPtr->getOrientation()* (mCameraPtr->getPostition()- Vector3(1, 2.5f, 5)); 
-	//Matrix4 m4 = Matrix4::MakeViewMatrix(mCameraPtr->getPostition(), mCameraPtr->getOrientation());
-	//Matrix4 invm4 = m4.inverse();
-	//Matrix3 rot3 = mCameraPtr->getOrientation().toRotationMatrix();
-	//Matrix4 rot4(rot3);
-	//glMultMatrixf(rot4._m);
-
-	//glRotatef(-mRotate.valueDegrees(), 0, 1, 0);
-	//glMatrixMode(GL_MODELVIEW);
-	//glLoadIdentity();
-	Quaternion q(mRotate, Vector3::UNIT_Y);
-	q.normalize();
-	//Quaternion cq = mCameraPtr->getOrientation();
-	//Quaternion rq = q*cq;
-	Matrix3 rot3 = q.toRotationMatrix();
-	Matrix4 rot4(rot3);
-	glMultMatrixf(rot4._m);
 	glTranslatef(mMove.x, 0, mMove.z);
 	Draw_Character();
 	glPopMatrix();
@@ -212,13 +195,18 @@ bool Game::captureKey(const KeyEvent& event)
 	switch(key){
 		case 'A':
 		case 'a':
-			mCameraPtr->yaw(Radian(angle));
-			mRotate += Radian(angle);
+			{
+			//mCameraPtr->rotate(Vector3(mMove.x, 1, mMove.z), Radian(angle));
+			mCameraPtr->setFixedYawAxis(false);
+			mCameraPtr->yaw(Radian(angle));//, Vector3(mMove.x, 1, mMove.z));
+			}
+			//mRotate += Radian(angle);
 			break;
 		case 'D':
 		case 'd':
-			mCameraPtr->yaw(Radian(-angle));
-			mRotate += Radian(-angle);
+			mCameraPtr->yaw(Radian(-angle));//, Vector3(mMove.x, 1, mMove.z));
+			mCameraPtr->setFixedYawAxis(false);
+			//mRotate += Radian(-angle);
 			break;
 		case 'W':
 		case 'w':
