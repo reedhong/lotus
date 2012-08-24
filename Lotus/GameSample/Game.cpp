@@ -30,6 +30,28 @@ static void  drawGrid()
 		glEnd();
 	}
 }
+
+void Draw_Character() // This object will symbolize our character
+{
+	//glScalef(0.3f,1.0f,0.3f);
+	glTranslatef(0,1.0f,0);
+	glBegin(GL_TRIANGLES);				
+	glColor3f(1.0f,0.0f,0.0f);				
+	glVertex3f( 0.0f, 1.0f, 0.0f);			
+	glVertex3f(-1.0f,-1.0f, 1.0f);			
+	glVertex3f( 1.0f,-1.0f, 1.0f);		
+	glVertex3f( 0.0f, 1.0f, 0.0f);						
+	glVertex3f( 1.0f,-1.0f, 1.0f);					
+	glVertex3f( 1.0f,-1.0f, -1.0f);					
+	glVertex3f( 0.0f, 1.0f, 0.0f);					
+	glVertex3f( 1.0f,-1.0f, -1.0f);					
+	glVertex3f(-1.0f,-1.0f, -1.0f);						
+	glVertex3f( 0.0f, 1.0f, 0.0f);					
+	glVertex3f(-1.0f,-1.0f,-1.0f);					
+	glVertex3f(-1.0f,-1.0f, 1.0f);			
+	glEnd();
+}
+
 Game::Game()
 {
 	InputEngine* inputEngine = new InputEngine();
@@ -38,7 +60,7 @@ Game::Game()
 
 	Camera* camera = new Camera();
 	mCameraPtr = SharedPtr<Camera>(camera);
-
+	mMove = Vector3::ZERO;
 }
 
 Game::~Game()
@@ -63,11 +85,15 @@ void Game::resize(int w, int h)
 #if 1
 	Camera camera;
 	mCameraPtr->project(45.0, (GLfloat)w/(GLfloat)h, 1.0, 1000.0);
+	mCameraPtr->setProjectMatrix();
 	//mCameraPtr->lookAt(Vector3(5,10,10),  Vector3( 0.0,0.0,0.0), Vector3(0.0,1.0,0.0));
-	mCameraPtr->setPosition(Vector3(0,0,0));
-	mCameraPtr->lookAt(Vector3(5,10,10));
+	//mCameraPtr->setPosition(Vector3(5,10,10));
+	//mCameraPtr->lookAt(Vector3(0,0,0));
+	mCameraPtr->setPosition(Vector3(1, 2.5f, 5));
+	mCameraPtr->lookAt(Vector3(0, 2.5f, 0));
+	mCameraPtr->setViewMatrix();
 	//mCameraPtr->lookAt(Vector3(0, 2.5f, 5),  Vector3(0, 2.5f, 0), Vector3(0, 1, 0));
-	//mCameraController.attachCamera(mCameraPtr);
+	mCameraController.attachCamera(mCameraPtr);
 #else
 	gluPerspective(60.0, (GLfloat)w/(GLfloat)h, 1.0, 1000.0);
 #endif
@@ -84,21 +110,49 @@ void Game::end()
 
 void Game::frame()
 {
-	glMatrixMode(GL_MODELVIEW);
-	glLoadIdentity();		
+	//glMatrixMode(GL_MODELVIEW);
+	//glLoadIdentity();		
 #if 0
 	//gluLookAt(0, 2.5f, 5,  00, 2.5f, 0, 0.0,1.0,0.0);
 	gluLookAt(5,10,10, 0, 0 ,0,0, 1, 0);
 #else
+	//Matrix4 m4 = Matrix4::MakeViewMatrix(mCameraPtr->getPostition(), 
+	//	mCameraPtr->getOrientation());
+	
+	//glLoadMatrixf(m4.transpose()._m);
+
 	//mCameraPtr->lookAt(mCameraPtr->mEye,  mCameraPtr->mCenter, 
 	//	mCameraPtr->mUp);
+	mCameraPtr->setViewMatrix();
 #endif
 	GLfloat mat[16];
 	glGetFloatv(GL_MODELVIEW_MATRIX, mat);
 	Root::Instance()->renderOneFrame();
 	drawGrid();
+	
+	glPushMatrix();
+	//Vector3 v3 = mCameraPtr->getOrientation()* (mCameraPtr->getPostition()- Vector3(1, 2.5f, 5)); 
+	//Matrix4 m4 = Matrix4::MakeViewMatrix(mCameraPtr->getPostition(), mCameraPtr->getOrientation());
+	//Matrix4 invm4 = m4.inverse();
+	//Matrix3 rot3 = mCameraPtr->getOrientation().toRotationMatrix();
+	//Matrix4 rot4(rot3);
+	//glMultMatrixf(rot4._m);
 
-	glTranslatef(0,1.0f,0);
+	//glRotatef(-mRotate.valueDegrees(), 0, 1, 0);
+	//glMatrixMode(GL_MODELVIEW);
+	//glLoadIdentity();
+	Quaternion q(mRotate, Vector3::UNIT_Y);
+	q.normalize();
+	//Quaternion cq = mCameraPtr->getOrientation();
+	//Quaternion rq = q*cq;
+	Matrix3 rot3 = q.toRotationMatrix();
+	Matrix4 rot4(rot3);
+	glMultMatrixf(rot4._m);
+	glTranslatef(mMove.x, 0, mMove.z);
+	Draw_Character();
+	glPopMatrix();
+
+
 	glBegin(GL_QUADS);						
 		glColor3f(0.0f,1.0f,0.0f);			
 		glVertex3f( 1.0f, 1.0f,-1.0f);		
@@ -151,30 +205,36 @@ void Game::resume()
 bool Game::captureKey(const KeyEvent& event)
 {
 	unsigned char key = event.mKey;
+
+
+	float const scaler = 0.1f;
+	float const angle = 0.03;
 	switch(key){
 		case 'A':
 		case 'a':
-			mCameraController.handleAction(FirstPersonCameraController::eMoveLeft);
+			mCameraPtr->yaw(Radian(angle));
+			mRotate += Radian(angle);
 			break;
 		case 'D':
 		case 'd':
-			mCameraController.handleAction(FirstPersonCameraController::eMoveRight);
+			mCameraPtr->yaw(Radian(-angle));
+			mRotate += Radian(-angle);
 			break;
 		case 'W':
 		case 'w':
-			mCameraController.handleAction(FirstPersonCameraController::eForward);
+			{
+				mCameraPtr->moveRelative(Vector3(0,0, -scaler));			
+				Vector3 trans =mCameraPtr->getOrientation()* Vector3(0,0, -scaler);
+				mMove += trans;
+			}
 			break;
 		case 'S':
 		case 's':
-			mCameraController.handleAction(FirstPersonCameraController::eBackward);
-			break;
-		case 'Q':
-		case 'q':
-			mCameraController.handleAction(FirstPersonCameraController::eRollLeft);
-			break;
-		case 'E':
-		case 'e':
-			mCameraController.handleAction(FirstPersonCameraController::eMoveRight);
+			{
+				mCameraPtr->moveRelative(Vector3(0,0, scaler));
+				Vector3 trans =mCameraPtr->getOrientation()* Vector3(0,0, scaler);
+				mMove += trans;
+			}
 			break;
 
 	}

@@ -39,11 +39,6 @@ namespace Lotus {
 	public:
 		enum CameraAction
 		{
-			eTurnLeftRight,
-			eTurnUpDown,
-			eRollLeft,
-			eRollRight,
-
 			eForward,
 			eBackward,
 			eMoveLeft,
@@ -52,17 +47,27 @@ namespace Lotus {
 	public:
 		FirstPersonCameraController();
 		virtual ~FirstPersonCameraController();
-		virtual void attachCamera(CameraPtr   camera);
-
-		void move(float x, float y, float z);
-		void rotate(float yaw, float pitch, float roll);
 
 		void handleAction(CameraAction action);
 
-	private:
-		// 此处我们用三元向量标识位置，四元数标识摄像机才方位
-		Vector3			mPostition;
-		Quaternion	mOrientation;
+	};
+
+	class ThirdPersonCameraController: public CameraController
+	{
+	public:
+		enum CameraAction
+		{
+			eForward,
+			eBackward,
+			eMoveLeft,
+			eMoveRight
+		};
+	public:
+		ThirdPersonCameraController();
+		virtual ~ThirdPersonCameraController();
+
+		void handleAction(CameraAction action);
+
 	};
 
 }

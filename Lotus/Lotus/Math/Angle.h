@@ -26,7 +26,10 @@ namespace Lotus {
 		Radian& operator = ( const Radian& r ) { mRad = r.mRad; return *this; }
 		Radian& operator = ( const Degree& d );
 
-		float valueDegrees() const; // see bottom of this file
+		float valueDegrees() const
+		{
+			return mRad*Math::Rad2Deg;
+		}
 		float valueRadians() const { return mRad; }
 		float valueAngleUnits() const;
 

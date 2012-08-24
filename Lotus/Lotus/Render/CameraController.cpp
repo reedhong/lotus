@@ -9,7 +9,7 @@
 #include "CameraController.h"
 
 namespace Lotus {
-	CameraController::CameraController():mRotationScaler(0.05f),
+	CameraController::CameraController():mRotationScaler(1.0f),
 		mMoveScaler(-1)
 	{
 
@@ -48,35 +48,53 @@ namespace Lotus {
 		
 	}
 
-	void FirstPersonCameraController::attachCamera(CameraPtr   camera)
+	void FirstPersonCameraController::	handleAction(CameraAction action)
 	{
-		Vector3  scale;
-		camera->mViewMatrix4.decomposition(mPostition, scale, mOrientation);
-
-		CameraController::attachCamera(camera);
-	}
-
-	void FirstPersonCameraController::move(float x, float y, float z)
-	{
+		//float elapsed_time = InputEngine::Instance()->elapsedTime();
 		if (mCameraPtr.isNull())
 			return ;
 
-		Vector3 movement(x, y, z);
-		movement *= mMoveScaler;
+		
 
-		//Vector3 new_eye_pos = mCameraPtr->mEye ;// TODO:+ MathLib::transform_quat(movement, inv_rot_);
+		float second = 0.1f;
+		float elapsed_time = 0.05f;
+		float const scaler = elapsed_time * 10;
+		float const angle = 0.03;
 
-		//mCameraPtr->lookAt(mCameraPtr->mEye+movement, movement + mCameraPtr->mCenter, 
-			//mCameraPtr->mUp);
-	
+		switch (action)
+		{
+		case eForward:
+			mCameraPtr->moveRelative(Vector3(0,0, scaler)*mMoveScaler);			
+			break;
+
+		case eBackward:
+			mCameraPtr->moveRelative(Vector3(0,0, -scaler)*mMoveScaler);
+			break;
+
+		case eMoveLeft:
+			mCameraPtr->yaw(Radian(angle*mRotationScaler));
+			break;
+
+		case eMoveRight:
+			mCameraPtr->yaw(Radian(-angle*mRotationScaler));
+			break;
+		}
 	}
 
-	void FirstPersonCameraController::rotate(float yaw, float pitch, float roll)
+	//////////////////////////////////////////////////////////////////////////
+	// third controller
+	// FirstPersonCameraController
+	ThirdPersonCameraController::ThirdPersonCameraController()
 	{
 
 	}
 
-	void FirstPersonCameraController::	handleAction(CameraAction action)
+	ThirdPersonCameraController::~ThirdPersonCameraController()
+	{
+
+	}
+
+	void ThirdPersonCameraController::	handleAction(CameraAction action)
 	{
 		//float elapsed_time = InputEngine::Instance()->elapsedTime();
 		if (mCameraPtr.isNull())
@@ -85,42 +103,25 @@ namespace Lotus {
 		float second = 0.1f;
 		float elapsed_time = 0.05f;
 		float const scaler = elapsed_time * 10;
+		float const angle = 0.03;
 
 		switch (action)
 		{
-		case eTurnLeftRight:
-			this->rotate(second * scaler, 0, 0);
-			break;
-
-		case eTurnUpDown:
-			this->rotate(0, second * scaler, 0);
-			break;
-
-		case eRollLeft:
-			this->rotate(0, 0, -scaler);
-			break;
-
-		case eRollRight:
-			this->rotate(0, 0, scaler);
-			break;
-
 		case eForward:
-			this->move(0, 0, scaler);
+			mCameraPtr->moveRelative(Vector3(0,0, scaler)*mMoveScaler);			
 			break;
 
 		case eBackward:
-			this->move(0, 0, -scaler);
+			mCameraPtr->moveRelative(Vector3(0,0, -scaler)*mMoveScaler);
 			break;
 
 		case eMoveLeft:
-			this->move(-scaler, 0, 0);
+			mCameraPtr->yaw(Radian(angle*mRotationScaler));
 			break;
 
 		case eMoveRight:
-			this->move(scaler, 0, 0);
+			mCameraPtr->yaw(Radian(-angle*mRotationScaler));
 			break;
 		}
 	}
-
-
 }

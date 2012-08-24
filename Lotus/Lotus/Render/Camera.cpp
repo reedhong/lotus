@@ -13,7 +13,7 @@ namespace Lotus {
 	Camera::Camera():mOrientation(Quaternion::IDENTITY),
 		mPosition(Vector3::ZERO)
 	{
-		
+		setFixedYawAxis(true);    // Default to fixed yaw, like freelook since most people expect this
 	}
 
 	Camera::~Camera()
@@ -21,6 +21,20 @@ namespace Lotus {
 
 	}
 
+	void Camera::setViewMatrix()
+	{
+		Matrix4 viewMatrix = Matrix4::MakeViewMatrix(mPosition, mOrientation);
+		glMatrixMode(GL_MODELVIEW);
+		glLoadMatrixf(viewMatrix.transpose()._m);
+	}
+
+	void Camera::setProjectMatrix()
+	{
+		Matrix4 viewMatrix = Matrix4::MakeViewMatrix(mPosition, mOrientation);
+		glMatrixMode(GL_PROJECTION);
+		glLoadMatrixf(mProjectMatrix4.transpose()._m);
+		glMatrixMode(GL_MODELVIEW);
+	}
 
 	void Camera::lookAt(const Vector3& eye)
 	{
@@ -37,6 +51,11 @@ namespace Lotus {
 		return mPosition;
 	}
 
+	Quaternion Camera::getOrientation()
+	{
+		return mOrientation;
+	}
+
 	void Camera::setDirection(const Vector3& vec)
 	{
 		// eye和position在同一个位置
@@ -48,27 +67,37 @@ namespace Lotus {
 
 		Quaternion targetWorldOrientation;
 
-		Vector3 axes[3];
-		//updateView();
-		mOrientation.toAxes(axes);
-		Quaternion rotQuat;
-		if ( (axes[2]+zAdjustVec).squaredLength() <  0.00005f) 
+		if( mYawFixed )
 		{
-			// Oops, a 180 degree turn (infinite possible rotation axes)
-			// Default to yaw i.e. use current UP
-			rotQuat.fromAngleAxis(Radian(Math::PI), axes[1]);
-		}
-		else
-		{
-			// Derive shortest arc to new direction
-			rotQuat = axes[2].getRotationTo(zAdjustVec);
+			Vector3 xVec =    mYawFixedAxis.cross( zAdjustVec );
+			xVec.normalize();
 
+			Vector3 yVec = zAdjustVec.cross( xVec );
+			yVec.normalize();
+
+			targetWorldOrientation.fromAxes( xVec, yVec, zAdjustVec );
+
+		}else{
+			Vector3 axes[3];
+			//updateView();
+			mOrientation.toAxes(axes);
+			Quaternion rotQuat;
+			if ( (axes[2]+zAdjustVec).squaredLength() <  0.00005f) 
+			{
+				// Oops, a 180 degree turn (infinite possible rotation axes)
+				// Default to yaw i.e. use current UP
+				rotQuat.fromAngleAxis(Radian(Math::PI), axes[1]);
+			}
+			else
+			{
+				// Derive shortest arc to new direction
+				rotQuat = axes[2].getRotationTo(zAdjustVec);
+
+			}
+			targetWorldOrientation = rotQuat * mOrientation;
 		}
-		targetWorldOrientation = rotQuat * mOrientation;
 		
 		mOrientation = targetWorldOrientation;
-
-		Matrix4 m4 = Matrix4::MakeViewMatrix(mPosition, mOrientation);
 	}
 
 	Vector3 Camera::getDirection(void)  const
@@ -82,25 +111,54 @@ namespace Lotus {
 		return mOrientation * Vector3::UNIT_Y;
 	}
 
+
+	// 移动操作
+	void Camera::move(const Vector3& vec)
+	{
+		mPosition = mPosition + vec;	
+	}
+
+	void Camera::moveRelative(const Vector3& vec)
+	{
+		Vector3 trans = mOrientation * vec;
+		mPosition = mPosition + trans;
+	}
+
+
     /** Rolls the camera anticlockwise, around its local z axis.
     */
     void Camera::roll(const Radian& angle)
 	{
-
+		Vector3 zAxis = mOrientation * Vector3::UNIT_Z;
+		rotate(zAxis, angle);
 	}
 
     /** Rotates the camera anticlockwise around it's local y axis.
     */
     void Camera::yaw(const Radian& angle)
 	{
+		Vector3 yAxis;
 
+		if (mYawFixed)
+		{
+			// Rotate around fixed yaw axis
+			yAxis = mYawFixedAxis;
+		}
+		else
+		{
+			// Rotate around local Y axis
+			yAxis = mOrientation * Vector3::UNIT_Y;
+		}
+
+		rotate(yAxis, angle);
 	}
 
     /** Pitches the camera up/down anticlockwise around it's local z axis.
     */
     void Camera::pitch(const Radian& angle)
 	{
-
+		Vector3 xAxis = mOrientation * Vector3::UNIT_X;
+		rotate(xAxis, angle);
 	}
 
 
@@ -108,14 +166,27 @@ namespace Lotus {
     */
     void Camera::rotate(const Vector3& axis, const Radian& angle)
 	{
-
+		Quaternion q(angle, axis);
+		rotate(q);
 	}
 
     /** Rotate the camera around an arbitrary axis using a Quaternion.
     */
     void Camera::rotate(const Quaternion& q)
 	{
+		// Note the order of the mult, i.e. q comes after
 
+		// Normalise the quat to avoid cumulative problems with precision
+		Quaternion qnorm = q;
+		qnorm.normalize();
+		mOrientation = qnorm * mOrientation;
+	}
+
+	//-----------------------------------------------------------------------
+	void Camera::setFixedYawAxis(bool useFixed, const Vector3& fixedAxis)
+	{
+		mYawFixed = useFixed;
+		mYawFixedAxis = fixedAxis;
 	}
 
 	void Camera::project(float fov, float aspect, float near, float far)
@@ -149,7 +220,5 @@ namespace Lotus {
 			0,			0,			q,			qn,
 			0,			0,			-1,			0
 			);
-		glMatrixMode(GL_PROJECTION);
-		glMultMatrixf(mProjectMatrix4.transpose()._m);
 	}
 }

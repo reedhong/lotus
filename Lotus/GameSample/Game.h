@@ -47,6 +47,8 @@ public:
 private:
 	CameraPtr	mCameraPtr;
 	FirstPersonCameraController	mCameraController;
+	Vector3		mMove;
+	Radian		mRotate;
 
 };
 

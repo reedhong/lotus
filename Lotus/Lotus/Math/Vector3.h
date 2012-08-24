@@ -177,6 +177,14 @@ namespace Lotus {
 
 		}
 
+		inline Vector3 cross( const Vector3& rkVector ) const
+		{
+			return Vector3(
+				y * rkVector.z - z * rkVector.y,
+				z * rkVector.x - x * rkVector.z,
+				x * rkVector.y - y * rkVector.x);
+		}
+
      /** Gets the shortest arc quaternion to rotate this vector to the destination
             vector.
         @remarks
