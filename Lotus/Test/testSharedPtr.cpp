@@ -1,6 +1,6 @@
 #include "test.h"
 
-#include "Main/SharedPtr.h"
+#include "General/SharedPtr.h"
 #include <vector>
 using namespace std;
 using namespace Lotus;

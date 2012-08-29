@@ -2,6 +2,7 @@
 using namespace std;
 
 #include "test.h"
+#include "General/Endian.h"
 
 int main(int argc, char**argv)
 {
@@ -33,6 +34,7 @@ int main(int argc, char**argv)
 
 	// testVFS();
 	testMath();
+
 	system("pause");
 	return 0;
 }

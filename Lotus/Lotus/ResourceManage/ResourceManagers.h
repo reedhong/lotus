@@ -15,7 +15,8 @@ namespace Lotus {
 		ResourceManagers();
 		~ResourceManagers();
 	private:
-		//map<String, Archive*> mResourceLocationIndex;
+		// name->path
+		map<String, String> mResourceLocationMap;
 	};
 }
 

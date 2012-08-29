@@ -14,9 +14,15 @@
 namespace Lotus {
 	class Mesh: public Resource
 	{
+		friend class SubMesh;
 	public:
-		Mesh();
-		~Mesh();
+		Mesh(ResourceManager* creator, const String& name,  const String&path);
+		virtual ~Mesh();
+		virtual void loadImpl();
+		virtual void unloadImpl();
+		virtual size_t calculateSize(void) const;
+	private:
+		vector<SubMesh *>	mSubMeshes;
 	};
 }
 

@@ -9,7 +9,7 @@
 #ifndef __Lotus_VFS_H__
 #define __Lotus_VFS_H__
 
-#include "Main/Singleton.h"
+#include "General/Singleton.h"
 #include "FileSystem.h"
 #include "File.h"
 #include "Dir.h"

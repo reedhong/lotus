@@ -9,7 +9,7 @@
 #ifndef __Lotus_SceneManager_H__
 #define __Lotus_SceneManager_H__
 
-#include "Main/Prerequisites.h"
+#include "General/Prerequisites.h"
 
 #include "SceneManager.h"
 #include "Render/Camera.h"

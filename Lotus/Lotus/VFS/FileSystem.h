@@ -9,7 +9,7 @@
 #ifndef __Lotus_FileSystem_H__
 #define __Lotus_FileSystem_H__
 
-#include "Main/Prerequisites.h"
+#include "General/Prerequisites.h"
 #include "File.h"
 #include "Dir.h"
 namespace Lotus {

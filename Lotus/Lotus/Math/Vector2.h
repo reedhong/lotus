@@ -10,7 +10,7 @@
 #define __Lotus_Vector2_H__
 
 
-#include "Main/Prerequisites.h"
+#include "General/Prerequisites.h"
 #include "Math.h"
 
 namespace Lotus {

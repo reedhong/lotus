@@ -22,7 +22,7 @@
 #ifndef __Lotus_Matrix4_H__
 #define __Lotus_Matrix4_H__
 
-#include "Main/Prerequisites.h"
+#include "General/Prerequisites.h"
 #include "Math.h"
 #include "Matrix3.h"
 #include "Vector3.h"

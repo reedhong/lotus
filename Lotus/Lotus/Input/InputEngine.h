@@ -15,9 +15,9 @@
 #define __Lotus_InputEngine_H__
 
 
-#include "Main/Prerequisites.h"
-#include "Main/Timer.h"
-#include "Main/Singleton.h"
+#include "General/Prerequisites.h"
+#include "General/Timer.h"
+#include "General/Singleton.h"
 
 #include "KeyEvent.h"
 #include "MotionEvent.h"

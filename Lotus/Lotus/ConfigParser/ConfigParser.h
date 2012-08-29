@@ -6,7 +6,7 @@
 #ifndef __LOTUS_CONFIG_PARSER_H__
 #define __LOTUS_CONFIG_PARSER_H__
 
-#include "Main/Prerequisites.h"
+#include "General/Prerequisites.h"
 
 namespace Lotus
 {

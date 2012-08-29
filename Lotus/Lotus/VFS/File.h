@@ -9,17 +9,12 @@
 #ifndef __Lotus_File_H__
 #define __Lotus_File_H__
 
-#include "Main/Prerequisites.h"
+#include "General/Prerequisites.h"
+#include "General/Stream.h"
 
 namespace Lotus {
-	class File 
+	class File: public Stream
 	{
-	public:
-		enum AccessMode
-		{
-			READ = 1, 
-			WRITE = 2
-		};
 	protected:
 		String mPath;
 		String mMountPoint;

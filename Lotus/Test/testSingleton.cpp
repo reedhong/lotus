@@ -1,4 +1,4 @@
-#include "Main/Singleton.h"
+#include "General/Singleton.h"
 #include <iostream>
 using namespace std;
 using namespace Lotus;

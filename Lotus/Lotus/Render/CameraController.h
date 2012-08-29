@@ -9,7 +9,7 @@
 #ifndef __Lotus_CameraController_H__
 #define __Lotus_CameraController_H__
 
-#include "Main/Prerequisites.h"
+#include "General/Prerequisites.h"
 
 #include "Camera.h"
 #include "Math/Quaternion.h"

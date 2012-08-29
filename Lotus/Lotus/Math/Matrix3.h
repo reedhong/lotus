@@ -9,7 +9,7 @@
 #ifndef __Lotus_Matrix3_H__
 #define __Lotus_Matrix3_H__
 
-#include "Main/Prerequisites.h"
+#include "General/Prerequisites.h"
 #include "Math.h"
 #include "Vector3.h"
 

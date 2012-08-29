@@ -12,6 +12,7 @@ using namespace std;
 #include "Math/Math.h"
 #include "Math/Matrix3.h"
 #include "Math/Matrix4.h"
+#include "General/Endian.h"
 
 using namespace Lotus;
 
@@ -100,11 +101,11 @@ void testMath()
 		9.0, 10.0, 11.0);
 
 	cout << matrix3.m[0] << endl;
-
-	
+	bool b = Endian::s_IsLittleEndian;
+	Endian e;
 	testMatrix3Multi();
 	testMatrix3Inverse();
 	testMatrix3Det();
 	testMatrix4Multi();
-
+	
 }

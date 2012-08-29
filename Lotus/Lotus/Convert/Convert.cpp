@@ -3,7 +3,7 @@ using namespace std;
 
 #include "Convert.h"
 #include "String/StringUtil.h"
-#include "Main/Macro.h"
+#include "General/Macro.h"
 
 namespace Lotus {
 	String Convert::Int2String(int32 ival)

@@ -9,7 +9,7 @@
 #ifndef __Lotus_Angle_H__
 #define __Lotus_Angle_H__
 
-#include "Main/Prerequisites.h"
+#include "General/Prerequisites.h"
 #include "Math.h"
 namespace Lotus {
 	// »¡¶È

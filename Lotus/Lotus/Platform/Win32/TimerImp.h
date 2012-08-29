@@ -13,8 +13,8 @@
 #endif
 #include <windows.h>
 #include <ctime>
-#include "Main/Prerequisites.h"
-#include "Main/Macro.h"
+#include "General/Prerequisites.h"
+#include "General/Macro.h"
 
 using namespace std;
 

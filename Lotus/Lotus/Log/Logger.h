@@ -7,7 +7,7 @@
 #define __LOTUS_LOG_H__
 
 
-#include "Main/Prerequisites.h"
+#include "General/Prerequisites.h"
 
 namespace Lotus
 {	

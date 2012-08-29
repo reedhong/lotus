@@ -9,7 +9,7 @@
 #ifndef __Lotus_Dir_H__
 #define __Lotus_Dir_H__
 
-#include "Main/Prerequisites.h"
+#include "General/Prerequisites.h"
 
 namespace Lotus {
 	class Dir 

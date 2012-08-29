@@ -1,6 +1,6 @@
 #include "Logger.h"
-#include "Main/Macro.h"
-#include "Main/Timer.h"
+#include "General/Macro.h"
+#include "General/Timer.h"
 
 #include <cstdio>
 #include <cstdlib>

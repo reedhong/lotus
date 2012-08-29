@@ -9,7 +9,7 @@
 #ifndef __Lotus_Camera_H__
 #define __Lotus_Camera_H__
 
-#include "Main/SharedPtr.h"
+#include "General/SharedPtr.h"
 
 #include "Math/Vector3.h"
 #include "Math/Matrix4.h"

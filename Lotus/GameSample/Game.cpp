@@ -7,8 +7,8 @@
 *********************************************************************/
 
 #include "Game.h"
-#include "Main/Timer.h"
-#include "Main/Root.h"
+#include "General/Timer.h"
+#include "General/Root.h"
 #include "Render/OpenGL/GLRenderSystem.h"
 #include "Render/Camera.h"
 

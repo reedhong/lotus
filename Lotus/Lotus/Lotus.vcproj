@@ -159,6 +159,14 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Animation\Animation.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Animation\AnimationTrack.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\Render\Camera.cpp"
 				>
 			</File>
@@ -167,7 +175,7 @@
 				>
 			</File>
 			<File
-				RelativePath=".\Main\Color.cpp"
+				RelativePath=".\General\Color.cpp"
 				>
 			</File>
 			<File
@@ -183,6 +191,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\General\Endian.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\SceneManager\Entity.cpp"
 				>
 			</File>
@@ -191,7 +203,7 @@
 				>
 			</File>
 			<File
-				RelativePath=".\Main\FactoryObj.cpp"
+				RelativePath=".\General\FactoryObj.cpp"
 				>
 			</File>
 			<File
@@ -227,6 +239,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Animation\KeyFrame.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\SceneManager\Light.cpp"
 				>
 			</File>
@@ -255,11 +271,23 @@
 				>
 			</File>
 			<File
+				RelativePath=".\ResourceManage\MeshManager.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\ResourceManage\MeshSerializer.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\Input\MotionEvent.cpp"
 				>
 			</File>
 			<File
 				RelativePath=".\VFS\Path.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\General\Pool.cpp"
 				>
 			</File>
 			<File
@@ -311,7 +339,7 @@
 				>
 			</File>
 			<File
-				RelativePath=".\Main\Root.cpp"
+				RelativePath=".\General\Root.cpp"
 				>
 			</File>
 			<File
@@ -319,11 +347,31 @@
 				>
 			</File>
 			<File
-				RelativePath=".\Main\SharedPtr.cpp"
+				RelativePath=".\General\Serializer.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\Main\Singleton.cpp"
+				RelativePath=".\General\SharedPtr.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\General\Singleton.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\ResourceManage\Skeleton.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\ResourceManage\Skeletonmanager.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\ResourceManage\SkeletonSerializer.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\General\Stream.cpp"
 				>
 			</File>
 			<File
@@ -381,7 +429,15 @@
 				>
 			</File>
 			<File
-				RelativePath=".\Main\Bitwise.h"
+				RelativePath=".\Animation\Animation.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Animation\AnimationTrack.h"
+				>
+			</File>
+			<File
+				RelativePath=".\General\Bitwise.h"
 				>
 			</File>
 			<File
@@ -393,11 +449,11 @@
 				>
 			</File>
 			<File
-				RelativePath=".\Main\Color.h"
+				RelativePath=".\General\Color.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Main\Config.h"
+				RelativePath=".\General\Config.h"
 				>
 			</File>
 			<File
@@ -413,6 +469,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\General\Endian.h"
+				>
+			</File>
+			<File
 				RelativePath=".\SceneManager\Entity.h"
 				>
 			</File>
@@ -421,7 +481,7 @@
 				>
 			</File>
 			<File
-				RelativePath=".\Main\FactoryObj.h"
+				RelativePath=".\General\FactoryObj.h"
 				>
 			</File>
 			<File
@@ -489,6 +549,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Animation\KeyFrame.h"
+				>
+			</File>
+			<File
 				RelativePath=".\SceneManager\Light.h"
 				>
 			</File>
@@ -501,7 +565,7 @@
 				>
 			</File>
 			<File
-				RelativePath=".\Main\Macro.h"
+				RelativePath=".\General\Macro.h"
 				>
 			</File>
 			<File
@@ -521,6 +585,14 @@
 				>
 			</File>
 			<File
+				RelativePath=".\ResourceManage\MeshManager.h"
+				>
+			</File>
+			<File
+				RelativePath=".\ResourceManage\MeshSerializer.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Input\MotionEvent.h"
 				>
 			</File>
@@ -533,7 +605,11 @@
 				>
 			</File>
 			<File
-				RelativePath=".\Main\Prerequisites.h"
+				RelativePath=".\General\Pool.h"
+				>
+			</File>
+			<File
+				RelativePath=".\General\Prerequisites.h"
 				>
 			</File>
 			<File
@@ -589,7 +665,7 @@
 				>
 			</File>
 			<File
-				RelativePath=".\Main\Root.h"
+				RelativePath=".\General\Root.h"
 				>
 			</File>
 			<File
@@ -597,11 +673,31 @@
 				>
 			</File>
 			<File
-				RelativePath=".\Main\SharedPtr.h"
+				RelativePath=".\General\Serializer.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Main\Singleton.h"
+				RelativePath=".\General\SharedPtr.h"
+				>
+			</File>
+			<File
+				RelativePath=".\General\Singleton.h"
+				>
+			</File>
+			<File
+				RelativePath=".\ResourceManage\Skeleton.h"
+				>
+			</File>
+			<File
+				RelativePath=".\ResourceManage\SkeletonManager.h"
+				>
+			</File>
+			<File
+				RelativePath=".\ResourceManage\SkeletonSerializer.h"
+				>
+			</File>
+			<File
+				RelativePath=".\General\Stream.h"
 				>
 			</File>
 			<File
@@ -625,7 +721,7 @@
 				>
 			</File>
 			<File
-				RelativePath=".\Main\Timer.h"
+				RelativePath=".\General\Timer.h"
 				>
 			</File>
 			<File
@@ -667,6 +763,10 @@
 			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
 			>
 		</Filter>
+		<File
+			RelativePath=".\ClassDiagram1.cd"
+			>
+		</File>
 	</Files>
 	<Globals>
 	</Globals>

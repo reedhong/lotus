@@ -9,7 +9,7 @@
 #ifndef __Lotus_GLRenderSystem_H__
 #define __Lotus_GLRenderSystem_H__
 
-#include "Main/Prerequisites.h"
+#include "General/Prerequisites.h"
 #include "Render/RenderSystem.h"
 
 namespace Lotus {

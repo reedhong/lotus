@@ -9,13 +9,13 @@
 #ifndef __Lotus_RenderSystem_H__
 #define __Lotus_RenderSystem_H__
 
-#include "Main/Prerequisites.h"
+#include "General/Prerequisites.h"
 #include "Math/Matrix4.h"
 #include "ResourceManage/TextureManager.h"
 #include "RenderSupport.h"
 //#include "RenderContext.h"
 #include "RenderCapabilities.h"
-#include "Main/Color.h"
+#include "General/Color.h"
 #include "Viewport.h"
 #include "Camera.h"
 

@@ -8,7 +8,7 @@
 #define __String_Util_H__
 
 
-#include "Main/Prerequisites.h"
+#include "General/Prerequisites.h"
 
 namespace Lotus
 {

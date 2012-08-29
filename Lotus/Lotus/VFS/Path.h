@@ -9,7 +9,7 @@
 #ifndef __Lotus_Path_H__
 #define __Lotus_Path_H__
 
-#include "Main/Prerequisites.h"
+#include "General/Prerequisites.h"
 
 namespace Lotus {
 	class Path

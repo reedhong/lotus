@@ -5,8 +5,8 @@
 #ifndef __LOTUS_LOG_MANAGER_H__
 #define __LOTUS_LOG_MANAGER_H__
 
-#include "Main/Prerequisites.h"
-#include "Main/Singleton.h"
+#include "General/Prerequisites.h"
+#include "General/Singleton.h"
 #include "Logger.h"
 
 namespace Lotus

@@ -9,7 +9,7 @@
 #ifndef __Lotus_RenderCommon_H__
 #define __Lotus_RenderCommon_H__
 
-#include "Main/Config.h"
+#include "General/Config.h"
 #include "Log/LoggerManager.h"
 
 namespace Lotus {

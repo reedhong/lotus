@@ -4,8 +4,8 @@
  */
 
 //#include "LotusStableHeaders.h"
-#include "Main/Timer.h"
-#include "Main/Bitwise.h"
+#include "General/Timer.h"
+#include "General/Bitwise.h"
  
 namespace Lotus{
 

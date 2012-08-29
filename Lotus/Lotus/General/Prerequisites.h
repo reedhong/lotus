@@ -14,6 +14,7 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <list>
 
 using namespace std;
 
@@ -40,6 +41,7 @@ class Archive;
 
 class Matrix3;
 class Quaternion;
+class Vector3;
 
 } // end Lotus
 

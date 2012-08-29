@@ -2,7 +2,7 @@
 using namespace std;
 #include "test.h"
 
-#include "Main/Timer.h"
+#include "General/Timer.h"
 using namespace Lotus;
 
 

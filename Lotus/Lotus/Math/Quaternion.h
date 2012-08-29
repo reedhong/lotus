@@ -9,7 +9,7 @@
 #ifndef __Lotus_Quaternion_H__
 #define __Lotus_Quaternion_H__
 
-#include "Main/Prerequisites.h"
+#include "General/Prerequisites.h"
 #include "Math.h"
 #include "Vector3.h"
 #include "Matrix3.h"

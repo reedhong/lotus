@@ -1,7 +1,7 @@
 #ifndef __LOTUS_PLATFORM_H__
 #define __LOTUS_PLATFORM_H__
 
-#include "Main/Config.h"
+#include "General/Config.h"
 #include <string>
 using namespace std;
 

@@ -10,7 +10,7 @@
 #define __Lotus_TextureManager_H__
 
 #include "ResourceManager.h"
-#include "Main/Singleton.h"
+#include "General/Singleton.h"
 
 namespace Lotus {
 	class TextureManager:  public ResourceManager, public Singleton<TextureManager>
