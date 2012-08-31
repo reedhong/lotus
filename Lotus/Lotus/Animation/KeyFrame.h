@@ -37,6 +37,16 @@ namespace Lotus {
 		const AnimationTrack* mParentTrack;
 	};
 
+
+	//////////////////////////////////////////////////////////////////////////
+
+	class TransformKeyFrame: public KeyFrame
+	{
+	public:
+		TransformKeyFrame(const AnimationTrack* parent, float time);
+		~TransformKeyFrame() {};
+	};
+
 }
 
 #endif

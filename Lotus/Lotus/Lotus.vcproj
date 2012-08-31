@@ -283,6 +283,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Animation\NodeAnimationTrack.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\VFS\Path.cpp"
 				>
 			</File>
@@ -343,6 +347,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Math\RotationalSpline.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\SceneManager\SceneManager.cpp"
 				>
 			</File>
@@ -352,6 +360,10 @@
 			</File>
 			<File
 				RelativePath=".\General\SharedPtr.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Math\SimpleSpline.cpp"
 				>
 			</File>
 			<File
@@ -597,6 +609,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Animation\NodeAnimationTrack.h"
+				>
+			</File>
+			<File
 				RelativePath=".\VFS\Path.h"
 				>
 			</File>
@@ -669,6 +685,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Math\RotationalSpline.h"
+				>
+			</File>
+			<File
 				RelativePath=".\SceneManager\SceneManager.h"
 				>
 			</File>
@@ -678,6 +698,10 @@
 			</File>
 			<File
 				RelativePath=".\General\SharedPtr.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Math\SimpleSpline.h"
 				>
 			</File>
 			<File

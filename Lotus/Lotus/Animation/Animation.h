@@ -30,11 +30,41 @@ namespace Lotus {
 		Animation(const String& name, float length);
 		virtual ~Animation();
 
+		const String& getName() const;
+		float getLength() const;
+		void setLength(float len);
+
+		//////////////////////////////////////////////////////////////////////////
+		// ≤Â÷µ
+		InterpolationMode getInterpolationMode(void) const
+		{
+			return mInterpolationMode;
+		}
+
+		void setInterpolationMode(InterpolationMode im)
+		{
+			mInterpolationMode = im;
+		}
+
+		RotationInterpolationMode getRotationInterpolationMode(void) const
+		{
+			return mRotationInterpolationMode;
+		}
+		void setRotationInterpolationMode(RotationInterpolationMode im)
+		{
+			mRotationInterpolationMode = im;
+		}
+
+
 	protected:
 		String		mName;
 		float		mLength;
 		InterpolationMode mInterpolationMode;
 		RotationInterpolationMode mRotationInterpolationMode;
+
+		//////////////////////////////////////////////////////////////////////////
+		// ¥Ê¥¢track
+		
 
 
 	};
