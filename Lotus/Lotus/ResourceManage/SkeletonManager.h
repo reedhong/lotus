@@ -17,7 +17,7 @@ namespace Lotus {
 	{
 	public:
 		SkeletonManager();
-		virtual SkeletonManager();
+		virtual ~SkeletonManager();
 
 		virtual Resource* createImpl(const String& name, const String& path);
 	};

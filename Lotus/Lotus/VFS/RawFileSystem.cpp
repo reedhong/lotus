@@ -23,17 +23,13 @@ namespace Lotus {
 
 	}
 
-	FilePtr RawFileSystem::open(const String&  basepath, const String& relpath) const
+	StreamPtr RawFileSystem::open(const String&  basepath, const String& relpath) const
 	{
 		String path = Path::join(basepath, relpath);
 		RawFile* pFile = LOTUS_NEW RawFile(path);		
 		return SharedPtr<RawFile>(pFile);
 	}
-	DirPtr RawFileSystem::openDir(const String&path) const
-	{
-		RawDir* pDir = LOTUS_NEW RawDir(path);		
-		return SharedPtr<RawDir>(pDir);
-	}	
+
 
 		// Ä¿Â¼²Ù×÷
 	void RawFileSystem::listDir(const String& path, StringVector* paths) const

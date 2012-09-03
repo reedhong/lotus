@@ -13,7 +13,7 @@ void testVFS()
 	vfs->addFileSystem(rfs);
 	vfs->mount("C:\\github\\lotus\\Lotus", "sys", RAW_FS);
 	
-	FilePtr fp = vfs->open("sys", "/test/test.h");
+	StreamPtr fp = vfs->open("sys", "/test/test.h");
 
 
 	LOTUS_DELETE vfs;

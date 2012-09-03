@@ -10,8 +10,8 @@
 #define __Lotus_FileSystem_H__
 
 #include "General/Prerequisites.h"
-#include "File.h"
-#include "Dir.h"
+#include "General/Stream.h"
+
 namespace Lotus {
 	class FileSystem 
 	{
@@ -24,8 +24,7 @@ namespace Lotus {
 		/*
 		 * 
 		 */
-		virtual FilePtr open(const String&  basepath, const String& relpath) const = 0;
-		virtual DirPtr openDir(const String&path) const = 0;
+		virtual StreamPtr open(const String&  basepath, const String& relpath) const = 0;
 
 		// Ä¿Â¼²Ù×÷
 		virtual void listDir(const String& path, StringVector* paths) const = 0;

@@ -54,6 +54,7 @@ void Draw_Character() // This object will symbolize our character
 
 Game::Game()
 {
+
 	InputEngine* inputEngine = new InputEngine();
 	InputEngine::Instance()->setKeyListener(this);
 	InputEngine::Instance()->setMotionListener(this);

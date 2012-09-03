@@ -53,7 +53,7 @@ namespace Lotus {
 	}
 
 
-	FilePtr VFS::open(const String& mountPoint, const String& relpath)
+	StreamPtr VFS::open(const String& mountPoint, const String& relpath)
 	{
 		map<String, String>::iterator iterPM = mPathMap.find(mountPoint);
 		ASSERT( iterPM != mPathMap.end());
@@ -66,6 +66,7 @@ namespace Lotus {
 		
 		return fsp.getPointer()->open(abspath, relpath);
 	}
+
 #if 0
 	FilePtr VFS::open(const String& absolutePath)
 	{

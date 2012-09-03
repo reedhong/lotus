@@ -12,10 +12,11 @@
 #include <fstream>
 using namespace std;
 
-#include "File.h"
+#include "General/Prerequisites.h"
+#include "General/Stream.h"
 
 namespace Lotus {
-	class RawFile: public File
+	class RawFile: public Stream
 	{
 	private:	
 		fstream		mFStream;

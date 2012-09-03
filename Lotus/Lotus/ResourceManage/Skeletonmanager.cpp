@@ -7,6 +7,7 @@
 *********************************************************************/
 
 #include "SkeletonManager.h"
+#include "Skeleton.h"
 
 namespace Lotus {
 	SkeletonManager::SkeletonManager()
@@ -14,13 +15,13 @@ namespace Lotus {
 
 	}
 
-	SkeletonManager::SkeletonManager()
+	SkeletonManager::~SkeletonManager()
 	{
 
 	}
 
 	Resource* SkeletonManager::createImpl(const String& name, const String& path)
 	{
-		return Skeleton(this, name, path);
+		return LOTUS_NEW Skeleton(this, name, path);
 	}
 }

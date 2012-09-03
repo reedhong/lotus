@@ -29,7 +29,7 @@ namespace Lotus {
 		return mLength;
 	}
 
-	void Animation::setLength(int len)
+	void Animation::setLength(float len)
 	{
 		mLength = len;
 	}

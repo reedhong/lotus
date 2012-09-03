@@ -12,7 +12,7 @@
 
 namespace Lotus {
 	RawFile::RawFile(const String& path, size_t size, unsigned char accessMode):
-		File(path, size, accessMode), mIsClose(false)
+		Stream(accessMode), mIsClose(false)
 	{
 		ios_base::openmode mode = ios_base::in;
 		if(accessMode != READ){

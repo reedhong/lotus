@@ -17,7 +17,7 @@ namespace Lotus {
 	{
 	public:
 		MeshManager();
-		virtual MeshManager();
+		virtual ~MeshManager();
 
 		virtual Resource* createImpl(const String& name, const String& path);
 	};

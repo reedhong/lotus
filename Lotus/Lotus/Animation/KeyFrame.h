@@ -10,6 +10,8 @@
 #define __Lotus_KeyFrame_H__
 
 #include "General/Prerequisites.h"
+#include "Math/Vector3.h"
+#include "Math/Quaternion.h"
 
 namespace Lotus {
 	/*
@@ -45,6 +47,21 @@ namespace Lotus {
 	public:
 		TransformKeyFrame(const AnimationTrack* parent, float time);
 		~TransformKeyFrame() {};
+
+		void setTranslate(const Vector3& trans);
+		const Vector3& getTranslate() const ;
+
+		void setScale(const Vector3& scale);
+		const Vector3& getScale() const;
+
+		void setRotation(const Quaternion& rot);
+		const Quaternion& getRotation() const ;
+
+		KeyFrame* _clone(AnimationTrack* newParent) const;
+	protected:
+		Vector3				mTranslate;
+		Vector3				mScale;
+		Quaternion		mRotate;
 	};
 
 }

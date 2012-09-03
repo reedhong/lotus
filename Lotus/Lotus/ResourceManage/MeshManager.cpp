@@ -7,6 +7,7 @@
 *********************************************************************/
 
 #include "MeshManager.h"
+#include "Mesh.h"
 
 namespace Lotus {
 	MeshManager::MeshManager()
@@ -14,13 +15,13 @@ namespace Lotus {
 
 	}
 
-	MeshManager::MeshManager()
+	MeshManager::~MeshManager()
 	{
 
 	}
 
 	Resource* MeshManager::createImpl(const String& name, const String& path)
 	{
-		return Mesh(this, name, path);
+		return LOTUS_NEW Mesh(this, name, path);
 	}
 }

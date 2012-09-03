@@ -41,12 +41,12 @@ namespace Lotus {
 		/*
 		 * @path: 为加载到mountPoint的相对路径，这里我们均采取Linux的命令模式 actor/monster/test.xml
 		 */
-		FilePtr	 open( const String& mountPoint, const String& relpath);
+		StreamPtr	 open( const String& mountPoint, const String& relpath);
 
 		/*
 		 * 虚拟的绝对路径
 		 */
-		FilePtr open(const String& absPath);
+		StreamPtr open(const String& absPath);
 
 		/*
 		 * 打开某个目录项

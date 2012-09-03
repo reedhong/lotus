@@ -187,10 +187,6 @@
 				>
 			</File>
 			<File
-				RelativePath=".\VFS\Dir.cpp"
-				>
-			</File>
-			<File
 				RelativePath=".\General\Endian.cpp"
 				>
 			</File>
@@ -204,10 +200,6 @@
 			</File>
 			<File
 				RelativePath=".\General\FactoryObj.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\VFS\File.cpp"
 				>
 			</File>
 			<File
@@ -300,10 +292,6 @@
 			</File>
 			<File
 				RelativePath=".\Math\Quaternion.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\VFS\RawDir.cpp"
 				>
 			</File>
 			<File
@@ -477,10 +465,6 @@
 				>
 			</File>
 			<File
-				RelativePath=".\VFS\Dir.h"
-				>
-			</File>
-			<File
 				RelativePath=".\General\Endian.h"
 				>
 			</File>
@@ -494,10 +478,6 @@
 			</File>
 			<File
 				RelativePath=".\General\FactoryObj.h"
-				>
-			</File>
-			<File
-				RelativePath=".\VFS\File.h"
 				>
 			</File>
 			<File
@@ -634,10 +614,6 @@
 			</File>
 			<File
 				RelativePath=".\Math\Quaternion.h"
-				>
-			</File>
-			<File
-				RelativePath=".\VFS\RawDir.h"
 				>
 			</File>
 			<File

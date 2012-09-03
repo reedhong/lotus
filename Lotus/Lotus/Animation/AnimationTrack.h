@@ -57,8 +57,8 @@ namespace Lotus {
         }
 	};	// end TimeIndex
 
-	//////////////////////////////////////////////////////////////////////////
-	
+
+	//////////////////////////////////////////////////////////////////////////	
     /** A 'track' in an animation sequence, i.e. a sequence of keyframes which affect a
         certain type of animable object.
 	 */
@@ -88,6 +88,8 @@ namespace Lotus {
 
 		/** Removes all the KeyFrames from this track. */
 		virtual void removeAllKeyFrames(void);
+
+		virtual void _keyFrameDataChanged(void) const {}
 
 	protected:
 		vector<KeyFrame* > mKeyFrames;

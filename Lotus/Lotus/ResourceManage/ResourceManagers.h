@@ -7,6 +7,7 @@
 #ifndef __Lotus_ResourceManagers_H__
 #define __Lotus_ResourceManagers_H__
 
+#include "General/Prerequisites.h"
 
 namespace Lotus {
 	class ResourceManagers

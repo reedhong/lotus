@@ -122,7 +122,7 @@ namespace Lotus {
 	    virtual void seek( size_t pos ) = 0;
 		
 		/** Returns the current byte offset from beginning */
-	    virtual size_t tell(void) const = 0;
+	    virtual size_t tell(void)  = 0;
 
 		/** Returns true if the stream has reached the end.
 	    */

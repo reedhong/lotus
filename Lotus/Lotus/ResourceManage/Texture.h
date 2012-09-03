@@ -15,7 +15,7 @@ namespace Lotus {
 	class Texture: public Resource 
 	{
 	public:
-		Texture() { }
+		Texture(ResourceManager* creator, const String& name,  const String&path);
 		virtual ~Texture() {}
 	};
 }
