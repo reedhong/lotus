@@ -12,6 +12,8 @@
 #include "Render/OpenGL/GLRenderSystem.h"
 #include "Render/Camera.h"
 #include "VFS/RawFileSystem.h"
+#include "ResourceManage/MeshManager.h"
+#include "ResourceManage/Mesh.h"
 
 #include <GL/glew.h>
 #include "Input/InputEngine.h"
@@ -78,10 +80,11 @@ void Game::startup(int width,int height,float scale)
 
 	RawFileSystem* rfs = LOTUS_NEW RawFileSystem();
 	VFS::Instance()->addFileSystem(rfs);
-	VFS::Instance()->mount("e:\\github\\lotus\\Lotus", "sys", RAW_FS);
+	VFS::Instance()->mount("F:\\game\\lotus-root\\Orge-Study\\OgreSDK_vc9_v1-8-0\\media", "media", RAW_FS);
 
-	FilePtr fp = VFS::Instance()->open("sys", "/test/test.h");
-	
+	StreamPtr fp = VFS::Instance()->open("media", "models/robot.mesh");
+
+	MeshManager::Instance()->load("robot", "/media/models/robot.mesh");
 
 }
 
@@ -121,7 +124,6 @@ void Game::frame()
 	
 	
 	drawGrid();
-
 	glFlush();
 	InputEngine::Instance()->update();
 }

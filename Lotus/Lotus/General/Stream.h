@@ -27,6 +27,8 @@ namespace Lotus {
         size_t mSize;
 		/// What type of access is allowed (AccessMode)
 		uint16 mAccess;
+
+		#define LOTUS_STREAM_TEMP_SIZE 128
 	public:
 		/// Constructor for creating unnamed streams
         Stream(uint16 accessMode = READ) : mSize(0), mAccess(accessMode) {}

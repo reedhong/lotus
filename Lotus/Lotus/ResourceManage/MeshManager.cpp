@@ -10,6 +10,8 @@
 #include "Mesh.h"
 
 namespace Lotus {
+	//-----------------------------------------------------------------------
+	template<> MeshManager* Singleton<MeshManager>::msInstance = 0;
 	MeshManager::MeshManager()
 	{
 

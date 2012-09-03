@@ -8,7 +8,6 @@
 
 #include "RawFileSystem.h"
 #include "RawFile.h"
-#include "RawDir.h"
 #include "Path.h"
 #include "General/SharedPtr.h"
 #include "VFS.h"

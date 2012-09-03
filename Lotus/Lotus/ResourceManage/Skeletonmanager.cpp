@@ -10,6 +10,8 @@
 #include "Skeleton.h"
 
 namespace Lotus {
+	//-----------------------------------------------------------------------
+	template<> SkeletonManager* Singleton<SkeletonManager>::msInstance = 0;
 	SkeletonManager::SkeletonManager()
 	{
 

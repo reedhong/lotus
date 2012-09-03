@@ -11,8 +11,6 @@
 
 #include "General/Singleton.h"
 #include "FileSystem.h"
-#include "File.h"
-#include "Dir.h"
 
 namespace Lotus {	
 	const static String RAW_FS = "raw";

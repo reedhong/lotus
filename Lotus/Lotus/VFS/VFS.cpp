@@ -64,16 +64,27 @@ namespace Lotus {
 
 		FileSystemPtr fsp = iterMP->second;
 		
-		return fsp.getPointer()->open(abspath, relpath);
+		return fsp->open(abspath, relpath);
 	}
 
-#if 0
-	FilePtr VFS::open(const String& absolutePath)
+
+	StreamPtr VFS::open(const String& absolutePath)
 	{
-		//return 0;
+		// 先获取mout point, 在获取
+		String mountPoitn = 
+		map<String, String>::iterator iterPM = mPathMap.find(mountPoint);
+		ASSERT( iterPM != mPathMap.end());
+		String abspath = iterPM->second;
+
+		map<String, FileSystemPtr>::iterator iterMP = mMountPointMap.find(mountPoint);
+		ASSERT( iterMP != mMountPointMap.end());
+
+		FileSystemPtr fsp = iterMP->second;
+
+		return fsp->open(abspath, relpath);
 	}
 
-
+#if 0 
 	DirPtr VFS::openDir(const String&path, const String& mountPoint)
 	{
 		return 0;

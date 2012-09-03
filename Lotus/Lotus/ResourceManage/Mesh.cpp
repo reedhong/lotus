@@ -21,7 +21,11 @@ namespace Lotus {
 
 	void Mesh::loadImpl()
 	{
+		MeshSerializer serializer;
+	
+		StreamPtr data = VFS::Instance()->open(mPath);
 
+		serializer.importMesh(data, this);
 	}
 
 	void Mesh::unloadImpl()

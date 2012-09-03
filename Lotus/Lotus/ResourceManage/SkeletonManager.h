@@ -13,7 +13,7 @@
 
 namespace Lotus {
 
-	class SkeletonManager: public ResourceManager
+	class SkeletonManager: public ResourceManager, public Singleton<SkeletonManager>
 	{
 	public:
 		SkeletonManager();

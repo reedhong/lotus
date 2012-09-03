@@ -15,12 +15,19 @@ namespace Lotus{
 		mVFS = LOTUS_NEW VFS();
 
 		mSceneMgr = LOTUS_NEW SceneManager();
-		//mRender->init();
+
+		mMeshManager = LOTUS_NEW MeshManager();
+		mSkeletonManager = LOTUS_NEW SkeletonManager();
 	}
 
 	Root::~Root()
 	{
-		// TODO:
+		LOTUS_DELETE mLoggerManager;
+		LOTUS_DELETE mTimer;
+		LOTUS_DELETE mVFS;
+		LOTUS_DELETE mSceneMgr;
+		LOTUS_DELETE mMeshManager;
+		LOTUS_DELETE mSkeletonManager;
 	}
 
 

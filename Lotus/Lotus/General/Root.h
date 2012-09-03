@@ -13,6 +13,8 @@
 #include "Log/LoggerManager.h"
 #include "VFS/VFS.h"
 #include "SceneManager/SceneManager.h"
+#include "ResourceManage/MeshManager.h"
+#include  "ResourceManage/SkeletonManager.h"
 #include "Timer.h"
 
 namespace Lotus
@@ -25,6 +27,10 @@ namespace Lotus
 		SceneManager*		mSceneMgr;
 		LoggerManager*		mLoggerManager;
 		VFS*							mVFS;
+
+		// Resource Manager
+		MeshManager*		mMeshManager;
+		SkeletonManager*	mSkeletonManager;
 
 		bool							mIsInitialised;
 		bool							mQueuedEnd;

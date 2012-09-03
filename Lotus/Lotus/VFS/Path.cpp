@@ -12,6 +12,6 @@ namespace Lotus {
 	String Path::join(const String& path1, const String& path2)
 	{
 		// TODOL
-		return path1+path2;
+		return path1+"/"+path2;
 	}
 }

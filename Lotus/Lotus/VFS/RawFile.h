@@ -43,12 +43,12 @@ namespace Lotus {
 		virtual size_t readLine(char* buf, size_t maxCount, const String& delim = "\n");
 		
 
-	    virtual String getLine( bool trimAfter = true );
+	    //virtual String getLine( bool trimAfter = true );
 
 
-	    virtual String getAsString(void);
+	   // virtual String getAsString(void);
 
-		virtual size_t skipLine(const String& delim = "\n");
+		//virtual size_t skipLine(const String& delim = "\n");
 
 		/** Skip a defined number of bytes. This can also be a negative value, in which case
 		the file pointer rewinds a defined number of bytes. */

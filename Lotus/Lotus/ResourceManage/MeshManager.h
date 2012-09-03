@@ -10,10 +10,11 @@
 #define __Lottus_MeshManager_H__
 
 #include "ResourceManager.h"
+#include "General/Singleton.h"
 
 namespace Lotus {
 
-	class MeshManager: public ResourceManager
+	class MeshManager: public ResourceManager, public Singleton<MeshManager>
 	{
 	public:
 		MeshManager();
