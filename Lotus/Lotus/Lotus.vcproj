@@ -577,6 +577,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\ResourceManage\MeshFileFormat.h"
+				>
+			</File>
+			<File
 				RelativePath=".\ResourceManage\MeshManager.h"
 				>
 			</File>
@@ -686,6 +690,10 @@
 			</File>
 			<File
 				RelativePath=".\ResourceManage\Skeleton.h"
+				>
+			</File>
+			<File
+				RelativePath=".\ResourceManage\SkeletonFileFormat.h"
 				>
 			</File>
 			<File

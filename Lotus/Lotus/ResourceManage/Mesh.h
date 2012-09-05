@@ -23,6 +23,15 @@ namespace Lotus {
 		virtual size_t calculateSize(void) const;
 	private:
 		vector<SubMesh *>	mSubMeshes;
+        /** Shared vertex data.
+            @remarks
+                This vertex data can be shared among multiple submeshes. SubMeshes may not have
+                their own VertexData, they may share this one.
+            @par
+                The use of shared or non-shared buffers is determined when
+                model data is converted to the OGRE .mesh format.
+        */
+        VertexData *sharedVertexData;
 	};
 }
 

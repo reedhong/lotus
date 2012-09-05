@@ -6,7 +6,12 @@
 	purpose:	
 *********************************************************************/
 
+
 #include "Mesh.h"
+#include "MeshSerializer.h"
+#include "VFS/VFS.h"
+#include "General/Stream.h"
+
 
 namespace Lotus {
 	Mesh::Mesh(ResourceManager* creator, const String& name,  const String&path):Resource(creator, name, path)

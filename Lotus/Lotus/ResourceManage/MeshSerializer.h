@@ -23,8 +23,7 @@ namespace Lotus {
         void importMesh(StreamPtr& stream, Mesh* pDest);
 
 	protected:
-	#if 0
-	virtual void writeSubMeshNameTable(const Mesh* pMesh);
+		virtual void writeSubMeshNameTable(const Mesh* pMesh);
 		virtual void writeMesh(const Mesh* pMesh);
 		virtual void writeSubMesh(const SubMesh* s);
 		virtual void writeSubMeshOperation(const SubMesh* s);
@@ -72,38 +71,38 @@ namespace Lotus {
 		virtual size_t calcSubMeshTextureAliasesSize(const SubMesh* pSub);
 
 
-		virtual void readTextureLayer(DataStreamPtr& stream, Mesh* pMesh, MaterialPtr& pMat);
-		virtual void readSubMeshNameTable(DataStreamPtr& stream, Mesh* pMesh);
-		virtual void readMesh(DataStreamPtr& stream, Mesh* pMesh, MeshSerializerListener *listener);
-		virtual void readSubMesh(DataStreamPtr& stream, Mesh* pMesh, MeshSerializerListener *listener);
-		virtual void readSubMeshOperation(DataStreamPtr& stream, Mesh* pMesh, SubMesh* sub);
-		virtual void readSubMeshTextureAlias(DataStreamPtr& stream, Mesh* pMesh, SubMesh* sub);
-		virtual void readGeometry(DataStreamPtr& stream, Mesh* pMesh, VertexData* dest);
-		virtual void readGeometryVertexDeclaration(DataStreamPtr& stream, Mesh* pMesh, VertexData* dest);
-		virtual void readGeometryVertexElement(DataStreamPtr& stream, Mesh* pMesh, VertexData* dest);
-		virtual void readGeometryVertexBuffer(DataStreamPtr& stream, Mesh* pMesh, VertexData* dest);
+		virtual void readTextureLayer(StreamPtr& stream, Mesh* pMesh, MaterialPtr& pMat);
+		virtual void readSubMeshNameTable(StreamPtr& stream, Mesh* pMesh);
+		virtual void readMesh(StreamPtr& stream, Mesh* pMesh);
+		virtual void readSubMesh(StreamPtr& stream, Mesh* pMesh);
+		virtual void readSubMeshOperation(StreamPtr& stream, Mesh* pMesh, SubMesh* sub);
+		virtual void readSubMeshTextureAlias(StreamPtr& stream, Mesh* pMesh, SubMesh* sub);
+		virtual void readGeometry(StreamPtr& stream, Mesh* pMesh, VertexData* dest);
+		virtual void readGeometryVertexDeclaration(StreamPtr& stream, Mesh* pMesh, VertexData* dest);
+		virtual void readGeometryVertexElement(StreamPtr& stream, Mesh* pMesh, VertexData* dest);
+		virtual void readGeometryVertexBuffer(StreamPtr& stream, Mesh* pMesh, VertexData* dest);
 
-		virtual void readSkeletonLink(DataStreamPtr& stream, Mesh* pMesh, MeshSerializerListener *listener);
-		virtual void readMeshBoneAssignment(DataStreamPtr& stream, Mesh* pMesh);
-		virtual void readSubMeshBoneAssignment(DataStreamPtr& stream, Mesh* pMesh, 
+		virtual void readSkeletonLink(StreamPtr& stream, Mesh* pMesh);
+		virtual void readMeshBoneAssignment(StreamPtr& stream, Mesh* pMesh);
+		virtual void readSubMeshBoneAssignment(StreamPtr& stream, Mesh* pMesh, 
 			SubMesh* sub);
-		virtual void readMeshLodInfo(DataStreamPtr& stream, Mesh* pMesh);
-		virtual void readMeshLodUsageManual(DataStreamPtr& stream, Mesh* pMesh, 
+		virtual void readMeshLodInfo(StreamPtr& stream, Mesh* pMesh);
+		virtual void readMeshLodUsageManual(StreamPtr& stream, Mesh* pMesh, 
 			unsigned short lodNum, MeshLodUsage& usage);
-		virtual void readMeshLodUsageGenerated(DataStreamPtr& stream, Mesh* pMesh, 
+		virtual void readMeshLodUsageGenerated(StreamPtr& stream, Mesh* pMesh, 
 			unsigned short lodNum, MeshLodUsage& usage);
-		virtual void readBoundsInfo(DataStreamPtr& stream, Mesh* pMesh);
-		virtual void readEdgeList(DataStreamPtr& stream, Mesh* pMesh);
-		virtual void readEdgeListLodInfo(DataStreamPtr& stream, EdgeData* edgeData);
-		virtual void readPoses(DataStreamPtr& stream, Mesh* pMesh);
-		virtual void readPose(DataStreamPtr& stream, Mesh* pMesh);
-		virtual void readAnimations(DataStreamPtr& stream, Mesh* pMesh);
-		virtual void readAnimation(DataStreamPtr& stream, Mesh* pMesh);
-		virtual void readAnimationTrack(DataStreamPtr& stream, Animation* anim, 
+		virtual void readBoundsInfo(StreamPtr& stream, Mesh* pMesh);
+		virtual void readEdgeList(StreamPtr& stream, Mesh* pMesh);
+		virtual void readEdgeListLodInfo(StreamPtr& stream, EdgeData* edgeData);
+		virtual void readPoses(StreamPtr& stream, Mesh* pMesh);
+		virtual void readPose(StreamPtr& stream, Mesh* pMesh);
+		virtual void readAnimations(StreamPtr& stream, Mesh* pMesh);
+		virtual void readAnimation(StreamPtr& stream, Mesh* pMesh);
+		virtual void readAnimationTrack(StreamPtr& stream, Animation* anim, 
 			Mesh* pMesh);
-		virtual void readMorphKeyFrame(DataStreamPtr& stream, VertexAnimationTrack* track);
-		virtual void readPoseKeyFrame(DataStreamPtr& stream, VertexAnimationTrack* track);
-		virtual void readExtremes(DataStreamPtr& stream, Mesh *pMesh);
+		virtual void readMorphKeyFrame(StreamPtr& stream, VertexAnimationTrack* track);
+		virtual void readPoseKeyFrame(StreamPtr& stream, VertexAnimationTrack* track);
+		virtual void readExtremes(StreamPtr& stream, Mesh *pMesh);
 #endif
 
 	};

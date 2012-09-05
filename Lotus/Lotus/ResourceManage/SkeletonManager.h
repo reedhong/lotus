@@ -10,6 +10,7 @@
 #define __Lottus_SkeletonManager_H__
 
 #include "ResourceManager.h"
+#include "General/Singleton.h"
 
 namespace Lotus {
 

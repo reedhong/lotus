@@ -8,6 +8,7 @@
 
 #include "VFS.h"
 #include "Exception/Exception.h"
+#include "String/StringUtil.h"
 
 namespace Lotus {
 	template<> VFS* Singleton<VFS>::msInstance = NULL;
@@ -52,9 +53,23 @@ namespace Lotus {
 		mFileSystemMap.insert(make_pair(fs->getType(), ptr));
 	}
 
+	StreamPtr VFS::open(const String& absPath)
+	{
+		String stdAbsPath = StringUtil::normalizeFilePath(absPath, false);
+		String::size_type pos = stdAbsPath.find('/', 0);
+		ASSERT(pos != String::npos);
+
+		String mountPoint = stdAbsPath.substr(0, pos);
+		String relPath = stdAbsPath.substr(pos+1);
+
+		return open(mountPoint, relPath);
+
+	}
 
 	StreamPtr VFS::open(const String& mountPoint, const String& relpath)
 	{
+		String stdRelPath = StringUtil::normalizeFilePath(relpath,false);
+
 		map<String, String>::iterator iterPM = mPathMap.find(mountPoint);
 		ASSERT( iterPM != mPathMap.end());
 		String abspath = iterPM->second;
@@ -64,36 +79,9 @@ namespace Lotus {
 
 		FileSystemPtr fsp = iterMP->second;
 		
-		return fsp->open(abspath, relpath);
+		return fsp->open(abspath, stdRelPath);
 	}
 
 
-	StreamPtr VFS::open(const String& absolutePath)
-	{
-		// 先获取mout point, 在获取
-		String mountPoitn = 
-		map<String, String>::iterator iterPM = mPathMap.find(mountPoint);
-		ASSERT( iterPM != mPathMap.end());
-		String abspath = iterPM->second;
 
-		map<String, FileSystemPtr>::iterator iterMP = mMountPointMap.find(mountPoint);
-		ASSERT( iterMP != mMountPointMap.end());
-
-		FileSystemPtr fsp = iterMP->second;
-
-		return fsp->open(abspath, relpath);
-	}
-
-#if 0 
-	DirPtr VFS::openDir(const String&path, const String& mountPoint)
-	{
-		return 0;
-	}
-
-	DirPtr VFS::openDir(const String& absolutePath)
-	{
-		return 0;
-	}
-#endif
-
-}
+}  // end Lotus
