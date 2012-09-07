@@ -167,11 +167,11 @@
 				>
 			</File>
 			<File
-				RelativePath=".\Render\Camera.cpp"
+				RelativePath=".\RenderSystem\Camera.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\Render\CameraController.cpp"
+				RelativePath=".\RenderSystem\CameraController.cpp"
 				>
 			</File>
 			<File
@@ -203,23 +203,51 @@
 				>
 			</File>
 			<File
-				RelativePath=".\Render\OpenGLES2\GLES2Texture.cpp"
+				RelativePath=".\RenderSystem\OpenGLES2\GLES2Texture.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\Render\OpenGLES\GLESTexture.cpp"
+				RelativePath=".\RenderSystem\OpenGLES\GLESTexture.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\Render\OpenGL\GLRenderSystem.cpp"
+				RelativePath=".\RenderSystem\OpenGL\GLHardwareBufferManager.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\Render\OpenGL\GLTexture.cpp"
+				RelativePath=".\RenderSystem\OpenGL\GLHardwareVertexBuffer.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\Render\OpenGL\GLTextureManager.cpp"
+				RelativePath=".\RenderSystem\OpenGL\GLRenderSystem.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\RenderSystem\OpenGL\GLTexture.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\RenderSystem\OpenGL\GLTextureManager.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\RenderSystem\HardwareBuffer.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\RenderSystem\HardwareBufferManager.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\RenderSystem\HardwareIndexBuffer.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\RenderSystem\HardwareShadowBuffer.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\RenderSystem\HardwareVertexBuffer.cpp"
 				>
 			</File>
 			<File
@@ -307,15 +335,15 @@
 				>
 			</File>
 			<File
-				RelativePath=".\Render\RenderCapabilities.cpp"
+				RelativePath=".\RenderSystem\RenderCapabilities.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\Render\RenderSupport.cpp"
+				RelativePath=".\RenderSystem\RenderSupport.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\Render\RenderSystem.cpp"
+				RelativePath=".\RenderSystem\RenderSystem.cpp"
 				>
 			</File>
 			<File
@@ -415,7 +443,7 @@
 				>
 			</File>
 			<File
-				RelativePath=".\Render\Viewport.cpp"
+				RelativePath=".\RenderSystem\Viewport.cpp"
 				>
 			</File>
 		</Filter>
@@ -441,11 +469,11 @@
 				>
 			</File>
 			<File
-				RelativePath=".\Render\Camera.h"
+				RelativePath=".\RenderSystem\Camera.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Render\CameraController.h"
+				RelativePath=".\RenderSystem\CameraController.h"
 				>
 			</File>
 			<File
@@ -485,51 +513,79 @@
 				>
 			</File>
 			<File
-				RelativePath=".\Render\OpenGL\GL\gl.h"
+				RelativePath=".\RenderSystem\OpenGL\GL\gl.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Render\OpenGL\GLCommon.h"
+				RelativePath=".\RenderSystem\OpenGL\GLCommon.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Render\OpenGLES2\GLES2Texture.h"
+				RelativePath=".\RenderSystem\OpenGLES2\GLES2Texture.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Render\OpenGLES\GLESTexture.h"
+				RelativePath=".\RenderSystem\OpenGLES\GLESTexture.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Render\OpenGL\GL\glew.h"
+				RelativePath=".\RenderSystem\OpenGL\GL\glew.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Render\OpenGL\GL\glext.h"
+				RelativePath=".\RenderSystem\OpenGL\GL\glext.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Render\OpenGL\GLRenderSystem.h"
+				RelativePath=".\RenderSystem\OpenGL\GLHardwareBufferManager.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Render\OpenGL\GLTexture.h"
+				RelativePath=".\RenderSystem\OpenGL\GLHardwareVertexBuffer.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Render\OpenGL\GLTextureManager.h"
+				RelativePath=".\RenderSystem\OpenGL\GLRenderSystem.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Render\OpenGL\GL\glxew.h"
+				RelativePath=".\RenderSystem\OpenGL\GLTexture.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Render\OpenGL\GL\glxext.h"
+				RelativePath=".\RenderSystem\OpenGL\GLTextureManager.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Render\OpenGL\GL\glxtokens.h"
+				RelativePath=".\RenderSystem\OpenGL\GL\glxew.h"
+				>
+			</File>
+			<File
+				RelativePath=".\RenderSystem\OpenGL\GL\glxext.h"
+				>
+			</File>
+			<File
+				RelativePath=".\RenderSystem\OpenGL\GL\glxtokens.h"
+				>
+			</File>
+			<File
+				RelativePath=".\RenderSystem\HardwareBuffer.h"
+				>
+			</File>
+			<File
+				RelativePath=".\RenderSystem\HardwareBufferManager.h"
+				>
+			</File>
+			<File
+				RelativePath=".\RenderSystem\HardwareIndexBuffer.h"
+				>
+			</File>
+			<File
+				RelativePath=".\RenderSystem\HardwareShadowBuffer.h"
+				>
+			</File>
+			<File
+				RelativePath=".\RenderSystem\HardwareVertexBuffer.h"
 				>
 			</File>
 			<File
@@ -633,19 +689,19 @@
 				>
 			</File>
 			<File
-				RelativePath=".\Render\RenderCapabilities.h"
+				RelativePath=".\RenderSystem\RenderCapabilities.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Render\RenderCommon.h"
+				RelativePath=".\RenderSystem\RenderCommon.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Render\RenderSupport.h"
+				RelativePath=".\RenderSystem\RenderSupport.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Render\RenderSystem.h"
+				RelativePath=".\RenderSystem\RenderSystem.h"
 				>
 			</File>
 			<File
@@ -753,15 +809,15 @@
 				>
 			</File>
 			<File
-				RelativePath=".\Render\Viewport.h"
+				RelativePath=".\RenderSystem\Viewport.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Render\OpenGL\GL\wglew.h"
+				RelativePath=".\RenderSystem\OpenGL\GL\wglew.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Render\OpenGL\GL\wglext.h"
+				RelativePath=".\RenderSystem\OpenGL\GL\wglext.h"
 				>
 			</File>
 		</Filter>

@@ -10,6 +10,7 @@
 
 namespace Lotus
 {
+
 #ifdef LOTUS_DEBUG_MODE
 #define ASSERT(c) if (c) 0; else assert(c)
 #else

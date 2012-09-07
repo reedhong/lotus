@@ -10,9 +10,11 @@
 #define __Lotus_HardwareBufferManager_H__
 
 namespace Lotus {
-	class HardwareBufferManager
+	class HardwareBufferManager: public Singleton<HardwareBufferManager>
 	{
-
+	public:
+		HardwareBufferManager();
+		~HardwareBufferManager();
 	};
 }
 

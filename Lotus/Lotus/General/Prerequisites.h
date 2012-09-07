@@ -11,6 +11,7 @@
 
 #include "Platform/Platform.h"
 #include "SharedPtr.h"
+#include "Macro.h"
 #include <string>
 #include <vector>
 #include <map>
