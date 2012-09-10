@@ -1,7 +1,10 @@
-/src/Debug/
-/src/Lotus/Debug/
-/src/Test/Debug/
-/src/UIEngine/Debug/
+/Lotus/Debug/
+/Lotus/Test/Debug/
+/Lotus/UIEngine/Debug/
+/Lotus/tmp/Lotus2d/Win32/Debug
+/Lotus/tmp/Lotus2d/Debug
+/Lotus/tmp/Lotus2d/Game/Debug
+/Lotus/tmp/Lotus2d/Lotus2d/Debug
 *.user
 *.suo
 *.ncb
