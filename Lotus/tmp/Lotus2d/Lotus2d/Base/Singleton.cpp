@@ -1,5 +1,5 @@
 #include "Singleton.h"
 
-namespace Lotus{
+namespace Lotus2d{
 	
 }

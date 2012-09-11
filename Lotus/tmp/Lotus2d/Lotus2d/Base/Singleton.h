@@ -6,12 +6,12 @@
  * created by reedhong fishwarter@gmail.com 2012.07.16
  */
 
-#ifndef __Lotus_Singleton_H__
-#define __Lotus_Singleton_H__
+#ifndef __Lotus2d_Singleton_H__
+#define __Lotus2d_Singleton_H__
 
-#include "Macro.h"
+#include "Macros.h"
 
-namespace Lotus{
+namespace Lotus2d{
 	template <typename T> class Singleton
 	{
 	private:

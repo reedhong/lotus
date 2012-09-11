@@ -20,7 +20,7 @@
 			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
 			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="1"
-			CharacterSet="2"
+			CharacterSet="0"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -40,7 +40,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="./include;&quot;../OpenGL ES Emulator v1.3.0/include&quot;"
+				AdditionalIncludeDirectories="./include;&quot;../OpenGL ES Emulator v1.3.0/include&quot;;../Lotus2d;../Game/"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -58,7 +58,9 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="libGLESv2.lib libEGL.lib"
+				UseLibraryDependencyInputs="false"
+				AdditionalDependencies="libGLESv1_CM.lib libEGL.lib"
+				LinkIncremental="2"
 				AdditionalLibraryDirectories="&quot;../OpenGL ES Emulator v1.3.0/lib&quot;"
 				GenerateDebugInformation="true"
 				TargetMachine="1"
@@ -165,19 +167,7 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath=".\src\cube.c"
-				>
-			</File>
-			<File
-				RelativePath=".\src\matrix.c"
-				>
-			</File>
-			<File
-				RelativePath=".\src\shader.c"
-				>
-			</File>
-			<File
-				RelativePath=".\src\window.c"
+				RelativePath=".\src\main.cpp"
 				>
 			</File>
 		</Filter>
@@ -186,22 +176,6 @@
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
-			<File
-				RelativePath=".\include\cube.h"
-				>
-			</File>
-			<File
-				RelativePath=".\include\matrix.h"
-				>
-			</File>
-			<File
-				RelativePath=".\include\shader.h"
-				>
-			</File>
-			<File
-				RelativePath=".\include\window.h"
-				>
-			</File>
 		</Filter>
 		<Filter
 			Name="资源文件"

@@ -22,7 +22,7 @@
 			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="4"
 			CharacterSet="1"
-			ManagedExtensions="2"
+			ManagedExtensions="0"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -42,9 +42,10 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
+				AdditionalIncludeDirectories="./;&quot;../OpenGL ES Emulator v1.3.0/include&quot;"
 				PreprocessorDefinitions="WIN32;_DEBUG"
 				RuntimeLibrary="3"
-				UsePrecompiledHeader="2"
+				UsePrecompiledHeader="0"
 				WarningLevel="3"
 				DebugInformationFormat="3"
 			/>
@@ -182,12 +183,68 @@
 			Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx"
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
+			<File
+				RelativePath=".\Engine.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\RenderSystem\ES1Render.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\RenderSystem\Image.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\RenderSystem\Render.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Base\Singleton.cpp"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="头文件"
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
+			<File
+				RelativePath=".\Base\Config.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Engine.h"
+				>
+			</File>
+			<File
+				RelativePath=".\RenderSystem\ES1Render.h"
+				>
+			</File>
+			<File
+				RelativePath=".\RenderSystem\Image.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Base\Macros.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Platform\Platform.h"
+				>
+			</File>
+			<File
+				RelativePath=".\RenderSystem\Render.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Base\Singleton.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Base\Types.h"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="资源文件"
