@@ -127,21 +127,6 @@ int main(void) {
 
 	gameStartup(WIDTH, HEIGTH);
 
-
-	glEnableClientState(GL_VERTEX_ARRAY);
-	glVertexPointer(3, GL_SHORT, 0, mVertices);
-
-
-#if 0
-
-    glOrthox(-160<<16, 160<<16, -120<<16, 120<<16, -128<<16, 128<<16);
-
-    glMatrixMode(GL_MODELVIEW);
-
-    glClearColorx(0x10000, 0x10000, 0, 0);
-    glColor4x(0x10000, 0, 0, 0);
-#endif
-
     // Main event loop
     while(!bDone)
     {
@@ -159,11 +144,7 @@ int main(void) {
             }
         }
 
-     #if 1
-   glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
-        glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_BYTE, mIndices);
-        glRotatex(2<<16, 0, 0, 0x10000);
-#endif
+
 		gameFrame();
         eglSwapBuffers(m_eglDisplay, m_eglSurface);
         Sleep(30);

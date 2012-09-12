@@ -9,6 +9,7 @@
 #ifndef __Lotus2d_Render_H__
 #define __Lotus2d_Render_H__
 
+#include "Base/Config.h"
 #include "Image.h"
 
 namespace Lotus2d{
@@ -53,16 +54,11 @@ namespace Lotus2d{
 		ePRIMITIVE_LINE_STRIP,
 		ePRIMITIVE_TRIANGLES,
 		ePRIMITIVE_TRIANGLE_STRIP,
-		ePRIMITIVE_TRIANGLE_FAN
+		ePRIMITIVE_TRIANGLE_FAN,
+		ePRIMITIVE_QUARD
 	};
 
-	// buffer types
-	enum BUFFER_TYPES
-	{
-		eBUFFER_COLOR = 2,
-		eBUFFER_DEPTH = 4,
-		eBUFFER_STENCIL = 8
-	};
+
 
 	// texture image mode
 	enum TEX_MODES
@@ -137,8 +133,17 @@ namespace Lotus2d{
 	class Render 
 	{
 	public:
-		Render(){};
+		Render();
 		virtual ~Render(){};
+	protected:
+		int	mColor;// 按照argb存储，在一个整数里面
+		float mTexcoordArray[MAX_ARRAY_SIZE][2];
+		char mColorArray[MAX_ARRAY_SIZE][4];
+		float mVertexArray[MAX_ARRAY_SIZE][3];
+		short mQuadIndexes[MAX_ARRAY_SIZE * 3 / 2 ];	// 索引数组
+		PRIMITIVE_TYPES mPrimitiveType;
+		int mVertexIndex;		//  当前是第几个顶点
+
 	public:
 		// view
 		virtual void setOrthoView(float left, float right, float bottom, float top, float zNear, float zFar) = 0;
@@ -148,8 +153,11 @@ namespace Lotus2d{
 		virtual void setViewport(int x, int y, unsigned int width, unsigned int height) = 0;
 
 		// clear
-		virtual void clear(int buffer) = 0;
-		virtual void setClearColor(const unsigned int & color) = 0;
+		virtual void clearScreen(int argb)=0;
+
+		// color 
+		virtual int getColor() { return mColor;}
+		virtual void setColor(int argb) = 0;
 
 		// texture
 		virtual void enableTexture(void) = 0;
@@ -172,60 +180,42 @@ namespace Lotus2d{
 		// arrays
 		virtual void enableVertexArray(void) = 0;
 		virtual void enableColorArray(void) = 0;
-		virtual void enableNormalArray(void) = 0;
 		virtual void enableTexCoordArray(void) = 0;
-		virtual void enableAttribArray(unsigned int location) = 0;
+
 		virtual void disableVertexArray(void) = 0;
 		virtual void disableColorArray(void) = 0;
-		virtual void disableNormalArray(void) = 0;
 		virtual void disableTexCoordArray(void) = 0;
-		virtual void disableAttribArray(unsigned int location) = 0;
+
 		virtual void setVertexPointer(TYPES type, unsigned int components, const void * pointer) = 0;
 		virtual void setColorPointer(TYPES type, unsigned int components, const void * pointer) = 0;
-		virtual void setNormalPointer(TYPES type, const void * pointer) = 0;
 		virtual void setTexCoordPointer(TYPES type, unsigned int components, const void * pointer) = 0;
-		virtual void setAttribPointer(unsigned int location, TYPES type, unsigned int components, const void * pointer, const bool normalized = false) = 0;
+
+		// 重置渲染器的顶点数组状态
+		virtual void resetVertexArrayStatus() = 0;
 
 		// draw
+		virtual void begin(PRIMITIVE_TYPES type) = 0;
+		virtual void vertex3f( float x, float y, float z ) = 0;
+		virtual void vertex2f( float x, float y ) = 0;
+		virtual void vertex2i( int x, int y ) = 0;
+		virtual void texCoord2i( int s, int t ) = 0;
+		virtual void texCoord2f(float s, float t ) = 0;
+		virtual void color4ub(unsigned char r, unsigned char g, unsigned char b, unsigned char a ) = 0;
+		virtual void color4ubv( unsigned char *rgba ) = 0;
+		virtual void color3f( float r, float g, float b ) = 0;
+		virtual void color4f( float r, float g, float b, float a ) = 0;
+		virtual void end() = 0;
+
 		virtual void drawArray(PRIMITIVE_TYPES type, unsigned int begin, unsigned int size) = 0;
 		virtual void drawElement(PRIMITIVE_TYPES type, unsigned int size, TYPES indicesType, const void * indices) = 0;
-
-		// lines
-		virtual void enableLineAntialiasing(void) = 0;
-		virtual void disableLineAntialiasing(void) = 0;
+		virtual void drawRect(int x, int y, int w, int h, int argb)=0;
 
 
-
-
-		// color
-		//virtual void setColor(const MColor & color) = 0;
-		//virtual void setColor3(const MVector3 & color) = 0;
-		//virtual void setColor4(const MVector4 & color) = 0;
 
 		// masks
 		virtual void setColorMask(bool r, bool g, bool b, bool a) = 0;
-		virtual void setDepthMask(bool depth) = 0;
-
 		// alpha
 		virtual void setAlphaTest(float value) = 0;
-
-		// depth
-		virtual void enableDepthTest(void) = 0;
-		virtual void disableDepthTest(void) = 0;
-		virtual void setDepthMode(DEPTH_MODES mode) = 0;
-
-		// stencil
-		virtual void enableStencilTest(void) = 0;
-		virtual void disableStencilTest(void) = 0;
-		//virtual void setStencilFunc(STENCIL_FUNCS func, int ref=0){};
-		//virtual void setStencilOp(STENCIL_OPS op){};
-
-		// cull face
-		virtual void enableCullFace(void) = 0;
-		virtual void disableCullFace(void) = 0;
-		virtual void setCullMode(CULL_MODES mode) = 0;
-
-
 
 		// matrix
 		virtual void loadIdentity(void) = 0;
@@ -251,6 +241,8 @@ namespace Lotus2d{
 		//test
 		virtual void test(void) = 0;
 
+		// checkError
+		virtual void checkError(const char* message) = 0;
 	};
 
 }

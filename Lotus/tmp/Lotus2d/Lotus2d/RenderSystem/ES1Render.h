@@ -27,8 +27,10 @@ namespace Lotus2d {
 		virtual void setViewport(int x, int y, unsigned int width, unsigned int height);
 
 		// clear
-		virtual void clear(int buffer);
-		virtual void setClearColor(const unsigned int & color);
+		virtual void clearScreen(int argb);
+
+		// color 
+		virtual void setColor(int color);
 
 		// texture
 		virtual void enableTexture(void);
@@ -47,64 +49,43 @@ namespace Lotus2d {
 		virtual void generateMipMap(void) ;
 		virtual void getTexImage(unsigned int level, Image * image);
 
-
-		// arrays
+		//  vertex arrays
 		virtual void enableVertexArray(void) ;
 		virtual void enableColorArray(void);
-		virtual void enableNormalArray(void);
 		virtual void enableTexCoordArray(void);
-		virtual void enableAttribArray(unsigned int location);
+
 		virtual void disableVertexArray(void);
 		virtual void disableColorArray(void);
-		virtual void disableNormalArray(void);
 		virtual void disableTexCoordArray(void);
-		virtual void disableAttribArray(unsigned int location) ;
+
 		virtual void setVertexPointer(TYPES type, unsigned int components, const void * pointer);
 		virtual void setColorPointer(TYPES type, unsigned int components, const void * pointer);
-		virtual void setNormalPointer(TYPES type, const void * pointer);
 		virtual void setTexCoordPointer(TYPES type, unsigned int components, const void * pointer);
-		virtual void setAttribPointer(unsigned int location, TYPES type, unsigned int components, const void * pointer, const bool normalized = false);
+		virtual void resetVertexArrayStatus();
 
 		// draw
+		virtual void begin(PRIMITIVE_TYPES type);
+		virtual void vertex3f( float x, float y, float z );
+		virtual void vertex2f( float x, float y );
+		virtual void vertex2i( int x, int y );
+		virtual void texCoord2i( int s, int t );
+		virtual void texCoord2f(float s, float t );
+		virtual void color4ub(unsigned char r, unsigned char g, unsigned char b, unsigned char a );
+		virtual void color4ubv( unsigned char *rgba );
+		virtual void color3f( float r, float g, float b );
+		virtual void color4f( float r, float g, float b, float a );
+		virtual void end();
+
 		virtual void drawArray(PRIMITIVE_TYPES type, unsigned int begin, unsigned int size) ;
 		virtual void drawElement(PRIMITIVE_TYPES type, unsigned int size, TYPES indicesType, const void * indices) ;
-
-		// lines
-		virtual void enableLineAntialiasing(void) ;
-		virtual void disableLineAntialiasing(void) ;
+		virtual void drawRect(int x, int y, int w, int h, int argb);
 
 
-
-
-		// color
-		//virtual void setColor(const MColor & color) = 0;
-		//virtual void setColor3(const MVector3 & color) = 0;
-		//virtual void setColor4(const MVector4 & color) = 0;
 
 		// masks
 		virtual void setColorMask(bool r, bool g, bool b, bool a);
-		virtual void setDepthMask(bool depth) ;
-
 		// alpha
 		virtual void setAlphaTest(float value);
-
-		// depth
-		virtual void enableDepthTest(void);
-		virtual void disableDepthTest(void);
-		virtual void setDepthMode(DEPTH_MODES mode);
-
-		// stencil
-		virtual void enableStencilTest(void) ;
-		virtual void disableStencilTest(void) ;
-		//virtual void setStencilFunc(STENCIL_FUNCS func, int ref=0){};
-		//virtual void setStencilOp(STENCIL_OPS op){};
-
-		// cull face
-		virtual void enableCullFace(void) ;
-		virtual void disableCullFace(void) ;
-		virtual void setCullMode(CULL_MODES mode);
-
-
 
 		// matrix
 		virtual void loadIdentity(void) ;
@@ -128,6 +109,9 @@ namespace Lotus2d {
 		virtual void setBlendingMode(BLENDING_MODES mode) ;
 
 		virtual void test(void);
+
+		// checkError
+		virtual void checkError(const char* message);
 	};
 }
 

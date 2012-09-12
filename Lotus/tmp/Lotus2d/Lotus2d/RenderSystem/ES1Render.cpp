@@ -6,8 +6,8 @@
 	purpose:	
 *********************************************************************/
 #include "GLES/gl.h"
-
 #include "ES1Render.h"
+#include "Base/Macros.h"
 
 namespace Lotus2d {
 	static GLenum returnGLType(TYPES type)
@@ -114,15 +114,9 @@ namespace Lotus2d {
 
 	ES1Render::ES1Render()
 	{
-		int i = 20;
-		i++;
-
 		glMatrixMode        (GL_MODELVIEW);
-
-		i++;
 		glLoadIdentity      ();
 
-		i++;
 		glEnable( GL_BLEND );
 		glEnable			(GL_TEXTURE_2D);
 		glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA );
@@ -142,18 +136,8 @@ namespace Lotus2d {
 
 		glMatrixMode        (GL_MODELVIEW);
 
+		resetVertexArrayStatus();
 
-		glOrthox(-160<<16, 160<<16, -120<<16, 120<<16, -128<<16, 128<<16);
-		glMatrixMode(GL_MODELVIEW);
-		glClearColorx(0x10000, 0x10000, 0, 0);
-		glColor4x(0x10000, 0, 0, 0);
-
-
-
-    /* Set projection matrix so screen extends to (-160, -120) at bottom left 
-    * and to (160, 120) at top right, with -128..128 as Z buffer. */
-
-    glMatrixMode(GL_PROJECTION);
 	}
 
 
@@ -180,44 +164,17 @@ namespace Lotus2d {
 		glViewport(x, y, width, height);
 	}
 
-	// clear
-	void ES1Render::clear(int buffer)
+	void ES1Render::clearScreen(int argb)
 	{
-		switch(buffer)
-		{
-		case eBUFFER_COLOR:
-			glClear(GL_COLOR_BUFFER_BIT);
-			return;
-
-		case eBUFFER_DEPTH:
-			glClear(GL_DEPTH_BUFFER_BIT);
-			return;
-
-		case eBUFFER_STENCIL:
-			glClear(GL_STENCIL_BUFFER_BIT);
-			return;
-
-		case eBUFFER_COLOR | eBUFFER_DEPTH:
-			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-			return;
-
-		case eBUFFER_COLOR | eBUFFER_STENCIL:
-			glClear(GL_COLOR_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
-			return;
-
-		case eBUFFER_COLOR |eBUFFER_DEPTH | eBUFFER_STENCIL:
-			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
-			return;
-
-		case eBUFFER_DEPTH | eBUFFER_STENCIL:
-			glClear(GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
-			return;
-		}
+		glClearColor(GL_COLOR_RED_FLOAT(argb), GL_COLOR_GREEN_FLOAT(argb), GL_COLOR_BLUE_FLOAT(argb), GL_COLOR_ALPHA_FLOAT(argb));
+		glClear( GL_COLOR_BUFFER_BIT );
 	}
 
-	void ES1Render::setClearColor(const unsigned int & color)
-	{
 
+	void ES1Render::setColor(int argb)
+	{
+		glColor4f(GL_COLOR_RED_FLOAT(argb), GL_COLOR_GREEN_FLOAT(argb), GL_COLOR_BLUE_FLOAT(argb), GL_COLOR_ALPHA_FLOAT(argb));
+		mColor = argb;
 	}
 
 	// texture
@@ -298,170 +255,185 @@ namespace Lotus2d {
 	// arrays
 	void ES1Render::enableVertexArray(void) 
 	{
-
+		glEnableClientState(GL_VERTEX_ARRAY);
 	}
 
 	void ES1Render::enableColorArray(void)
 	{
-
-	}
-
-	void ES1Render::enableNormalArray(void)
-	{
-
+		glEnableClientState(GL_COLOR_ARRAY);
 	}
 
 	void ES1Render::enableTexCoordArray(void)
 	{
-
+		glEnableClientState(GL_TEXTURE_COORD_ARRAY);
 	}
-	void ES1Render::enableAttribArray(unsigned int location)
-	{
 
-	}
 	void ES1Render::disableVertexArray(void)
 	{
-
+		glDisableClientState(GL_VERTEX_ARRAY);
 	}
 	void ES1Render::disableColorArray(void)
 	{
-
+		glDisableClientState(GL_COLOR_ARRAY);
 	}
-	void ES1Render::disableNormalArray(void)
-	{
 
-	}
 	void ES1Render::disableTexCoordArray(void)
 	{
-
+		glDisableClientState(GL_TEXTURE_COORD_ARRAY);
 	}
-	void ES1Render::disableAttribArray(unsigned int location) 
-	{
 
-	}
 	void ES1Render::setVertexPointer(TYPES type, unsigned int components, const void * pointer)
 	{
-
+		glVertexPointer(components, returnGLType(type), 0, pointer);
 	}
 	void ES1Render::setColorPointer(TYPES type, unsigned int components, const void * pointer)
 	{
-
+		glColorPointer(components, returnGLType(type), 0, pointer);
 	}
-	void ES1Render::setNormalPointer(TYPES type, const void * pointer)
-	{
 
-	}
 	void ES1Render::setTexCoordPointer(TYPES type, unsigned int components, const void * pointer)
 	{
-
+		glTexCoordPointer(components, returnGLType(type), 0, pointer);
 	}
-	void ES1Render::setAttribPointer(unsigned int location, TYPES type, unsigned int components, const void * pointer, const bool normalized)
+
+	void ES1Render::resetVertexArrayStatus()
+	{
+		glVertexPointer( 3, GL_FLOAT, sizeof( mVertexArray[0] ), mVertexArray );
+		glEnableClientState( GL_VERTEX_ARRAY );
+		glTexCoordPointer( 2, GL_FLOAT, sizeof( mTexcoordArray[0] ), mTexcoordArray );
+		glEnableClientState( GL_TEXTURE_COORD_ARRAY );
+		glColorPointer( 4, GL_UNSIGNED_BYTE, sizeof( mColorArray[0] ), mColorArray );
+	}
+	// draw
+	void ES1Render::begin(PRIMITIVE_TYPES type)
+	{
+		if(mVertexIndex)
+			end();
+		mVertexIndex = 0;
+		mPrimitiveType = type;
+	}
+
+	void ES1Render::vertex3f( float x, float y, float z )
 	{
 
 	}
 
-	// draw
+	void ES1Render::vertex2f( float x, float y )
+	{
+
+	}
+
+	void ES1Render::vertex2i( int x, int y )
+	{
+
+	}
+
+	void ES1Render::texCoord2i( int s, int t )
+	{
+
+	}
+
+	void ES1Render::texCoord2f(float s, float t )
+	{
+
+	}
+
+	void ES1Render::color4ub(unsigned char r, unsigned char g, unsigned char b, unsigned char a )
+	{
+
+	}
+
+	void ES1Render::color4ubv( unsigned char *rgba )
+	{
+
+	}
+
+	void ES1Render::color3f( float r, float g, float b )
+	{
+
+	}
+
+	void ES1Render::color4f( float r, float g, float b, float a )
+	{
+
+	}
+
+	void ES1Render::end()
+	{
+		// 如果用到VBO技术就需要打开此处
+		//resetVertexArrayStatus();
+		if(mVertexIndex>0)
+		{
+			if ( mPrimitiveType == ePRIMITIVE_QUARD ) {
+					glDrawElements( GL_TRIANGLES, mVertexIndex / 4 * 6, GL_UNSIGNED_SHORT, mQuadIndexes );
+			} else {
+				glDrawArrays( returnPrimitiveType(mPrimitiveType), 0,  mVertexIndex);
+			}
+		}
+		mVertexIndex = 0;
+		mPrimitiveType = ePRIMITIVE_QUARD;//默认GL_QUADS
+#ifdef DEBUG	
+		checkError("end");
+#endif	
+	}
+
 	void ES1Render::drawArray(PRIMITIVE_TYPES type, unsigned int begin, unsigned int size) 
 	{
-
+		glDrawArrays(returnPrimitiveType(type), begin, size);
 	}
 	void ES1Render::drawElement(PRIMITIVE_TYPES type, unsigned int size, TYPES indicesType, const void * indices)
 	{
-
+		glDrawElements(returnPrimitiveType(type), size, returnGLType(indicesType), indices);
 	}
-
-	// lines
-	void ES1Render::enableLineAntialiasing(void) 
-	{
-
-	}
-	void ES1Render::disableLineAntialiasing(void) 
-	{
-
-	}
-
-
-
-
-	// color
-	//void setColor(const MColor & color) = 0;
-	//void setColor3(const MVector3 & color) = 0;
-	//void setColor4(const MVector4 & color) = 0;
 
 	// masks
 	void ES1Render::setColorMask(bool r, bool g, bool b, bool a)
 	{
-
-	}
-	void ES1Render::setDepthMask(bool depth) 
-	{
-
+		glColorMask(r, g, b, a);
 	}
 
 	// alpha
 	void ES1Render::setAlphaTest(float value)
 	{
+		if(value > 0.0f)
+			glEnable(GL_ALPHA_TEST);
+		else {
+			glDisable(GL_ALPHA_TEST);
+		}
 
+		glAlphaFunc(GL_GREATER, value);
 	}
-
-	// depth
-	void ES1Render::enableDepthTest(void)
-	{
-
-	}
-	void ES1Render::disableDepthTest(void)
-	{
-
-	}
-	void ES1Render::setDepthMode(DEPTH_MODES mode)
-	{
-
-	}
-
-	// stencil
-	void ES1Render::enableStencilTest(void) 
-	{
-
-	}
-	void ES1Render::disableStencilTest(void) 
-	{
-
-	}
-	//void setStencilFunc(STENCIL_FUNCS func, int ref=0){};
-	//void setStencilOp(STENCIL_OPS op){};
-
-	// cull face
-	void ES1Render::enableCullFace(void) 
-	{
-
-	}
-	void ES1Render::disableCullFace(void) 
-	{
-
-	}
-	void ES1Render::setCullMode(CULL_MODES mode)
-	{
-
-	}
-
 
 
 	// matrix
 	void ES1Render::loadIdentity(void) 
 	{
-
+		glLoadIdentity();
 	}
 	void ES1Render::setMatrixMode(MATRIX_MODES mode) 
 	{
+		switch(mode)
+		{
+		case eMATRIX_MODELVIEW:
+			glMatrixMode(GL_MODELVIEW);
+			return;
 
+		case eMATRIX_PROJECTION:
+			glMatrixMode(GL_PROJECTION);
+			return;
+
+		case eMATRIX_TEXTURE:
+			glMatrixMode(GL_TEXTURE);
+			return;
+		}
 	}
 	void ES1Render::pushMatrix(void) 
 	{
-
+		glPushMatrix();
 	}
 	void ES1Render::popMatrix(void) 
 	{
-
+		glPopMatrix();
 	}
 
 	// blending
@@ -480,6 +452,15 @@ namespace Lotus2d {
 
 	void ES1Render::test(void)
 	{
+		
+	}
 
+	void ES1Render::checkError(const char* message)
+	{
+		GLint err = glGetError();
+		if ( err != GL_NO_ERROR ) {
+			// TODO:
+			//LOGD( "GL ERROR %d from %s\n", err, message );
+		}
 	}
 }

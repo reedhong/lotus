@@ -169,11 +169,11 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
-				RelativePath=".\CameConfig.h"
+				RelativePath=".\Game.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Game.h"
+				RelativePath=".\GameConfig.h"
 				>
 			</File>
 			<File

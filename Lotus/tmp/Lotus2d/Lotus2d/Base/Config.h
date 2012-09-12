@@ -14,4 +14,7 @@
 #define LOTUS2D_PROFILING 1
 #define ENABLE_GL_CHECK 1	
 
+// 渲染器内部的顶点数组
+#define MAX_ARRAY_SIZE 6*1000
+
 #endif
