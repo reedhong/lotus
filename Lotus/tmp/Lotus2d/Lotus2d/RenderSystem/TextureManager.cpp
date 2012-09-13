@@ -1,28 +1,21 @@
 /********************************************************************
-	created:	2012/09/11
-	filename: 	Lotus2d.cpp
+	created:	2012/09/14
+	filename: 	TextureManager.cpp
 	author:		reedhong
 	
 	purpose:	
 *********************************************************************/
 
-#include "Engine.h"
+#include "TextureManager.h"
 
 namespace Lotus2d {
-	Engine::Engine()
-	{
-
-	}
-	
-	Engine::~Engine()
+	TextureManager::TextureManager()
 	{
 
 	}
 
-	// instance
-	Engine * Engine::Instance(void)
+	TextureManager::~TextureManager()
 	{
-		static Engine s_instance;
-		return &s_instance;
+
 	}
 }

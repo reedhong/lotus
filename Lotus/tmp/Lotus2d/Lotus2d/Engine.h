@@ -18,17 +18,13 @@
 namespace Lotus2d{
 	// 引擎入口类
 	class Engine {
-	public:
+	private:
 		Engine();
+	public:
 		~Engine();
 
 		// instance
 		static Engine * Instance(void);
-		
-		Render* getRender();
-		void setRender(Render* render);
-	private:
-		Render*	mRender;
 	};
 }
 

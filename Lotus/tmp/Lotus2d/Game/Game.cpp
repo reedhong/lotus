@@ -6,7 +6,7 @@
 	purpose:	
 *********************************************************************/
 #include "Engine.h"
-#include "RenderSystem/ES1Render.h"
+#include "RenderSystem/Render.h"
 
 
 using namespace  Lotus2d;
@@ -34,19 +34,13 @@ Game * Game::Instance(void)
 
 void Game::startup(int width,int height,float scale)
 {
-	int* p = new int;
-	ES1Render* render = new ES1Render();
-	Engine::Instance()->setRender(render);
-	
-	render->setOrthoView(0, (float)width, (float)height, 0, -99999, 99999);
-	render->setViewport(0, 0, width, height);
-
-	render->setMatrixMode(eMATRIX_MODELVIEW);
-	render->loadIdentity();
+	Render::Instance()->init(width, height, scale);
 }
 
 void Game::frame()
 {
-	Engine::Instance()->getRender()->clearScreen(GL_COLOR_WHITE);
-	Engine::Instance()->getRender()->test();
+	Render::Instance()->clearScreen(GL_COLOR_WHITE);
+	Render::Instance()->setLineWidth(8);
+	Render::Instance()->drawRect(10, 10, 200, 100, GL_COLOR_RED);
+	Render::Instance()->drawLine(50,50, 400,400, GL_COLOR_GREEN);
 }

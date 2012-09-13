@@ -79,6 +79,8 @@ namespace Lotus2d
 #define GL_COLOR_WHITE 0xFFFFFFFF
 
 
+#define LOTUS2D_NEW	new
+#define LOTUS2D_DELETE	delete
 
 }
 

@@ -9,7 +9,6 @@
 #include "Game.h"
 
 #include "Engine.h"
-#include "RenderSystem/ES1Render.h"
 
 using namespace  Lotus2d;
 

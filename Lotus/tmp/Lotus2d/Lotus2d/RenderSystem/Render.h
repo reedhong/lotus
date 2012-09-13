@@ -1,19 +1,18 @@
 /********************************************************************
 	created:	2012/09/11
-	filename: 	Render.h
+	filename: 	ES1Render.h
 	author:		reedhong
 	
-	purpose:	Render 渲染器, 部分从Maratis裁减过来
+	purpose:	
 *********************************************************************/
 
-#ifndef __Lotus2d_Render_H__
-#define __Lotus2d_Render_H__
+#ifndef __Lotus2d_ES1Render_H__
+#define __Lotus2d_ES1Render_H__
 
 #include "Base/Config.h"
 #include "Image.h"
 
-namespace Lotus2d{
-	// blending modes
+namespace Lotus2d {
 	enum BLENDING_MODES
 	{
 		eBLENDING_NONE = 0,
@@ -128,13 +127,14 @@ namespace Lotus2d{
 		eUINT,
 		eFLOAT
 	};
-
-
-	class Render 
+	class Render
 	{
-	public:
+	private:
 		Render();
-		virtual ~Render(){};
+	public:
+		 ~Render();
+		 // instance
+		 static Render * Instance(void);
 	protected:
 		int	mColor;// 按照argb存储，在一个整数里面
 		float mTexcoordArray[MAX_ARRAY_SIZE][2];
@@ -143,108 +143,109 @@ namespace Lotus2d{
 		short mQuadIndexes[MAX_ARRAY_SIZE * 3 / 2 ];	// 索引数组
 		PRIMITIVE_TYPES mPrimitiveType;
 		int mVertexIndex;		//  当前是第几个顶点
-
+		int mLineWidth;
+		int mWidth;
+		int mHeight;
+		float mScale;
 	public:
-		// view
-		virtual void setOrthoView(float left, float right, float bottom, float top, float zNear, float zFar) = 0;
-		virtual void setPerspectiveView(float fov, float ratio, float zNear, float zFar) = 0;
+		// init
+		void init(int width, int height, float mScale);
 
-		// viewport
-		virtual void setViewport(int x, int y, unsigned int width, unsigned int height) = 0;
+		int getWidth() { return mWidth;}
+		int getHeight() { return mHeight;}
+		float getScale() { return mScale;}
 
+		int getLineWidth() { return mLineWidth;}
+		void setLineWidth(int width) { mLineWidth = width;}
 		// clear
-		virtual void clearScreen(int argb)=0;
+		void clearScreen(int argb);
 
 		// color 
-		virtual int getColor() { return mColor;}
-		virtual void setColor(int argb) = 0;
+		int getColor() { return mColor;}
+		void setColor(int color);
 
 		// texture
-		virtual void enableTexture(void) = 0;
-		virtual void disableTexture(void) = 0;
-		virtual void setTextureGenMode(TEX_GEN_MODES mode) = 0;
-		virtual void setTextureFilterMode(TEX_FILTER_MODES min, TEX_FILTER_MODES mag) = 0;
-		virtual void setTextureUWrapMode(WRAP_MODES wrap) = 0;
-		virtual void setTextureVWrapMode(WRAP_MODES wrap) = 0;
-		virtual void setTextureCombineMode(TEX_COMBINE_MODES combine) = 0;
-		virtual void bindTexture(unsigned int textureId, const unsigned int multitextureId = 0) = 0;
-		virtual void createTexture(unsigned int * textureId) = 0;
-		virtual void deleteTexture(unsigned int * textureId) = 0;
-		virtual void sendTextureImage(Image * image, bool mipMap, bool filter, bool compress) = 0;
-		virtual void texImage(unsigned int level, unsigned int width, unsigned int height, TYPES type, TEX_MODES mode, const void * pixels) = 0;
-		virtual void texSubImage(unsigned int level, int xoffset, int yoffset, unsigned int width, unsigned int height, TYPES type, TEX_MODES mode, const void * pixels) = 0;
-		virtual void generateMipMap(void) = 0;
-		virtual void getTexImage(unsigned int level, Image * image){}
+		void enableTexture(void);
+		void disableTexture(void);
 
+		void setTextureGenMode(TEX_GEN_MODES mode);
+		void setTextureFilterMode(TEX_FILTER_MODES min, TEX_FILTER_MODES mag);
+		void setTextureUWrapMode(WRAP_MODES wrap);
+		void setTextureVWrapMode(WRAP_MODES wrap);
+		void setTextureCombineMode(TEX_COMBINE_MODES combine);
+		void bindTexture(unsigned int textureId, const unsigned int multitextureId = 0);
+		void createTexture(unsigned int * textureId);
+		void deleteTexture(unsigned int * textureId);
+		void sendTextureImage(Image * image, bool mipMap, bool filter, bool compress) ;
+		void texImage(unsigned int level, unsigned int width, unsigned int height, TYPES type, TEX_MODES mode, const void * pixels);
+		void texSubImage(unsigned int level, int xoffset, int yoffset, unsigned int width, unsigned int height, TYPES type, TEX_MODES mode, const void * pixels);
+		void generateMipMap(void) ;
+		void getTexImage(unsigned int level, Image * image);
 
-		// arrays
-		virtual void enableVertexArray(void) = 0;
-		virtual void enableColorArray(void) = 0;
-		virtual void enableTexCoordArray(void) = 0;
+		//  vertex arrays
+		void enableVertexArray(void) ;
+		void enableColorArray(void);
+		void enableTexCoordArray(void);
 
-		virtual void disableVertexArray(void) = 0;
-		virtual void disableColorArray(void) = 0;
-		virtual void disableTexCoordArray(void) = 0;
+		void disableVertexArray(void);
+		void disableColorArray(void);
+		void disableTexCoordArray(void);
 
-		virtual void setVertexPointer(TYPES type, unsigned int components, const void * pointer) = 0;
-		virtual void setColorPointer(TYPES type, unsigned int components, const void * pointer) = 0;
-		virtual void setTexCoordPointer(TYPES type, unsigned int components, const void * pointer) = 0;
-
-		// 重置渲染器的顶点数组状态
-		virtual void resetVertexArrayStatus() = 0;
+		void setVertexPointer(TYPES type, unsigned int components, const void * pointer);
+		void setColorPointer(TYPES type, unsigned int components, const void * pointer);
+		void setTexCoordPointer(TYPES type, unsigned int components, const void * pointer);
+		void resetVertexArrayStatus();
 
 		// draw
-		virtual void begin(PRIMITIVE_TYPES type) = 0;
-		virtual void vertex3f( float x, float y, float z ) = 0;
-		virtual void vertex2f( float x, float y ) = 0;
-		virtual void vertex2i( int x, int y ) = 0;
-		virtual void texCoord2i( int s, int t ) = 0;
-		virtual void texCoord2f(float s, float t ) = 0;
-		virtual void color4ub(unsigned char r, unsigned char g, unsigned char b, unsigned char a ) = 0;
-		virtual void color4ubv( unsigned char *rgba ) = 0;
-		virtual void color3f( float r, float g, float b ) = 0;
-		virtual void color4f( float r, float g, float b, float a ) = 0;
-		virtual void end() = 0;
+		void begin(PRIMITIVE_TYPES type);
+		void vertex3f( float x, float y, float z );
+		void vertex2f( float x, float y );
+		void vertex2i( int x, int y );
+		void texCoord2i( int s, int t );
+		void texCoord2f(float s, float t );
+		void color4ub(unsigned char r, unsigned char g, unsigned char b, unsigned char a );
+		void color4ubv( unsigned char *rgba );
+		void color3f( float r, float g, float b );
+		void color4f( float r, float g, float b, float a );
+		void end();
 
-		virtual void drawArray(PRIMITIVE_TYPES type, unsigned int begin, unsigned int size) = 0;
-		virtual void drawElement(PRIMITIVE_TYPES type, unsigned int size, TYPES indicesType, const void * indices) = 0;
-		virtual void drawRect(int x, int y, int w, int h, int argb)=0;
+		void drawArray(PRIMITIVE_TYPES type, unsigned int begin, unsigned int size) ;
+		void drawElement(PRIMITIVE_TYPES type, unsigned int size, TYPES indicesType, const void * indices) ;
+		void drawRect(int x, int y, int w, int h, int argb);
+		void drawLine(int x1, int y1, int x2, int y2, int argb, int lineWidth=1);
 
 
 
 		// masks
-		virtual void setColorMask(bool r, bool g, bool b, bool a) = 0;
+		void setColorMask(bool r, bool g, bool b, bool a);
 		// alpha
-		virtual void setAlphaTest(float value) = 0;
+		void setAlphaTest(float value);
 
 		// matrix
-		virtual void loadIdentity(void) = 0;
-		virtual void setMatrixMode(MATRIX_MODES mode) = 0;
-		virtual void pushMatrix(void) = 0;
-		virtual void popMatrix(void) = 0;
-#if 0
-		virtual void multMatrix(const MMatrix4x4 * matrix) = 0;
-		virtual void translate(const MVector3 & position) = 0;
-		virtual void rotate(const MVector3 & axis, float angle) = 0;
-		virtual void scale(const MVector3 & scale) = 0;
-		virtual void getViewport(int * viewport) = 0;
-		virtual void getModelViewMatrix(MMatrix4x4 * matrix) = 0;
-		virtual void getProjectionMatrix(MMatrix4x4 * matrix) = 0;
-		virtual void getTextureMatrix(MMatrix4x4 * matrix) = 0;
-#endif
+		void loadIdentity(void) ;
+		void setMatrixMode(MATRIX_MODES mode) ;
+		void pushMatrix(void) ;
+		void popMatrix(void) ;
+		#if 0
+		void multMatrix(const MMatrix4x4 * matrix) = 0;
+		void translate(const MVector3 & position) = 0;
+		void rotate(const MVector3 & axis, float angle) = 0;
+		void scale(const MVector3 & scale) = 0;
+		void getViewport(int * viewport) = 0;
+		void getModelViewMatrix(MMatrix4x4 * matrix) = 0;
+		void getProjectionMatrix(MMatrix4x4 * matrix) = 0;
+		void getTextureMatrix(MMatrix4x4 * matrix) = 0;
+		#endif
 
 		// blending
-		virtual void enableBlending(void) = 0;
-		virtual void disableBlending(void) = 0;
-		virtual void setBlendingMode(BLENDING_MODES mode) = 0;
+		void enableBlending(void) ;
+		void disableBlending(void) ;
+		void setBlendingMode(BLENDING_MODES mode) ;
 
-		//test
-		virtual void test(void) = 0;
-
+	
 		// checkError
-		virtual void checkError(const char* message) = 0;
+		void checkError(const char* message);
 	};
-
 }
 
-#endif
+#endif 

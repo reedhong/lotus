@@ -1,28 +1,21 @@
 /********************************************************************
-	created:	2012/09/11
-	filename: 	Lotus2d.cpp
+	created:	2012/09/14
+	filename: 	Texture.cpp
 	author:		reedhong
 	
 	purpose:	
 *********************************************************************/
 
-#include "Engine.h"
+#include "Texture.h"
 
 namespace Lotus2d {
-	Engine::Engine()
-	{
-
-	}
-	
-	Engine::~Engine()
+	Texture::Texture()
 	{
 
 	}
 
-	// instance
-	Engine * Engine::Instance(void)
+	Texture::~Texture()
 	{
-		static Engine s_instance;
-		return &s_instance;
+
 	}
 }

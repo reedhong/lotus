@@ -188,10 +188,6 @@
 				>
 			</File>
 			<File
-				RelativePath=".\RenderSystem\ES1Render.cpp"
-				>
-			</File>
-			<File
 				RelativePath=".\RenderSystem\Image.cpp"
 				>
 			</File>
@@ -200,7 +196,19 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Base\SharedPtr.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\Base\Singleton.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\RenderSystem\Texture.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\RenderSystem\TextureManager.cpp"
 				>
 			</File>
 		</Filter>
@@ -218,7 +226,7 @@
 				>
 			</File>
 			<File
-				RelativePath=".\RenderSystem\ES1Render.h"
+				RelativePath=".\RenderSystem\GLHeader.h"
 				>
 			</File>
 			<File
@@ -234,11 +242,27 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Base\Prerequisites.h"
+				>
+			</File>
+			<File
 				RelativePath=".\RenderSystem\Render.h"
 				>
 			</File>
 			<File
+				RelativePath=".\Base\SharedPtr.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Base\Singleton.h"
+				>
+			</File>
+			<File
+				RelativePath=".\RenderSystem\Texture.h"
+				>
+			</File>
+			<File
+				RelativePath=".\RenderSystem\TextureManager.h"
 				>
 			</File>
 			<File

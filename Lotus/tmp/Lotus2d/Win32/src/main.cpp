@@ -17,8 +17,8 @@
 #include "GameInterface.h"
 
 
-#define WIDTH 640
-#define HEIGTH 480
+#define WIDTH 800
+#define HEIGTH 600
 
 LRESULT CALLBACK process_window(HWND hWnd, UINT uiMsg, WPARAM wParam, LPARAM lParam) {
     switch(uiMsg) {
