@@ -7,6 +7,8 @@
 *********************************************************************/
 #include "Engine.h"
 #include "RenderSystem/Render.h"
+#include "Png/Png.h"
+#include "Base/FileStream.h"
 
 
 using namespace  Lotus2d;
@@ -34,7 +36,16 @@ Game * Game::Instance(void)
 
 void Game::startup(int width,int height,float scale)
 {
-	Render::Instance()->init(width, height, scale);
+
+	Render::Instance()->init(width, height, scale);	
+	uint8 header[8];
+	FILE* fp = fopen("enemy_xueguai.png", "r");
+	fread(header, 1, 8, fp);
+
+	FileStream* stream = new FileStream("enemy_xueguai.png", "r");
+	Png* png = Png::loadPng(stream);
+	int w = png->m_width;
+	int h = png->m_height;
 }
 
 void Game::frame()

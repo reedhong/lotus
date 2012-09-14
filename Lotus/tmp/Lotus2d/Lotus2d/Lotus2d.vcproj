@@ -188,7 +188,19 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Base\FileStream.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\RenderSystem\Image.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Base\MemroyStream.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Png\Png.cpp"
 				>
 			</File>
 			<File
@@ -204,11 +216,19 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Base\Stream.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\RenderSystem\Texture.cpp"
 				>
 			</File>
 			<File
 				RelativePath=".\RenderSystem\TextureManager.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Png\Zip.cpp"
 				>
 			</File>
 		</Filter>
@@ -226,6 +246,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Base\FileStream.h"
+				>
+			</File>
+			<File
 				RelativePath=".\RenderSystem\GLHeader.h"
 				>
 			</File>
@@ -238,7 +262,15 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Base\MemoryStream.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Platform\Platform.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Png\Png.h"
 				>
 			</File>
 			<File
@@ -258,6 +290,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Base\Stream.h"
+				>
+			</File>
+			<File
 				RelativePath=".\RenderSystem\Texture.h"
 				>
 			</File>
@@ -267,6 +303,10 @@
 			</File>
 			<File
 				RelativePath=".\Base\Types.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Png\Zip.h"
 				>
 			</File>
 		</Filter>

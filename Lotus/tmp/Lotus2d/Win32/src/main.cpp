@@ -125,6 +125,8 @@ int main(void) {
     printf("EGLContext = %p\n", m_eglContext);
     eglMakeCurrent(m_eglDisplay, m_eglSurface, m_eglSurface, m_eglContext);
 
+	char strAppPathName[1024];    
+	GetCurrentDirectoryA(1024,strAppPathName);   
 	gameStartup(WIDTH, HEIGTH);
 
     // Main event loop

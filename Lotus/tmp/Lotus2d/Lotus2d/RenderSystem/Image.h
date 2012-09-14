@@ -20,12 +20,12 @@ namespace Lotus2d {
 		~Image(void);
 
 	public:
-		static Image* createImage(TexturePtr texturePtr, float x, float y, float w, float h,bool flipY = false);
+		static Image* createImage(Texture* texturePtr, float x, float y, float w, float h,bool flipY = false);
 
 	public:
 		void setTextureRect(float x, float y, float w, float h,bool flipY = false) ;
 	public:
-		TexturePtr	mTexturePtr;	
+		Texture*	mTexturePtr;	
 
 		float m_tx0;
 		float m_ty0;

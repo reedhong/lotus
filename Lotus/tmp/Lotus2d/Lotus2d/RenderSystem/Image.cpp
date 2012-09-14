@@ -21,7 +21,7 @@ namespace Lotus2d{
 	}
 	//////////////////////////////////////////////////////////////////////
 
-	Image* Image::createImage(TexturePtr texturePtr, float x, float y, float w, float h, bool flipY)
+	Image* Image::createImage(Texture* texturePtr, float x, float y, float w, float h, bool flipY)
 	{
 		Image* image = LOTUS2D_NEW Image();
 		image->mTexturePtr = texturePtr;

@@ -461,7 +461,7 @@ namespace Lotus2d {
 		end();
 		glDisable( GL_TEXTURE_2D );
 		setColor(argb);
-		glLineWidth(lineWidth);
+		glLineWidth((float)lineWidth);
 		begin(ePRIMITIVE_LINES);
 		vertex2i(x1, y1 );
 		vertex2i(x2, y2 );
