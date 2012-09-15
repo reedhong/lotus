@@ -53,7 +53,7 @@ namespace Lotus2d {
 		SAFE_FREE(m_idata); 
 	}
 
-	bool Png::doParse(int req_comp)
+	BOOL Png::doParse(int req_comp)
 	{
 		unsigned char *result=NULL;
 		m_expanded = NULL;
@@ -66,19 +66,16 @@ namespace Lotus2d {
 		return FALSE;
 	}
 
-	int Png::checkPngHeader()
+	BOOL Png::checkPngHeader()
 	{
 		static uint8 png_sig[8] = { 137,80,78,71,13,10,26,10 };
-		int i;uint8 c;
 		uint8 header[8];
 		mStream->read(header, 8);
+		
+		if  (memcmp(png_sig, header, 8) == 0)
+			return TRUE;
 
-		for (i=0; i < 8; ++i)
-		{
-			c = mStream->read8();
-			if (c != png_sig[i]) return 0;//e("bad png sig","Not a PNG");
-		}
-		return 1;
+		return FALSE;
 	}
 
 	Chunk Png::getChunkHeader()

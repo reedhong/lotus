@@ -14,18 +14,17 @@
 namespace Lotus2d {
 	class Image
 	{
-	protected:
-		Image(void);
 	public:
-		~Image(void);
+		Image();
+		~Image();
+		BOOL isRendable() const;
+	public:
+		static Image* createImage(Texture* texturePtr, int  x, int  y, int  w,  int  h, BOOL flipY=FALSE);
 
 	public:
-		static Image* createImage(Texture* texturePtr, float x, float y, float w, float h,bool flipY = false);
-
+		void setTextureRect(int  x, int  y, int  w,  int  h, BOOL flipY=FALSE);
 	public:
-		void setTextureRect(float x, float y, float w, float h,bool flipY = false) ;
-	public:
-		Texture*	mTexturePtr;	
+		Texture*	mTexture;	
 
 		float m_tx0;
 		float m_ty0;

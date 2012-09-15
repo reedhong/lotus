@@ -25,9 +25,9 @@ namespace Lotus2d {
 		Png();
 
 	private:
-		bool doParse(int req_comp);
+		BOOL doParse(int req_comp);
 		int parse(int scan, int req_comp);
-		int checkPngHeader();
+		BOOL checkPngHeader();
 		Chunk getChunkHeader();
 		int createPngImage(uint8 *raw, uint32 raw_len, int out_n);
 		int createPngImage2(uint8 *raw, uint32 raw_len, int out_n);

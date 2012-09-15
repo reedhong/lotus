@@ -224,10 +224,6 @@
 				>
 			</File>
 			<File
-				RelativePath=".\RenderSystem\TextureManager.cpp"
-				>
-			</File>
-			<File
 				RelativePath=".\Png\Zip.cpp"
 				>
 			</File>
@@ -295,10 +291,6 @@
 			</File>
 			<File
 				RelativePath=".\RenderSystem\Texture.h"
-				>
-			</File>
-			<File
-				RelativePath=".\RenderSystem\TextureManager.h"
 				>
 			</File>
 			<File

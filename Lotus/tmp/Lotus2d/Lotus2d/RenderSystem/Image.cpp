@@ -11,7 +11,7 @@
 
 
 namespace Lotus2d{
-	Image::Image()
+	Image::Image():mTexture(NULL)
 	{
 
 	}
@@ -19,33 +19,38 @@ namespace Lotus2d{
 	Image::~Image()
 	{
 	}
+
+	BOOL Image::isRendable() const
+	{
+		return (mTexture) && (mTexture->isRendable());
+	}
 	//////////////////////////////////////////////////////////////////////
 
-	Image* Image::createImage(Texture* texturePtr, float x, float y, float w, float h, bool flipY)
+	Image* Image::createImage(Texture* texturePtr, int  x, int  y, int  w,  int  h, BOOL flipY)
 	{
-		Image* image = LOTUS2D_NEW Image();
-		image->mTexturePtr = texturePtr;
+		Image* image = new Image();
+		image->mTexture = texturePtr;
 		image->setTextureRect(x, y, w, h,flipY);
 		return image;	 
 	}
 
 
-	void Image::setTextureRect(float x, float y, float w, float h, bool flipY) 
+	void Image::setTextureRect(int  x, int  y, int  w,  int  h, BOOL flipY)
 	{ 
-		m_x = x;
-		m_y = y;
-		m_width = w;
-		m_height = h;
+		m_x = (float)x;
+		m_y = (float)y;
+		m_width = (float)w;
+		m_height = (float)h;
 
-		m_tx0 = x/mTexturePtr->m_textureWidth;
-		m_tx1 = (x+w)/mTexturePtr->m_textureWidth;
+		m_tx0 = m_x/mTexture->mTextureWidth;
+		m_tx1 = (m_x+m_width)/mTexture->mTextureWidth;
 
 		if(flipY){
-			m_ty0 = 1.0f-y/mTexturePtr->m_textureHeight;
-			m_ty1 = 1.0f-(y+h)/mTexturePtr->m_textureHeight;
+			m_ty0 = 1.0f-m_y/mTexture->mTextureHeight;
+			m_ty1 = 1.0f-(m_y+m_height)/mTexture->mTextureHeight;
 		}else{
-			this->m_ty0 = y/mTexturePtr->m_textureHeight;
-			this->m_ty1 = (y+h)/mTexturePtr->m_textureHeight;
+			this->m_ty0 = m_y/mTexture->mTextureHeight;
+			this->m_ty1 = (m_y+m_height)/mTexture->mTextureHeight;
 		}
 	}
 }

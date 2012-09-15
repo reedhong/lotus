@@ -98,7 +98,7 @@ namespace Lotus2d
 #define SAFE_RELEASE(x)     if( (x)!=NULL ) { (x)->Release(); (x)=NULL; }
 #endif
 
-
+#define UNDIFINED  0xFFFFFFFF
 
 }
 

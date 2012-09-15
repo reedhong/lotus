@@ -9,32 +9,35 @@
 #ifndef __Lotus_Texture_H__
 #define __Lotus_Texture_H__
 
-#include "Base/SharedPtr.h"
+#include "Base/Stream.h"
 
 namespace Lotus2d {
 	class Texture
 	{
+	protected:
+		Texture();
 	public:
-		Texture(void);
-		~Texture(void);
-	public:
-		unsigned int			m_textureId;
-		float						m_imageWidth;
-		float						m_imageHeight;
-		float						m_textureWidth;
-		float						m_textureHeight;
-		unsigned char *	m_imageData;
-		unsigned char		m_alphaType;
-		unsigned char		m_keepRawData;
-		unsigned int			m_originalFormat;
-		unsigned int			m_refid;
-		
-		// TODO:
-		int							m_textureGLobalIndex;
-		unsigned int 			m_textureKey;
-	};
+		static Texture* loadTexture(Stream* stream);
+		~Texture();
+		BOOL isRendable() const;
+		BOOL hasBind() const{ return mTextureId != UNDIFINED;} 
+		BOOL keepRawData() const{ return mKeepRawData;}
+		void setKeepRawData(BOOL b) { mKeepRawData = b;}
 
-	typedef SharedPtr<Texture> TexturePtr;
+	public:
+		unsigned int			mTextureId;
+		unsigned int 			mImageWidth;
+		unsigned int			mImageHeight;
+		unsigned int			mTextureWidth;
+		unsigned int			mTextureHeight;
+		unsigned char *	mImageData;
+		unsigned char		mAlphaType;
+		unsigned char		mKeepRawData;
+		unsigned int			mOriginalFormat;
+
+		unsigned int 			mTextureKey;		// 根据路径生成的hash值
+		int32						mTextureGLobalIndex;
+	};
 }
 
 #endif

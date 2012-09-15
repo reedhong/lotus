@@ -11,6 +11,7 @@
 
 #include "Base/Config.h"
 #include "Image.h"
+#include "Texture.h"
 
 namespace Lotus2d {
 	enum BLENDING_MODES
@@ -147,6 +148,7 @@ namespace Lotus2d {
 		int mWidth;
 		int mHeight;
 		float mScale;
+		int mCurrentTextureId; // 记录当前的纹理id
 	public:
 		// init
 		void init(int width, int height, float mScale);
@@ -167,20 +169,11 @@ namespace Lotus2d {
 		// texture
 		void enableTexture(void);
 		void disableTexture(void);
+		/*
+		 * 绑定材质，如果没有提交显卡，需要生成材质id，指定纹理数据，进行提交
+		 */
+		void  bindTexture(Texture* texture, BOOL  isLinearFiltering=TRUE);
 
-		void setTextureGenMode(TEX_GEN_MODES mode);
-		void setTextureFilterMode(TEX_FILTER_MODES min, TEX_FILTER_MODES mag);
-		void setTextureUWrapMode(WRAP_MODES wrap);
-		void setTextureVWrapMode(WRAP_MODES wrap);
-		void setTextureCombineMode(TEX_COMBINE_MODES combine);
-		void bindTexture(unsigned int textureId, const unsigned int multitextureId = 0);
-		void createTexture(unsigned int * textureId);
-		void deleteTexture(unsigned int * textureId);
-		void sendTextureImage(Image * image, bool mipMap, bool filter, bool compress) ;
-		void texImage(unsigned int level, unsigned int width, unsigned int height, TYPES type, TEX_MODES mode, const void * pixels);
-		void texSubImage(unsigned int level, int xoffset, int yoffset, unsigned int width, unsigned int height, TYPES type, TEX_MODES mode, const void * pixels);
-		void generateMipMap(void) ;
-		void getTexImage(unsigned int level, Image * image);
 
 		//  vertex arrays
 		void enableVertexArray(void) ;
@@ -213,7 +206,8 @@ namespace Lotus2d {
 		void drawElement(PRIMITIVE_TYPES type, unsigned int size, TYPES indicesType, const void * indices) ;
 		void drawRect(int x, int y, int w, int h, int argb);
 		void drawLine(int x1, int y1, int x2, int y2, int argb, int lineWidth=1);
-
+		void drawImage(const Image* image, float x, float y,int transfer=TRANS_NONE,int anchor=ANCHOR_TOP|ANCHOR_LEFT);
+		void drawTexture(const Texture* texture, float x, float y,int transfer=TRANS_NONE,int anchor=ANCHOR_TOP|ANCHOR_LEFT);
 
 
 		// masks
