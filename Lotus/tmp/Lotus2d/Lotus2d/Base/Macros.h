@@ -11,8 +11,7 @@
 #include <assert.h>
 #include "Platform/Platform.h"
 
-namespace Lotus2d
-{
+namespace Lotus2d {
 
 #ifdef LOTUS2D_DEBUG_MODE
 #define ASSERT(c) if (c) 0; else assert(c)
@@ -99,6 +98,22 @@ namespace Lotus2d
 #endif
 
 #define UNDIFINED  0xFFFFFFFF
+
+
+// TODO:
+#define FLAG_NONE				0
+#define FLAG_FLIP_X				((unsigned int)1 << 0)	// flip horizontally
+#define FLAG_FLIP_Y				((unsigned int)1 << 1)	// flip vertically
+#define FLAG_FLIP_XY			(FLAG_FLIP_X | FLAG_FLIP_Y)
+#define FLAG_ROT_90				((unsigned int)1 << 2)	// rotation
+#define FLAG_ROT_FY_FX			(FLAG_FLIP_X | FLAG_FLIP_Y|FLAG_ROT_90)
+
+// todo:
+static const  int FLIP_NONE = 0;
+static const  int FLIP_HORIZONTALLY = FLIP_NONE + 1;
+static const  int FLIP_VERTICALLY = FLIP_HORIZONTALLY + 1;
+static const  int FLIP_V_H = FLIP_VERTICALLY + 1;
+
 
 }
 

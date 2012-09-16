@@ -10,6 +10,7 @@
 #define __Game_H__
 
 #include "RenderSystem/Texture.h"
+#include "RenderSystem/Sprite.h"
 
 using namespace Lotus2d;
 
@@ -24,7 +25,7 @@ public:
 	void frame();
 
 private:
-	Texture* mTexture;
+	Sprite* mSprite;
 };
 
 #endif 

@@ -32,14 +32,13 @@ namespace Lotus2d {
 		return count;
 	}
 
-	// ≤ª‘ –Ì–¥
 	size_t MemoryStream::write(const void* buf, size_t count)
 	{
-		(void)buf;
-		(void)count;
-		ASSERT(0);
+		ASSERT(count <= (size_t)(mBufferEnd-mBuffer));
+		memcpy(mBuffer, buf, count);
+		mBuffer += count;
 
-		return 0;
+		return count;
 	}
 	void MemoryStream::skip(long count)
 	{

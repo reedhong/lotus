@@ -9,6 +9,7 @@
 #include "Texture.h"
 #include "Png/Png.h"
 #include "GLHeader.h"
+#include "Base/FileStream.h"
 
 namespace Lotus2d {
 	Texture::Texture():mTextureId(UNDIFINED), mKeepRawData(FALSE),mImageData(0)
@@ -23,6 +24,12 @@ namespace Lotus2d {
 	BOOL Texture::isRendable() const
 	{
 		return (mTextureId!=UNDIFINED) || (mTextureId==UNDIFINED && mImageData) ;
+	}
+
+	Texture* Texture::loadTexture(const char* path)
+	{
+		FileStream stream(path, "rb");
+		return loadTexture(&stream);
 	}
 
 	Texture* Texture::loadTexture(Stream* stream)

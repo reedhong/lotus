@@ -3,7 +3,7 @@
 	filename: 	Types.h
 	author:		reedhong 
 	
-	purpose:	
+	purpose:	¿‡–Õ…˘√˜
 *********************************************************************/
 
 #include "Platform/Platform.h"
@@ -34,7 +34,15 @@ typedef char int8;
 	typedef long long int64;
 #endif
 
+struct VERTEX_DATA_DEF
+{
+	float		m_texcoord_x;
+	float		m_texcoord_y;
+	int16	m_vertex_x;
+	int16	m_vertex_y;
+};
 
+#define VERTEX_SIZE	sizeof(VERTEX_DATA_DEF)
 
 
 

@@ -17,6 +17,7 @@ namespace Lotus2d {
 	protected:
 		Texture();
 	public:
+		static Texture* loadTexture(const char* path);
 		static Texture* loadTexture(Stream* stream);
 		~Texture();
 		BOOL isRendable() const;

@@ -42,7 +42,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="./;&quot;../OpenGL ES Emulator v1.3.0/include&quot;"
+				AdditionalIncludeDirectories="./;&quot;../OpenGL ES Emulator v1.3.0/include&quot;;./Font/freetype/include;./Font/freetype/include/freetype"
 				PreprocessorDefinitions="WIN32;_DEBUG"
 				RuntimeLibrary="3"
 				UsePrecompiledHeader="0"
@@ -184,11 +184,23 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
+				RelativePath=".\Font\freetype\src\autofit\autofit.c"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\src\cff\cff.c"
+				>
+			</File>
+			<File
 				RelativePath=".\Engine.cpp"
 				>
 			</File>
 			<File
 				RelativePath=".\Base\FileStream.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\FontManager.cpp"
 				>
 			</File>
 			<File
@@ -204,7 +216,19 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Font\freetype\src\pshinter\pshinter.c"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\src\psnames\psnames.c"
+				>
+			</File>
+			<File
 				RelativePath=".\RenderSystem\Render.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\src\sfnt\sfnt.c"
 				>
 			</File>
 			<File
@@ -216,11 +240,43 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Font\freetype\src\smooth\smooth.c"
+				>
+			</File>
+			<File
+				RelativePath=".\RenderSystem\Sprite.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\Base\Stream.cpp"
 				>
 			</File>
 			<File
 				RelativePath=".\RenderSystem\Texture.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\TinyXML\tinystr.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\TinyXML\tinyxml.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\TinyXML\tinyxmlerror.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\TinyXML\tinyxmlparser.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\src\truetype\truetype.c"
+				>
+			</File>
+			<File
+				RelativePath=".\base\Util.cpp"
 				>
 			</File>
 			<File
@@ -234,6 +290,10 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
+				RelativePath=".\Font\freetype\include\freetype\internal\autohint.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Base\Config.h"
 				>
 			</File>
@@ -246,6 +306,222 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Font\FontManager.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\freetype.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\ft2build.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\ftadvanc.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\ftbbox.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\ftbdf.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\ftbitmap.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\ftcache.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\internal\ftcalc.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\ftchapters.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\ftcid.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\config\ftconfig.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\internal\ftdebug.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\internal\ftdriver.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\fterrdef.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\fterrors.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\ftgasp.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\internal\ftgloadr.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\ftglyph.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\ftgxval.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\ftgzip.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\config\ftheader.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\ftimage.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\ftincrem.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\ftlcdfil.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\ftlist.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\ftlzw.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\ftmac.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\internal\ftmemory.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\ftmm.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\ftmodapi.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\ftmoderr.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\config\ftmodule.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\internal\ftobjs.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\config\ftoption.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\ftotval.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\ftoutln.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\ftpfr.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\ftrender.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\internal\ftrfork.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\internal\ftserv.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\ftsizes.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\ftsnames.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\config\ftstdlib.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\internal\ftstream.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\ftstroke.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\ftsynth.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\ftsystem.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\internal\fttrace.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\fttrigon.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\fttypes.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\internal\ftvalid.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\ftwinfnt.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\ftxf86.h"
+				>
+			</File>
+			<File
 				RelativePath=".\RenderSystem\GLHeader.h"
 				>
 			</File>
@@ -254,11 +530,19 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Font\freetype\include\freetype\internal\internal.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Base\Macros.h"
 				>
 			</File>
 			<File
 				RelativePath=".\Base\MemoryStream.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\internal\pcftypes.h"
 				>
 			</File>
 			<File
@@ -274,7 +558,23 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Font\freetype\include\freetype\internal\psaux.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\internal\pshints.h"
+				>
+			</File>
+			<File
+				RelativePath=".\RapidXml\rapidxml.hpp"
+				>
+			</File>
+			<File
 				RelativePath=".\RenderSystem\Render.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\internal\sfnt.h"
 				>
 			</File>
 			<File
@@ -286,7 +586,87 @@
 				>
 			</File>
 			<File
+				RelativePath=".\RenderSystem\Sprite.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Base\Stream.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\internal\services\svbdf.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\internal\services\svcid.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\internal\services\svgldict.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\internal\services\svgxval.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\internal\services\svkern.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\internal\services\svmm.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\internal\services\svotval.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\internal\services\svpfr.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\internal\services\svpostnm.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\internal\services\svpscmap.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\internal\services\svpsinfo.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\internal\services\svsfnt.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\internal\services\svttcmap.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\internal\services\svtteng.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\internal\services\svttglyf.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\internal\services\svwinfnt.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\internal\services\svxf86nm.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\t1tables.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\internal\t1types.h"
 				>
 			</File>
 			<File
@@ -294,7 +674,39 @@
 				>
 			</File>
 			<File
+				RelativePath=".\TinyXML\tinystr.h"
+				>
+			</File>
+			<File
+				RelativePath=".\TinyXML\tinyxml.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\ttnameid.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\tttables.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\tttags.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\internal\tttypes.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Font\freetype\include\freetype\ttunpat.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Base\Types.h"
+				>
+			</File>
+			<File
+				RelativePath=".\base\Util.h"
 				>
 			</File>
 			<File

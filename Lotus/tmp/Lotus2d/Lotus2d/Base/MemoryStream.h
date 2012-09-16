@@ -3,7 +3,7 @@
 	filename: 	MemoryStream.h
 	author:		reedhong 
 	
-	purpose:	内存Stream，只提供读取入口
+	purpose:	内存Stream，读写均可
 *********************************************************************/
 
 #ifndef __Lotus2d_MemoryStream_H__

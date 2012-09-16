@@ -66,6 +66,13 @@ namespace Lotus2d {
 		return l;
 	}
 
+	float Stream::readf()
+	{
+		float f;
+		read(&f, sizeof(float));
+		return f;
+	}
+
 	uint16 Stream::read16le()
 	{
 		uint16 s;
@@ -113,6 +120,11 @@ namespace Lotus2d {
 	{
 		swapEndian(&l, sizeof(uint64));
 		write(&l, sizeof(uint64));
+	}
+
+	void Stream::writef(float f)
+	{
+		write(&f, sizeof(float));
 	}
 
 	void Stream::write16le(uint16 s)

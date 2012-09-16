@@ -1,0 +1,1170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sprite name="X:\avatar\character\actors\enemy_xueguai.sprite" version="">
+ <images>
+  <image key="enemy_xueguai" file="enemy_xueguai.png" bg="0" memtype="22" />
+ </images>
+ <modules>
+  <module x="91" y="104" width="87" height="81" img="0" /> 
+  <module x="79" y="277" width="64" height="71" img="0" /> 
+  <module x="286" y="180" width="54" height="91" img="0" /> 
+  <module x="317" y="101" width="28" height="78" img="0" /> 
+  <module x="190" y="394" width="44" height="51" img="0" /> 
+  <module x="91" y="257" width="52" height="19" img="0" /> 
+  <module x="70" y="104" width="13" height="16" img="0" /> 
+  <module x="227" y="227" width="27" height="29" img="0" /> 
+  <module x="481" y="299" width="31" height="29" img="0" /> 
+  <module x="318" y="391" width="34" height="30" img="0" /> 
+  <module x="477" y="145" width="35" height="94" img="0" /> 
+  <module x="366" y="386" width="39" height="58" img="0" /> 
+  <module x="457" y="416" width="55" height="96" img="0" /> 
+  <module x="77" y="417" width="58" height="31" img="0" /> 
+  <module x="246" y="101" width="40" height="81" img="0" /> 
+  <module x="112" y="349" width="40" height="68" img="0" /> 
+  <module x="265" y="271" width="54" height="92" img="0" /> 
+  <module x="228" y="284" width="35" height="32" img="0" /> 
+  <module x="61" y="260" width="30" height="18" img="0" /> 
+  <module x="319" y="276" width="31" height="13" img="0" /> 
+  <module x="0" y="419" width="31" height="11" img="0" /> 
+  <module x="374" y="292" width="61" height="88" img="0" /> 
+  <module x="178" y="103" width="68" height="81" img="0" /> 
+  <module x="318" y="422" width="52" height="90" img="0" /> 
+  <module x="0" y="206" width="52" height="75" img="0" /> 
+  <module x="201" y="316" width="58" height="74" img="0" /> 
+  <module x="435" y="292" width="27" height="80" img="0" /> 
+  <module x="286" y="101" width="31" height="79" img="0" /> 
+  <module x="352" y="224" width="51" height="67" img="0" /> 
+  <module x="473" y="96" width="39" height="49" img="0" /> 
+  <module x="472" y="239" width="40" height="57" img="0" /> 
+  <module x="153" y="371" width="37" height="73" img="0" /> 
+  <module x="370" y="447" width="36" height="65" img="0" /> 
+  <module x="76" y="454" width="31" height="58" img="0" /> 
+  <module x="312" y="0" width="53" height="101" img="0" /> 
+  <module x="365" y="0" width="56" height="98" img="0" /> 
+  <module x="247" y="182" width="39" height="45" img="0" /> 
+  <module x="320" y="291" width="54" height="90" img="0" /> 
+  <module x="254" y="227" width="33" height="44" img="0" /> 
+  <module x="235" y="391" width="34" height="47" img="0" /> 
+  <module x="127" y="0" width="52" height="104" img="0" /> 
+  <module x="179" y="0" width="61" height="102" img="0" /> 
+  <module x="459" y="329" width="53" height="87" img="0" /> 
+  <module x="404" y="389" width="53" height="48" img="0" /> 
+  <module x="151" y="315" width="50" height="54" img="0" /> 
+  <module x="232" y="438" width="86" height="74" img="0" /> 
+  <module x="345" y="101" width="36" height="77" img="0" /> 
+  <module x="63" y="349" width="49" height="69" img="0" /> 
+  <module x="270" y="374" width="48" height="63" img="0" /> 
+  <module x="0" y="349" width="63" height="69" img="0" /> 
+  <module x="403" y="241" width="69" height="51" img="0" /> 
+  <module x="70" y="0" width="57" height="104" img="0" /> 
+  <module x="0" y="0" width="70" height="120" img="0" /> 
+  <module x="381" y="98" width="81" height="75" img="0" /> 
+  <module x="240" y="0" width="72" height="101" img="0" /> 
+  <module x="0" y="281" width="79" height="68" img="0" /> 
+  <module x="0" y="120" width="91" height="86" img="0" /> 
+  <module x="105" y="445" width="127" height="67" img="0" /> 
+  <module x="73" y="185" width="107" height="71" img="0" /> 
+  <module x="421" y="0" width="81" height="96" img="0" /> 
+  <module x="0" y="439" width="76" height="73" img="0" /> 
+  <module x="420" y="173" width="57" height="67" img="0" /> 
+  <module x="406" y="437" width="51" height="75" img="0" /> 
+  <module x="144" y="227" width="83" height="88" img="0" /> 
+  <module x="54" y="207" width="17" height="28" img="0" /> 
+  <module x="180" y="184" width="67" height="42" img="0" /> 
+  <module x="340" y="178" width="80" height="46" img="0" /> 
+ </modules>
+ <frames>
+  <frame name="">
+   <fmodule module="1" x="-14" y="21" trans="0" />
+   <fmodule module="2" x="-41" y="6" trans="0" />
+   <fmodule module="0" x="-38" y="-29" trans="0" />
+  </frame>
+  <frame name="01">
+   <fmodule module="3" x="26" y="-101" trans="0" />
+   <fmodule module="48" x="-7" y="-51" trans="0" />
+   <fmodule module="7" x="-75" y="-31" trans="6" />
+   <fmodule module="4" x="-37" y="-26" trans="0" />
+   <fmodule module="6" x="-66" y="-53" trans="3" />
+   <fmodule module="1" x="-30" y="-76" trans="0" />
+   <fmodule module="2" x="-57" y="-91" trans="0" />
+   <fmodule module="0" x="-51" y="-125" trans="0" />
+   <fmodule module="5" x="-62" y="-96" trans="6" />
+  </frame>
+  <frame name="01">
+   <fmodule module="8" x="-75" y="-30" trans="0" />
+   <fmodule module="3" x="26" y="-100" trans="0" />
+   <fmodule module="4" x="-37" y="-26" trans="0" />
+   <fmodule module="48" x="-7" y="-51" trans="0" />
+   <fmodule module="6" x="-66" y="-52" trans="3" />
+   <fmodule module="1" x="-30" y="-75" trans="0" />
+   <fmodule module="2" x="-57" y="-90" trans="0" />
+   <fmodule module="0" x="-51" y="-124" trans="0" />
+   <fmodule module="5" x="-62" y="-95" trans="6" />
+  </frame>
+  <frame name="01">
+   <fmodule module="9" x="-75" y="-29" trans="0" />
+   <fmodule module="3" x="27" y="-99" trans="0" />
+   <fmodule module="4" x="-37" y="-26" trans="0" />
+   <fmodule module="48" x="-7" y="-51" trans="0" />
+   <fmodule module="6" x="-67" y="-51" trans="3" />
+   <fmodule module="1" x="-30" y="-74" trans="0" />
+   <fmodule module="2" x="-58" y="-89" trans="0" />
+   <fmodule module="0" x="-51" y="-124" trans="0" />
+   <fmodule module="5" x="-63" y="-94" trans="6" />
+  </frame>
+  <frame name="02">
+   <fmodule module="13" x="-40" y="-37" trans="6" />
+   <fmodule module="11" x="-38" y="-65" trans="0" />
+   <fmodule module="12" x="-71" y="-95" trans="0" />
+   <fmodule module="10" x="-34" y="-127" trans="0" />
+   <fmodule module="13" x="11" y="-37" trans="7" />
+   <fmodule module="11" x="1" y="-65" trans="2" />
+   <fmodule module="12" x="18" y="-95" trans="2" />
+   <fmodule module="10" x="1" y="-127" trans="2" />
+  </frame>
+  <frame name="02">
+   <fmodule module="13" x="-40" y="-37" trans="6" />
+   <fmodule module="11" x="-38" y="-64" trans="0" />
+   <fmodule module="12" x="-71" y="-94" trans="0" />
+   <fmodule module="13" x="11" y="-37" trans="7" />
+   <fmodule module="11" x="1" y="-64" trans="2" />
+   <fmodule module="12" x="18" y="-94" trans="2" />
+   <fmodule module="10" x="-34" y="-126" trans="0" />
+   <fmodule module="10" x="1" y="-126" trans="2" />
+  </frame>
+  <frame name="02">
+   <fmodule module="13" x="-40" y="-37" trans="6" />
+   <fmodule module="11" x="-38" y="-63" trans="0" />
+   <fmodule module="12" x="-72" y="-93" trans="0" />
+   <fmodule module="13" x="11" y="-37" trans="7" />
+   <fmodule module="11" x="1" y="-63" trans="2" />
+   <fmodule module="12" x="19" y="-93" trans="2" />
+   <fmodule module="10" x="-34" y="-124" trans="0" />
+   <fmodule module="10" x="1" y="-124" trans="2" />
+  </frame>
+  <frame name="03">
+   <fmodule module="17" x="-40" y="-17" trans="6" />
+   <fmodule module="17" x="7" y="-17" trans="7" />
+   <fmodule module="15" x="-40" y="-75" trans="0" />
+   <fmodule module="15" x="-1" y="-75" trans="2" />
+   <fmodule module="18" x="-18" y="-24" trans="6" />
+   <fmodule module="18" x="0" y="-24" trans="7" />
+   <fmodule module="16" x="-71" y="-92" trans="0" />
+   <fmodule module="16" x="18" y="-91" trans="2" />
+   <fmodule module="14" x="-40" y="-127" trans="0" />
+   <fmodule module="14" x="0" y="-127" trans="2" />
+   <fmodule module="5" x="-69" y="-91" trans="6" />
+   <fmodule module="6" x="-68" y="-50" trans="3" />
+   <fmodule module="5" x="53" y="-91" trans="7" />
+   <fmodule module="6" x="58" y="-50" trans="1" />
+  </frame>
+  <frame name="03">
+   <fmodule module="17" x="-40" y="-17" trans="6" />
+   <fmodule module="17" x="7" y="-17" trans="7" />
+   <fmodule module="15" x="-40" y="-74" trans="0" />
+   <fmodule module="15" x="-1" y="-74" trans="2" />
+   <fmodule module="19" x="-13" y="-23" trans="6" />
+   <fmodule module="19" x="0" y="-23" trans="7" />
+   <fmodule module="16" x="-72" y="-90" trans="0" />
+   <fmodule module="16" x="18" y="-90" trans="2" />
+   <fmodule module="14" x="-40" y="-126" trans="0" />
+   <fmodule module="14" x="0" y="-126" trans="2" />
+   <fmodule module="5" x="-69" y="-90" trans="6" />
+   <fmodule module="6" x="-68" y="-49" trans="3" />
+   <fmodule module="5" x="53" y="-90" trans="7" />
+   <fmodule module="6" x="58" y="-49" trans="1" />
+  </frame>
+  <frame name="03">
+   <fmodule module="17" x="-40" y="-17" trans="6" />
+   <fmodule module="17" x="7" y="-17" trans="7" />
+   <fmodule module="15" x="-40" y="-73" trans="0" />
+   <fmodule module="15" x="-1" y="-73" trans="2" />
+   <fmodule module="20" x="-11" y="-22" trans="6" />
+   <fmodule module="20" x="0" y="-22" trans="7" />
+   <fmodule module="16" x="-73" y="-89" trans="0" />
+   <fmodule module="16" x="19" y="-89" trans="2" />
+   <fmodule module="14" x="-40" y="-124" trans="0" />
+   <fmodule module="14" x="0" y="-124" trans="2" />
+   <fmodule module="5" x="-70" y="-89" trans="6" />
+   <fmodule module="6" x="-69" y="-48" trans="3" />
+   <fmodule module="5" x="54" y="-89" trans="7" />
+   <fmodule module="6" x="59" y="-48" trans="1" />
+  </frame>
+  <frame name="04">
+   <fmodule module="8" x="-64" y="-30" trans="0" />
+   <fmodule module="26" x="16" y="-100" trans="0" />
+   <fmodule module="29" x="5" y="-42" trans="0" />
+   <fmodule module="6" x="-57" y="-52" trans="3" />
+   <fmodule module="1" x="-30" y="-75" trans="0" />
+   <fmodule module="30" x="-39" y="-37" trans="0" />
+   <fmodule module="21" x="-58" y="-93" trans="0" />
+   <fmodule module="0" x="-51" y="-124" trans="0" />
+   <fmodule module="5" x="-51" y="-95" trans="6" />
+  </frame>
+  <frame name="04">
+   <fmodule module="50" x="-12" y="-42" trans="0" />
+   <fmodule module="27" x="13" y="-100" trans="0" />
+   <fmodule module="9" x="-55" y="-36" trans="0" />
+   <fmodule module="30" x="-42" y="-39" trans="0" />
+   <fmodule module="6" x="-42" y="-45" trans="3" />
+   <fmodule module="1" x="-30" y="-74" trans="0" />
+   <fmodule module="23" x="-36" y="-88" trans="0" />
+   <fmodule module="0" x="-51" y="-122" trans="0" />
+   <fmodule module="5" x="-38" y="-89" trans="6" />
+  </frame>
+  <frame name="04">
+   <fmodule module="8" x="-57" y="-29" trans="0" />
+   <fmodule module="24" x="16" y="-100" trans="0" />
+   <fmodule module="29" x="5" y="-43" trans="0" />
+   <fmodule module="6" x="-68" y="-59" trans="3" />
+   <fmodule module="1" x="-30" y="-75" trans="0" />
+   <fmodule module="30" x="-26" y="-32" trans="0" />
+   <fmodule module="21" x="-63" y="-88" trans="0" />
+   <fmodule module="0" x="-51" y="-124" trans="0" />
+   <fmodule module="5" x="-63" y="-101" trans="6" />
+  </frame>
+  <frame name="04">
+   <fmodule module="29" x="-14" y="-47" trans="0" />
+   <fmodule module="9" x="-55" y="-36" trans="0" />
+   <fmodule module="25" x="22" y="-91" trans="0" />
+   <fmodule module="6" x="-73" y="-66" trans="3" />
+   <fmodule module="1" x="-30" y="-74" trans="0" />
+   <fmodule module="28" x="-32" y="-35" trans="0" />
+   <fmodule module="22" x="-69" y="-89" trans="0" />
+   <fmodule module="0" x="-51" y="-124" trans="0" />
+   <fmodule module="5" x="-67" y="-105" trans="6" />
+  </frame>
+  <frame name="05">
+   <fmodule module="32" x="6" y="-40" trans="0" />
+   <fmodule module="33" x="-38" y="-40" trans="0" />
+   <fmodule module="11" x="-38" y="-64" trans="0" />
+   <fmodule module="11" x="1" y="-64" trans="2" />
+   <fmodule module="37" x="19" y="-95" trans="2" />
+   <fmodule module="34" x="-69" y="-91" trans="2" />
+   <fmodule module="10" x="-34" y="-127" trans="0" />
+   <fmodule module="10" x="1" y="-127" trans="2" />
+  </frame>
+  <frame name="05">
+   <fmodule module="48" x="-1" y="-96" trans="0" />
+   <fmodule module="36" x="15" y="-65" trans="2" />
+   <fmodule module="31" x="5" y="-42" trans="0" />
+   <fmodule module="33" x="-38" y="-46" trans="0" />
+   <fmodule module="11" x="-38" y="-63" trans="0" />
+   <fmodule module="35" x="-69" y="-89" trans="2" />
+   <fmodule module="11" x="1" y="-63" trans="2" />
+   <fmodule module="10" x="-34" y="-127" trans="0" />
+   <fmodule module="10" x="1" y="-127" trans="2" />
+  </frame>
+  <frame name="05">
+   <fmodule module="32" x="-39" y="-40" trans="2" />
+   <fmodule module="33" x="10" y="-40" trans="2" />
+   <fmodule module="11" x="-38" y="-64" trans="0" />
+   <fmodule module="11" x="1" y="-64" trans="2" />
+   <fmodule module="37" x="-72" y="-95" trans="0" />
+   <fmodule module="34" x="17" y="-91" trans="0" />
+   <fmodule module="10" x="-34" y="-127" trans="0" />
+   <fmodule module="10" x="1" y="-127" trans="2" />
+  </frame>
+  <frame name="05">
+   <fmodule module="48" x="-52" y="-93" trans="2" />
+   <fmodule module="36" x="-59" y="-58" trans="0" />
+   <fmodule module="31" x="-41" y="-42" trans="2" />
+   <fmodule module="33" x="9" y="-46" trans="2" />
+   <fmodule module="11" x="-38" y="-63" trans="0" />
+   <fmodule module="11" x="1" y="-63" trans="2" />
+   <fmodule module="35" x="15" y="-89" trans="0" />
+   <fmodule module="10" x="-34" y="-127" trans="0" />
+   <fmodule module="10" x="1" y="-127" trans="2" />
+  </frame>
+  <frame name="06">
+   <fmodule module="39" x="-37" y="-29" trans="2" />
+   <fmodule module="15" x="-40" y="-74" trans="0" />
+   <fmodule module="15" x="-1" y="-74" trans="2" />
+   <fmodule module="19" x="-13" y="-23" trans="6" />
+   <fmodule module="41" x="-72" y="-103" trans="0" />
+   <fmodule module="42" x="16" y="-90" trans="0" />
+   <fmodule module="14" x="-40" y="-127" trans="0" />
+   <fmodule module="14" x="0" y="-127" trans="2" />
+   <fmodule module="5" x="-71" y="-86" trans="6" />
+   <fmodule module="6" x="-70" y="-45" trans="3" />
+   <fmodule module="5" x="52" y="-92" trans="7" />
+   <fmodule module="6" x="57" y="-52" trans="1" />
+   <fmodule module="39" x="5" y="-24" trans="0" />
+   <fmodule module="19" x="0" y="-23" trans="7" />
+  </frame>
+  <frame name="06">
+   <fmodule module="36" x="28" y="-51" trans="2" />
+   <fmodule module="39" x="-35" y="-40" trans="2" />
+   <fmodule module="15" x="-40" y="-73" trans="0" />
+   <fmodule module="15" x="-1" y="-73" trans="2" />
+   <fmodule module="40" x="-67" y="-92" trans="0" />
+   <fmodule module="20" x="-11" y="-22" trans="6" />
+   <fmodule module="14" x="-40" y="-127" trans="0" />
+   <fmodule module="14" x="0" y="-127" trans="2" />
+   <fmodule module="5" x="-68" y="-79" trans="6" />
+   <fmodule module="6" x="-67" y="-38" trans="3" />
+   <fmodule module="5" x="53" y="-95" trans="7" />
+   <fmodule module="6" x="59" y="-57" trans="1" />
+   <fmodule module="38" x="5" y="-20" trans="0" />
+   <fmodule module="20" x="0" y="-22" trans="7" />
+   <fmodule module="43" x="14" y="-90" trans="0" />
+  </frame>
+  <frame name="06">
+   <fmodule module="39" x="4" y="-33" trans="0" />
+   <fmodule module="15" x="-40" y="-74" trans="0" />
+   <fmodule module="15" x="-1" y="-74" trans="2" />
+   <fmodule module="41" x="14" y="-96" trans="2" />
+   <fmodule module="42" x="-70" y="-89" trans="2" />
+   <fmodule module="14" x="-40" y="-127" trans="0" />
+   <fmodule module="14" x="0" y="-127" trans="2" />
+   <fmodule module="5" x="58" y="-85" trans="7" />
+   <fmodule module="6" x="64" y="-46" trans="1" />
+   <fmodule module="5" x="-69" y="-94" trans="6" />
+   <fmodule module="6" x="-69" y="-53" trans="3" />
+   <fmodule module="39" x="-41" y="-24" trans="2" />
+   <fmodule module="19" x="0" y="-23" trans="7" />
+   <fmodule module="19" x="-13" y="-23" trans="6" />
+  </frame>
+  <frame name="06">
+   <fmodule module="39" x="1" y="-34" trans="0" />
+   <fmodule module="43" x="-67" y="-90" trans="2" />
+   <fmodule module="36" x="-68" y="-53" trans="0" />
+   <fmodule module="15" x="-40" y="-73" trans="0" />
+   <fmodule module="15" x="-1" y="-73" trans="2" />
+   <fmodule module="40" x="17" y="-92" trans="2" />
+   <fmodule module="14" x="-40" y="-127" trans="0" />
+   <fmodule module="14" x="0" y="-127" trans="2" />
+   <fmodule module="5" x="53" y="-78" trans="7" />
+   <fmodule module="6" x="58" y="-36" trans="1" />
+   <fmodule module="5" x="-69" y="-95" trans="6" />
+   <fmodule module="6" x="-67" y="-55" trans="3" />
+   <fmodule module="38" x="-39" y="-20" trans="2" />
+   <fmodule module="20" x="0" y="-22" trans="7" />
+   <fmodule module="20" x="-11" y="-22" trans="6" />
+  </frame>
+  <frame name="07">
+   <fmodule module="29" x="1" y="-44" trans="0" />
+   <fmodule module="7" x="-50" y="-26" trans="6" />
+   <fmodule module="25" x="27" y="-99" trans="0" />
+   <fmodule module="44" x="-40" y="-31" trans="0" />
+   <fmodule module="1" x="-23" y="-75" trans="0" />
+   <fmodule module="45" x="-55" y="-87" trans="5" />
+   <fmodule module="6" x="-62" y="-54" trans="3" />
+   <fmodule module="5" x="-57" y="-98" trans="6" />
+   <fmodule module="0" x="-41" y="-119" trans="0" />
+  </frame>
+  <frame name="07">
+   <fmodule module="29" x="0" y="-44" trans="0" />
+   <fmodule module="8" x="-49" y="-27" trans="0" />
+   <fmodule module="25" x="28" y="-100" trans="0" />
+   <fmodule module="44" x="-41" y="-32" trans="0" />
+   <fmodule module="1" x="-22" y="-76" trans="0" />
+   <fmodule module="45" x="-55" y="-87" trans="5" />
+   <fmodule module="6" x="-61" y="-55" trans="3" />
+   <fmodule module="5" x="-56" y="-99" trans="6" />
+   <fmodule module="0" x="-36" y="-119" trans="0" />
+  </frame>
+  <frame name="07">
+   <fmodule module="29" x="4" y="-45" trans="0" />
+   <fmodule module="9" x="-47" y="-27" trans="0" />
+   <fmodule module="25" x="29" y="-99" trans="0" />
+   <fmodule module="44" x="-36" y="-33" trans="0" />
+   <fmodule module="1" x="-20" y="-76" trans="0" />
+   <fmodule module="45" x="-55" y="-87" trans="5" />
+   <fmodule module="6" x="-59" y="-55" trans="3" />
+   <fmodule module="5" x="-54" y="-99" trans="6" />
+   <fmodule module="0" x="-37" y="-120" trans="0" />
+  </frame>
+  <frame name="07">
+   <fmodule module="29" x="5" y="-44" trans="0" />
+   <fmodule module="7" x="-46" y="-26" trans="6" />
+   <fmodule module="25" x="30" y="-97" trans="0" />
+   <fmodule module="44" x="-36" y="-31" trans="0" />
+   <fmodule module="1" x="-19" y="-75" trans="0" />
+   <fmodule module="45" x="-55" y="-87" trans="5" />
+   <fmodule module="6" x="-58" y="-52" trans="3" />
+   <fmodule module="5" x="-53" y="-96" trans="6" />
+   <fmodule module="0" x="-37" y="-116" trans="0" />
+  </frame>
+  <frame name="08">
+   <fmodule module="29" x="-55" y="-48" trans="0" />
+   <fmodule module="8" x="-104" y="-31" trans="0" />
+   <fmodule module="44" x="-96" y="-36" trans="0" />
+   <fmodule module="1" x="-77" y="-80" trans="0" />
+   <fmodule module="45" x="-110" y="-95" trans="5" />
+   <fmodule module="6" x="-116" y="-59" trans="3" />
+   <fmodule module="5" x="-111" y="-103" trans="6" />
+   <fmodule module="0" x="-91" y="-123" trans="0" />
+  </frame>
+  <frame name="08">
+   <fmodule module="29" x="-55" y="-48" trans="0" />
+   <fmodule module="9" x="-108" y="-30" trans="0" />
+   <fmodule module="44" x="-96" y="-36" trans="0" />
+   <fmodule module="1" x="-81" y="-79" trans="0" />
+   <fmodule module="0" x="-96" y="-124" trans="0" />
+   <fmodule module="45" x="-81" y="-101" trans="0" />
+   <fmodule module="5" x="-83" y="-46" trans="3" />
+   <fmodule module="6" x="-41" y="-33" trans="5" />
+  </frame>
+  <frame name="08">
+   <fmodule module="29" x="-54" y="-48" trans="0" />
+   <fmodule module="9" x="-111" y="-30" trans="0" />
+   <fmodule module="44" x="-95" y="-36" trans="0" />
+   <fmodule module="1" x="-85" y="-79" trans="0" />
+   <fmodule module="0" x="-98" y="-123" trans="0" />
+   <fmodule module="45" x="-85" y="-101" trans="0" />
+   <fmodule module="5" x="-87" y="-46" trans="3" />
+   <fmodule module="6" x="-45" y="-33" trans="5" />
+  </frame>
+  <frame name="08">
+   <fmodule module="29" x="-54" y="-48" trans="0" />
+   <fmodule module="8" x="-107" y="-30" trans="0" />
+   <fmodule module="44" x="-95" y="-36" trans="0" />
+   <fmodule module="1" x="-85" y="-79" trans="0" />
+   <fmodule module="0" x="-98" y="-123" trans="0" />
+   <fmodule module="45" x="-85" y="-101" trans="0" />
+   <fmodule module="5" x="-87" y="-46" trans="3" />
+   <fmodule module="6" x="-45" y="-33" trans="5" />
+  </frame>
+  <frame name="08">
+   <fmodule module="29" x="-54" y="-48" trans="0" />
+   <fmodule module="7" x="-106" y="-30" trans="6" />
+   <fmodule module="44" x="-95" y="-36" trans="0" />
+   <fmodule module="1" x="-85" y="-79" trans="0" />
+   <fmodule module="0" x="-98" y="-123" trans="0" />
+   <fmodule module="45" x="-85" y="-101" trans="0" />
+   <fmodule module="5" x="-87" y="-46" trans="3" />
+   <fmodule module="6" x="-45" y="-33" trans="5" />
+  </frame>
+  <frame name="08">
+   <fmodule module="29" x="-54" y="-48" trans="0" />
+   <fmodule module="9" x="-111" y="-30" trans="0" />
+   <fmodule module="44" x="-95" y="-36" trans="0" />
+   <fmodule module="1" x="-85" y="-79" trans="0" />
+   <fmodule module="0" x="-98" y="-123" trans="0" />
+   <fmodule module="45" x="-85" y="-101" trans="0" />
+   <fmodule module="5" x="-87" y="-46" trans="3" />
+   <fmodule module="6" x="-45" y="-33" trans="5" />
+  </frame>
+  <frame name="08">
+   <fmodule module="29" x="-54" y="-48" trans="0" />
+   <fmodule module="8" x="-107" y="-30" trans="0" />
+   <fmodule module="44" x="-95" y="-36" trans="0" />
+   <fmodule module="1" x="-85" y="-79" trans="0" />
+   <fmodule module="0" x="-98" y="-123" trans="0" />
+   <fmodule module="45" x="-85" y="-101" trans="0" />
+   <fmodule module="5" x="-87" y="-46" trans="3" />
+   <fmodule module="6" x="-45" y="-33" trans="5" />
+  </frame>
+  <frame name="08">
+   <fmodule module="29" x="-54" y="-48" trans="0" />
+   <fmodule module="7" x="-106" y="-30" trans="6" />
+   <fmodule module="44" x="-95" y="-36" trans="0" />
+   <fmodule module="1" x="-85" y="-79" trans="0" />
+   <fmodule module="0" x="-98" y="-123" trans="0" />
+   <fmodule module="45" x="-85" y="-101" trans="0" />
+   <fmodule module="5" x="-87" y="-46" trans="3" />
+   <fmodule module="6" x="-45" y="-33" trans="5" />
+  </frame>
+  <frame name="08">
+   <fmodule module="29" x="-88" y="-48" trans="0" />
+   <fmodule module="9" x="-145" y="-30" trans="0" />
+   <fmodule module="44" x="-129" y="-36" trans="0" />
+   <fmodule module="1" x="-119" y="-79" trans="0" />
+   <fmodule module="0" x="-134" y="-124" trans="0" />
+   <fmodule module="45" x="-119" y="-101" trans="0" />
+   <fmodule module="5" x="-121" y="-46" trans="3" />
+   <fmodule module="6" x="-79" y="-33" trans="5" />
+  </frame>
+  <frame name="08">
+   <fmodule module="29" x="-88" y="-48" trans="0" />
+   <fmodule module="8" x="-141" y="-30" trans="0" />
+   <fmodule module="44" x="-129" y="-36" trans="0" />
+   <fmodule module="1" x="-119" y="-79" trans="0" />
+   <fmodule module="0" x="-132" y="-123" trans="0" />
+   <fmodule module="45" x="-119" y="-101" trans="0" />
+   <fmodule module="5" x="-121" y="-46" trans="3" />
+   <fmodule module="6" x="-79" y="-33" trans="5" />
+  </frame>
+  <frame name="08">
+   <fmodule module="29" x="-81" y="-48" trans="0" />
+   <fmodule module="7" x="-133" y="-30" trans="6" />
+   <fmodule module="44" x="-122" y="-36" trans="0" />
+   <fmodule module="1" x="-112" y="-79" trans="0" />
+   <fmodule module="0" x="-126" y="-124" trans="0" />
+   <fmodule module="45" x="-112" y="-101" trans="0" />
+   <fmodule module="5" x="-114" y="-46" trans="3" />
+   <fmodule module="6" x="-72" y="-33" trans="5" />
+  </frame>
+  <frame name="08">
+   <fmodule module="29" x="-75" y="-48" trans="0" />
+   <fmodule module="9" x="-132" y="-30" trans="0" />
+   <fmodule module="44" x="-116" y="-36" trans="0" />
+   <fmodule module="1" x="-106" y="-79" trans="0" />
+   <fmodule module="0" x="-119" y="-123" trans="0" />
+   <fmodule module="45" x="-106" y="-101" trans="0" />
+   <fmodule module="5" x="-108" y="-46" trans="3" />
+   <fmodule module="6" x="-66" y="-33" trans="5" />
+  </frame>
+  <frame name="08">
+   <fmodule module="29" x="-54" y="-48" trans="0" />
+   <fmodule module="8" x="-107" y="-30" trans="0" />
+   <fmodule module="44" x="-95" y="-36" trans="0" />
+   <fmodule module="1" x="-85" y="-79" trans="0" />
+   <fmodule module="0" x="-98" y="-123" trans="0" />
+   <fmodule module="45" x="-85" y="-101" trans="0" />
+   <fmodule module="5" x="-87" y="-46" trans="3" />
+   <fmodule module="6" x="-45" y="-33" trans="5" />
+  </frame>
+  <frame name="08">
+   <fmodule module="29" x="-54" y="-48" trans="0" />
+   <fmodule module="7" x="-106" y="-30" trans="6" />
+   <fmodule module="44" x="-95" y="-36" trans="0" />
+   <fmodule module="1" x="-85" y="-79" trans="0" />
+   <fmodule module="0" x="-98" y="-123" trans="0" />
+   <fmodule module="45" x="-85" y="-101" trans="0" />
+   <fmodule module="5" x="-87" y="-46" trans="3" />
+   <fmodule module="6" x="-45" y="-33" trans="5" />
+  </frame>
+  <frame name="09">
+   <fmodule module="29" x="-2" y="-39" trans="0" />
+   <fmodule module="8" x="-58" y="-27" trans="0" />
+   <fmodule module="32" x="-35" y="-42" trans="0" />
+   <fmodule module="1" x="-35" y="-73" trans="0" />
+   <fmodule module="45" x="-64" y="-83" trans="5" />
+   <fmodule module="6" x="-70" y="-39" trans="3" />
+   <fmodule module="5" x="-68" y="-85" trans="6" />
+   <fmodule module="0" x="-47" y="-112" trans="0" />
+  </frame>
+  <frame name="09">
+   <fmodule module="28" x="4" y="-74" trans="0" />
+   <fmodule module="1" x="-37" y="-108" trans="0" />
+   <fmodule module="9" x="-26" y="-62" trans="0" />
+   <fmodule module="37" x="-69" y="-116" trans="0" />
+   <fmodule module="5" x="26" y="-118" trans="7" />
+   <fmodule module="5" x="-103" y="-69" trans="3" />
+   <fmodule module="6" x="-73" y="-50" trans="5" />
+   <fmodule module="47" x="-49" y="-61" trans="0" />
+   <fmodule module="0" x="-56" y="-148" trans="0" />
+   <fmodule module="46" x="10" y="-141" trans="0" />
+  </frame>
+  <frame name="09">
+   <fmodule module="34" x="-100" y="-158" trans="7" />
+   <fmodule module="37" x="4" y="-160" trans="4" />
+   <fmodule module="32" x="6" y="-92" trans="0" />
+   <fmodule module="33" x="-39" y="-87" trans="0" />
+   <fmodule module="11" x="-38" y="-116" trans="0" />
+   <fmodule module="11" x="1" y="-116" trans="2" />
+   <fmodule module="10" x="-35" y="-172" trans="0" />
+   <fmodule module="10" x="0" y="-172" trans="2" />
+  </frame>
+  <frame name="09">
+   <fmodule module="38" x="-32" y="-93" trans="0" />
+   <fmodule module="15" x="-40" y="-141" trans="0" />
+   <fmodule module="15" x="-1" y="-141" trans="2" />
+   <fmodule module="19" x="-13" y="-90" trans="6" />
+   <fmodule module="41" x="-74" y="-163" trans="0" />
+   <fmodule module="42" x="17" y="-156" trans="0" />
+   <fmodule module="5" x="-71" y="-153" trans="6" />
+   <fmodule module="6" x="-70" y="-112" trans="3" />
+   <fmodule module="5" x="52" y="-159" trans="7" />
+   <fmodule module="6" x="57" y="-119" trans="1" />
+   <fmodule module="39" x="2" y="-92" trans="0" />
+   <fmodule module="19" x="0" y="-90" trans="7" />
+   <fmodule module="14" x="-38" y="-191" trans="0" />
+   <fmodule module="14" x="2" y="-192" trans="2" />
+  </frame>
+  <frame name="09">
+   <fmodule module="29" x="-2" y="-39" trans="0" />
+   <fmodule module="8" x="-58" y="-27" trans="0" />
+   <fmodule module="32" x="-35" y="-42" trans="0" />
+   <fmodule module="1" x="-35" y="-73" trans="0" />
+   <fmodule module="45" x="-64" y="-82" trans="5" />
+   <fmodule module="6" x="-70" y="-39" trans="3" />
+   <fmodule module="5" x="-68" y="-85" trans="6" />
+   <fmodule module="0" x="-47" y="-112" trans="0" />
+  </frame>
+  <frame name="09">
+   <fmodule module="29" x="3" y="-66" trans="0" />
+   <fmodule module="9" x="-26" y="-62" trans="0" />
+   <fmodule module="5" x="31" y="-119" trans="7" />
+   <fmodule module="1" x="-37" y="-108" trans="0" />
+   <fmodule module="47" x="-49" y="-61" trans="0" />
+   <fmodule module="0" x="-55" y="-148" trans="0" />
+   <fmodule module="46" x="15" y="-142" trans="0" />
+   <fmodule module="22" x="-75" y="-118" trans="0" />
+   <fmodule module="6" x="-71" y="-81" trans="5" />
+   <fmodule module="5" x="-101" y="-100" trans="3" />
+  </frame>
+  <frame name="09">
+   <fmodule module="32" x="6" y="-92" trans="0" />
+   <fmodule module="33" x="-39" y="-87" trans="0" />
+   <fmodule module="11" x="-38" y="-116" trans="0" />
+   <fmodule module="11" x="1" y="-116" trans="2" />
+   <fmodule module="37" x="-2" y="-166" trans="4" />
+   <fmodule module="34" x="-99" y="-147" trans="7" />
+   <fmodule module="0" x="-59" y="-161" trans="0" />
+  </frame>
+  <frame name="10">
+   <fmodule module="29" x="-7" y="-48" trans="0" />
+   <fmodule module="8" x="-65" y="-31" trans="0" />
+   <fmodule module="1" x="-41" y="-84" trans="0" />
+   <fmodule module="6" x="-80" y="-50" trans="3" />
+   <fmodule module="28" x="-44" y="-40" trans="0" />
+   <fmodule module="5" x="-78" y="-95" trans="6" />
+   <fmodule module="45" x="-72" y="-92" trans="5" />
+   <fmodule module="0" x="-59" y="-127" trans="0" />
+  </frame>
+  <frame name="10">
+   <fmodule module="1" x="-63" y="-94" trans="0" />
+   <fmodule module="25" x="-45" y="-136" trans="6" />
+   <fmodule module="9" x="-86" y="-31" trans="0" />
+   <fmodule module="48" x="-13" y="-49" trans="0" />
+   <fmodule module="1" x="-55" y="-84" trans="0" />
+   <fmodule module="5" x="-107" y="-94" trans="6" />
+   <fmodule module="6" x="-113" y="-53" trans="3" />
+   <fmodule module="47" x="-68" y="-37" trans="0" />
+   <fmodule module="45" x="-102" y="-95" trans="5" />
+   <fmodule module="0" x="-90" y="-131" trans="0" />
+  </frame>
+  <frame name="10">
+   <fmodule module="9" x="-88" y="-50" trans="0" />
+   <fmodule module="50" x="-19" y="-49" trans="0" />
+   <fmodule module="1" x="-61" y="-98" trans="0" />
+   <fmodule module="49" x="-64" y="-51" trans="0" />
+   <fmodule module="0" x="-78" y="-130" trans="0" />
+   <fmodule module="45" x="-68" y="-110" trans="0" />
+   <fmodule module="6" x="-38" y="-48" trans="2" />
+   <fmodule module="5" x="-76" y="-67" trans="2" />
+  </frame>
+  <frame name="10">
+   <fmodule module="8" x="-88" y="-48" trans="0" />
+   <fmodule module="50" x="-21" y="-47" trans="0" />
+   <fmodule module="49" x="-66" y="-49" trans="0" />
+   <fmodule module="1" x="-61" y="-98" trans="0" />
+   <fmodule module="0" x="-83" y="-128" trans="0" />
+   <fmodule module="45" x="-70" y="-108" trans="0" />
+   <fmodule module="6" x="-38" y="-48" trans="2" />
+   <fmodule module="5" x="-76" y="-67" trans="2" />
+  </frame>
+  <frame name="10">
+   <fmodule module="8" x="-87" y="-50" trans="0" />
+   <fmodule module="50" x="-20" y="-49" trans="0" />
+   <fmodule module="49" x="-65" y="-51" trans="0" />
+   <fmodule module="1" x="-60" y="-100" trans="0" />
+   <fmodule module="0" x="-90" y="-128" trans="0" />
+   <fmodule module="45" x="-76" y="-106" trans="0" />
+   <fmodule module="6" x="-40" y="-43" trans="2" />
+   <fmodule module="5" x="-78" y="-62" trans="2" />
+  </frame>
+  <frame name="11">
+   <fmodule module="8" x="-103" y="-38" trans="0" />
+   <fmodule module="50" x="-36" y="-37" trans="0" />
+   <fmodule module="49" x="-81" y="-39" trans="0" />
+   <fmodule module="1" x="-76" y="-88" trans="0" />
+   <fmodule module="0" x="-108" y="-117" trans="0" />
+   <fmodule module="45" x="-92" y="-94" trans="0" />
+   <fmodule module="6" x="-56" y="-31" trans="2" />
+   <fmodule module="5" x="-94" y="-50" trans="2" />
+  </frame>
+  <frame name="11">
+   <fmodule module="5" x="12" y="-138" trans="5" />
+   <fmodule module="51" x="-32" y="-180" trans="0" />
+   <fmodule module="9" x="-71" y="-48" trans="0" />
+   <fmodule module="48" x="-6" y="-51" trans="0" />
+   <fmodule module="1" x="-47" y="-87" trans="0" />
+   <fmodule module="6" x="-91" y="-100" trans="5" />
+   <fmodule module="47" x="-61" y="-39" trans="0" />
+   <fmodule module="0" x="-66" y="-133" trans="0" />
+   <fmodule module="52" x="-86" y="-165" trans="0" />
+   <fmodule module="5" x="-81" y="-100" trans="4" />
+  </frame>
+  <frame name="11">
+   <fmodule module="5" x="12" y="-138" trans="5" />
+   <fmodule module="51" x="-32" y="-180" trans="0" />
+   <fmodule module="8" x="-69" y="-48" trans="0" />
+   <fmodule module="48" x="-6" y="-51" trans="0" />
+   <fmodule module="1" x="-47" y="-87" trans="0" />
+   <fmodule module="6" x="-91" y="-100" trans="5" />
+   <fmodule module="47" x="-61" y="-39" trans="0" />
+   <fmodule module="0" x="-69" y="-135" trans="0" />
+   <fmodule module="52" x="-86" y="-165" trans="0" />
+   <fmodule module="5" x="-81" y="-100" trans="4" />
+  </frame>
+  <frame name="11">
+   <fmodule module="5" x="11" y="-138" trans="5" />
+   <fmodule module="51" x="-33" y="-180" trans="0" />
+   <fmodule module="7" x="-66" y="-49" trans="6" />
+   <fmodule module="48" x="-6" y="-51" trans="0" />
+   <fmodule module="1" x="-47" y="-87" trans="0" />
+   <fmodule module="6" x="-92" y="-100" trans="5" />
+   <fmodule module="47" x="-61" y="-39" trans="0" />
+   <fmodule module="0" x="-67" y="-136" trans="0" />
+   <fmodule module="52" x="-87" y="-165" trans="0" />
+   <fmodule module="5" x="-82" y="-100" trans="4" />
+  </frame>
+  <frame name="11">
+   <fmodule module="5" x="11" y="-138" trans="5" />
+   <fmodule module="9" x="-71" y="-48" trans="0" />
+   <fmodule module="48" x="-6" y="-51" trans="0" />
+   <fmodule module="1" x="-47" y="-87" trans="0" />
+   <fmodule module="47" x="-61" y="-39" trans="0" />
+   <fmodule module="51" x="-33" y="-180" trans="0" />
+   <fmodule module="0" x="-72" y="-135" trans="0" />
+   <fmodule module="52" x="-87" y="-165" trans="0" />
+   <fmodule module="5" x="-82" y="-100" trans="4" />
+   <fmodule module="6" x="-92" y="-100" trans="5" />
+  </frame>
+  <frame name="11">
+   <fmodule module="5" x="11" y="-138" trans="5" />
+   <fmodule module="51" x="-33" y="-180" trans="0" />
+   <fmodule module="8" x="-69" y="-48" trans="0" />
+   <fmodule module="48" x="-6" y="-51" trans="0" />
+   <fmodule module="1" x="-47" y="-87" trans="0" />
+   <fmodule module="47" x="-61" y="-39" trans="0" />
+   <fmodule module="0" x="-70" y="-135" trans="0" />
+   <fmodule module="6" x="-92" y="-100" trans="5" />
+   <fmodule module="52" x="-87" y="-165" trans="0" />
+   <fmodule module="5" x="-82" y="-100" trans="4" />
+  </frame>
+  <frame name="11">
+   <fmodule module="5" x="11" y="-138" trans="5" />
+   <fmodule module="51" x="-33" y="-180" trans="0" />
+   <fmodule module="7" x="-67" y="-48" trans="6" />
+   <fmodule module="48" x="-6" y="-51" trans="0" />
+   <fmodule module="1" x="-47" y="-87" trans="0" />
+   <fmodule module="47" x="-61" y="-39" trans="0" />
+   <fmodule module="0" x="-70" y="-135" trans="0" />
+   <fmodule module="6" x="-92" y="-100" trans="5" />
+   <fmodule module="52" x="-87" y="-165" trans="0" />
+   <fmodule module="5" x="-82" y="-100" trans="4" />
+  </frame>
+  <frame name="gongji">
+   <fmodule module="29" x="-2" y="-39" trans="0" />
+   <fmodule module="8" x="-58" y="-27" trans="0" />
+   <fmodule module="32" x="-35" y="-42" trans="0" />
+   <fmodule module="1" x="-35" y="-73" trans="0" />
+   <fmodule module="0" x="-47" y="-112" trans="0" />
+   <fmodule module="45" x="-90" y="-104" trans="3" />
+   <fmodule module="5" x="-51" y="-140" trans="7" />
+   <fmodule module="6" x="-39" y="-102" trans="6" />
+  </frame>
+  <frame name="gongji">
+   <fmodule module="9" x="-3" y="-89" trans="0" />
+   <fmodule module="5" x="51" y="-148" trans="7" />
+   <fmodule module="1" x="-14" y="-135" trans="0" />
+   <fmodule module="47" x="-26" y="-88" trans="0" />
+   <fmodule module="0" x="-33" y="-176" trans="0" />
+   <fmodule module="46" x="35" y="-171" trans="0" />
+   <fmodule module="23" x="-22" y="-141" trans="0" />
+   <fmodule module="6" x="-22" y="-86" trans="5" />
+   <fmodule module="5" x="-52" y="-105" trans="3" />
+  </frame>
+  <frame name="gongji">
+   <fmodule module="32" x="95" y="-118" trans="0" />
+   <fmodule module="33" x="61" y="-96" trans="0" />
+   <fmodule module="11" x="62" y="-125" trans="0" />
+   <fmodule module="11" x="95" y="-126" trans="2" />
+   <fmodule module="37" x="96" y="-175" trans="4" />
+   <fmodule module="34" x="2" y="-153" trans="7" />
+   <fmodule module="0" x="38" y="-173" trans="0" />
+  </frame>
+  <frame name="gongji">
+   <fmodule module="29" x="121" y="-48" trans="0" />
+   <fmodule module="8" x="63" y="-31" trans="0" />
+   <fmodule module="1" x="87" y="-84" trans="0" />
+   <fmodule module="28" x="84" y="-40" trans="0" />
+   <fmodule module="0" x="69" y="-127" trans="0" />
+   <fmodule module="2" x="27" y="-110" trans="5" />
+   <fmodule module="5" x="68" y="-136" trans="6" />
+   <fmodule module="6" x="57" y="-109" trans="3" />
+  </frame>
+  <frame name="12">
+   <fmodule module="0" x="99" y="-132" trans="0" />
+   <fmodule module="7" x="74" y="-36" trans="6" />
+   <fmodule module="48" x="129" y="-54" trans="0" />
+   <fmodule module="54" x="91" y="-103" trans="0" />
+   <fmodule module="55" x="163" y="-85" trans="0" />
+   <fmodule module="47" x="80" y="-39" trans="0" />
+   <fmodule module="5" x="152" y="-38" trans="3" />
+   <fmodule module="6" x="191" y="-23" trans="5" />
+  </frame>
+  <frame name="12">
+   <fmodule module="53" x="131" y="-145" trans="0" />
+   <fmodule module="48" x="129" y="-54" trans="0" />
+   <fmodule module="56" x="85" y="-93" trans="0" />
+   <fmodule module="8" x="74" y="-36" trans="0" />
+   <fmodule module="5" x="193" y="-133" trans="0" />
+   <fmodule module="47" x="80" y="-39" trans="0" />
+   <fmodule module="0" x="102" y="-125" trans="0" />
+   <fmodule module="6" x="190" y="-141" trans="6" />
+   <fmodule module="2" x="108" y="-91" trans="6" />
+   <fmodule module="5" x="137" y="-109" trans="6" />
+   <fmodule module="6" x="145" y="-74" trans="3" />
+  </frame>
+  <frame name="12">
+   <fmodule module="9" x="64" y="-38" trans="0" />
+   <fmodule module="57" x="157" y="-95" trans="0" />
+   <fmodule module="48" x="133" y="-42" trans="0" />
+   <fmodule module="56" x="85" y="-91" trans="0" />
+   <fmodule module="47" x="78" y="-41" trans="0" />
+   <fmodule module="0" x="99" y="-128" trans="0" />
+   <fmodule module="2" x="46" y="-122" trans="5" />
+  </frame>
+  <frame name="12">
+   <fmodule module="57" x="128" y="-115" trans="0" />
+   <fmodule module="6" x="76" y="-63" trans="4" />
+   <fmodule module="5" x="62" y="-73" trans="5" />
+   <fmodule module="5" x="173" y="-130" trans="7" />
+   <fmodule module="9" x="149" y="-50" trans="2" />
+   <fmodule module="62" x="49" y="-128" trans="0" />
+   <fmodule module="48" x="131" y="-44" trans="0" />
+   <fmodule module="48" x="82" y="-54" trans="2" />
+   <fmodule module="59" x="90" y="-109" trans="0" />
+   <fmodule module="0" x="72" y="-136" trans="0" />
+  </frame>
+  <frame name="12">
+   <fmodule module="60" x="153" y="-101" trans="0" />
+   <fmodule module="8" x="64" y="-38" trans="0" />
+   <fmodule module="48" x="124" y="-48" trans="0" />
+   <fmodule module="56" x="85" y="-91" trans="0" />
+   <fmodule module="61" x="71" y="-41" trans="0" />
+   <fmodule module="0" x="91" y="-128" trans="0" />
+   <fmodule module="45" x="74" y="-94" trans="5" />
+   <fmodule module="6" x="72" y="-62" trans="7" />
+   <fmodule module="5" x="42" y="-52" trans="3" />
+  </frame>
+  <frame name="12">
+   <fmodule module="51" x="29" y="-104" trans="6" />
+   <fmodule module="48" x="94" y="-47" trans="0" />
+   <fmodule module="63" x="87" y="-58" trans="0" />
+   <fmodule module="15" x="91" y="-88" trans="0" />
+   <fmodule module="15" x="130" y="-89" trans="2" />
+   <fmodule module="64" x="80" y="-76" trans="6" />
+   <fmodule module="18" x="112" y="-36" trans="6" />
+   <fmodule module="55" x="159" y="-92" trans="0" />
+   <fmodule module="18" x="130" y="-36" trans="7" />
+   <fmodule module="14" x="91" y="-127" trans="0" />
+   <fmodule module="14" x="131" y="-127" trans="2" />
+   <fmodule module="6" x="208" y="-76" trans="2" />
+  </frame>
+  <frame name="12">
+   <fmodule module="65" x="124" y="-124" trans="0" />
+   <fmodule module="48" x="120" y="-56" trans="0" />
+   <fmodule module="1" x="93" y="-87" trans="0" />
+   <fmodule module="5" x="62" y="-125" trans="2" />
+   <fmodule module="8" x="67" y="-38" trans="0" />
+   <fmodule module="47" x="79" y="-45" trans="0" />
+   <fmodule module="0" x="66" y="-137" trans="0" />
+   <fmodule module="6" x="47" y="-118" trans="7" />
+   <fmodule module="5" x="55" y="-153" trans="6" />
+   <fmodule module="52" x="49" y="-170" trans="0" />
+  </frame>
+  <frame name="12">
+   <fmodule module="65" x="124" y="-124" trans="0" />
+   <fmodule module="48" x="120" y="-56" trans="0" />
+   <fmodule module="1" x="93" y="-87" trans="0" />
+   <fmodule module="5" x="62" y="-125" trans="2" />
+   <fmodule module="8" x="67" y="-38" trans="0" />
+   <fmodule module="47" x="79" y="-45" trans="0" />
+   <fmodule module="0" x="66" y="-137" trans="0" />
+   <fmodule module="6" x="47" y="-118" trans="7" />
+   <fmodule module="5" x="55" y="-153" trans="6" />
+   <fmodule module="52" x="49" y="-170" trans="0" />
+  </frame>
+  <frame name="12">
+   <fmodule module="66" x="173" y="-100" trans="0" />
+   <fmodule module="48" x="118" y="-58" trans="0" />
+   <fmodule module="54" x="90" y="-116" trans="0" />
+   <fmodule module="8" x="65" y="-38" trans="0" />
+   <fmodule module="47" x="78" y="-46" trans="0" />
+   <fmodule module="0" x="100" y="-139" trans="0" />
+   <fmodule module="2" x="126" y="-102" trans="6" />
+   <fmodule module="5" x="122" y="-73" trans="3" />
+   <fmodule module="6" x="151" y="-83" trans="2" />
+  </frame>
+  <frame name="12">
+   <fmodule module="66" x="173" y="-100" trans="0" />
+   <fmodule module="48" x="118" y="-58" trans="0" />
+   <fmodule module="54" x="90" y="-116" trans="0" />
+   <fmodule module="8" x="65" y="-38" trans="0" />
+   <fmodule module="47" x="78" y="-46" trans="0" />
+   <fmodule module="0" x="100" y="-139" trans="0" />
+   <fmodule module="2" x="126" y="-102" trans="6" />
+   <fmodule module="5" x="122" y="-73" trans="3" />
+   <fmodule module="6" x="151" y="-83" trans="2" />
+  </frame>
+  <frame name="12">
+   <fmodule module="66" x="173" y="-100" trans="0" />
+   <fmodule module="48" x="118" y="-58" trans="0" />
+   <fmodule module="54" x="90" y="-116" trans="0" />
+   <fmodule module="8" x="65" y="-38" trans="0" />
+   <fmodule module="47" x="78" y="-46" trans="0" />
+   <fmodule module="0" x="100" y="-139" trans="0" />
+   <fmodule module="2" x="126" y="-102" trans="6" />
+   <fmodule module="5" x="122" y="-73" trans="3" />
+   <fmodule module="6" x="151" y="-83" trans="2" />
+  </frame>
+  <frame name="shibai">
+   <fmodule module="9" x="64" y="-38" trans="0" />
+   <fmodule module="57" x="157" y="-95" trans="0" />
+   <fmodule module="48" x="133" y="-42" trans="0" />
+   <fmodule module="56" x="85" y="-91" trans="0" />
+   <fmodule module="47" x="78" y="-41" trans="0" />
+   <fmodule module="6" x="69" y="-99" trans="6" />
+   <fmodule module="58" x="39" y="-107" trans="0" />
+   <fmodule module="0" x="98" y="-132" trans="0" />
+   <fmodule module="5" x="76" y="-123" trans="6" />
+  </frame>
+  <frame name="shibai">
+   <fmodule module="5" x="181" y="-119" trans="7" />
+   <fmodule module="57" x="133" y="-111" trans="0" />
+   <fmodule module="6" x="76" y="-63" trans="4" />
+   <fmodule module="5" x="62" y="-73" trans="5" />
+   <fmodule module="9" x="149" y="-50" trans="2" />
+   <fmodule module="62" x="49" y="-128" trans="0" />
+   <fmodule module="48" x="131" y="-44" trans="0" />
+   <fmodule module="48" x="82" y="-54" trans="2" />
+   <fmodule module="59" x="90" y="-109" trans="0" />
+   <fmodule module="0" x="73" y="-137" trans="0" />
+  </frame>
+  <frame name="shibai">
+   <fmodule module="60" x="143" y="-101" trans="0" />
+   <fmodule module="8" x="64" y="-38" trans="0" />
+   <fmodule module="48" x="124" y="-48" trans="0" />
+   <fmodule module="56" x="85" y="-91" trans="0" />
+   <fmodule module="61" x="71" y="-41" trans="0" />
+   <fmodule module="0" x="82" y="-126" trans="0" />
+   <fmodule module="2" x="31" y="-117" trans="5" />
+   <fmodule module="5" x="79" y="-112" trans="0" />
+   <fmodule module="6" x="66" y="-112" trans="7" />
+  </frame>
+  <frame name="shibai">
+   <fmodule module="65" x="124" y="-124" trans="0" />
+   <fmodule module="48" x="120" y="-56" trans="0" />
+   <fmodule module="1" x="93" y="-87" trans="0" />
+   <fmodule module="5" x="62" y="-125" trans="2" />
+   <fmodule module="7" x="67" y="-38" trans="6" />
+   <fmodule module="47" x="79" y="-45" trans="0" />
+   <fmodule module="0" x="63" y="-137" trans="0" />
+   <fmodule module="45" x="27" y="-128" trans="3" />
+   <fmodule module="5" x="61" y="-161" trans="6" />
+   <fmodule module="6" x="51" y="-131" trans="7" />
+  </frame>
+  <frame name="shibai">
+   <fmodule module="55" x="160" y="-95" trans="0" />
+   <fmodule module="51" x="29" y="-104" trans="6" />
+   <fmodule module="48" x="94" y="-47" trans="0" />
+   <fmodule module="63" x="87" y="-58" trans="0" />
+   <fmodule module="15" x="91" y="-88" trans="0" />
+   <fmodule module="15" x="130" y="-89" trans="2" />
+   <fmodule module="64" x="80" y="-76" trans="6" />
+   <fmodule module="18" x="112" y="-36" trans="6" />
+   <fmodule module="5" x="157" y="-59" trans="2" />
+   <fmodule module="6" x="190" y="-40" trans="2" />
+   <fmodule module="18" x="130" y="-36" trans="7" />
+   <fmodule module="14" x="91" y="-127" trans="0" />
+   <fmodule module="14" x="131" y="-127" trans="2" />
+  </frame>
+  <frame name="shibai">
+   <fmodule module="51" x="29" y="-104" trans="6" />
+   <fmodule module="48" x="94" y="-47" trans="0" />
+   <fmodule module="63" x="87" y="-58" trans="0" />
+   <fmodule module="55" x="157" y="-91" trans="0" />
+   <fmodule module="15" x="91" y="-88" trans="0" />
+   <fmodule module="15" x="130" y="-89" trans="2" />
+   <fmodule module="64" x="80" y="-76" trans="6" />
+   <fmodule module="18" x="112" y="-36" trans="6" />
+   <fmodule module="18" x="130" y="-36" trans="7" />
+   <fmodule module="5" x="148" y="-57" trans="2" />
+   <fmodule module="6" x="181" y="-38" trans="2" />
+   <fmodule module="14" x="91" y="-127" trans="0" />
+   <fmodule module="14" x="131" y="-127" trans="2" />
+  </frame>
+  <frame name="shibai">
+   <fmodule module="51" x="29" y="-104" trans="6" />
+   <fmodule module="48" x="94" y="-47" trans="0" />
+   <fmodule module="63" x="87" y="-58" trans="0" />
+   <fmodule module="55" x="157" y="-91" trans="0" />
+   <fmodule module="15" x="91" y="-88" trans="0" />
+   <fmodule module="15" x="130" y="-89" trans="2" />
+   <fmodule module="64" x="80" y="-76" trans="6" />
+   <fmodule module="18" x="112" y="-36" trans="6" />
+   <fmodule module="18" x="130" y="-36" trans="7" />
+   <fmodule module="5" x="148" y="-57" trans="2" />
+   <fmodule module="6" x="181" y="-38" trans="2" />
+   <fmodule module="14" x="91" y="-127" trans="0" />
+   <fmodule module="14" x="131" y="-127" trans="2" />
+  </frame>
+ </frames>
+ <actions bound_x="-75" bound_y="-132" bound_w="149" bound_h="152" sp_bound_x="0" sp_bound_y="0" sp_bound_w="60" sp_bound_h="47" kzone_w="150" kzone_h="150">
+  <action id="0" name="zhanli" key="zhanli" px="0" py="0" bound_x="-75" bound_y="-125" bound_w="130" bound_h="150">
+   <aframe frame="1" flip="0" time="2" fx="0" fy="0" visible="true" />
+   <aframe frame="2" flip="0" time="2" fx="0" fy="0" visible="true" />
+   <aframe frame="3" flip="0" time="2" fx="0" fy="0" visible="true" />
+   <aframe frame="2" flip="0" time="2" fx="0" fy="0" visible="true" />
+  </action>
+  <action id="1" name="1zhanli" key="1zhanli" px="0" py="0" bound_x="-72" bound_y="-127" bound_w="146" bound_h="148">
+   <aframe frame="4" flip="0" time="2" fx="0" fy="0" visible="true" />
+   <aframe frame="5" flip="0" time="2" fx="0" fy="0" visible="true" />
+   <aframe frame="6" flip="0" time="2" fx="0" fy="0" visible="true" />
+   <aframe frame="5" flip="0" time="2" fx="0" fy="0" visible="true" />
+  </action>
+  <action id="2" name="2zhanli" key="2zhanli" px="0" py="0" bound_x="-73" bound_y="-127" bound_w="146" bound_h="145">
+   <aframe frame="7" flip="0" time="2" fx="0" fy="0" visible="true" />
+   <aframe frame="8" flip="0" time="2" fx="0" fy="0" visible="true" />
+   <aframe frame="9" flip="0" time="2" fx="0" fy="0" visible="true" />
+   <aframe frame="8" flip="0" time="2" fx="0" fy="0" visible="true" />
+  </action>
+  <action id="3" name="xingzou" key="xingzou" px="0" py="0" bound_x="-75" bound_y="-125" bound_w="155" bound_h="157">
+   <aframe frame="1" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="10" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="11" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="10" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="1" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="12" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="13" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="12" flip="0" time="1" fx="0" fy="0" visible="true" />
+  </action>
+  <action id="4" name="1xingzou" key="1xingzou" px="0" py="0" bound_x="-72" bound_y="-127" bound_w="145" bound_h="160">
+   <aframe frame="4" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="14" flip="0" time="1" fx="0" fy="1" visible="true" />
+   <aframe frame="15" flip="0" time="1" fx="0" fy="2" visible="true" />
+   <aframe frame="14" flip="0" time="1" fx="0" fy="1" visible="true" />
+   <aframe frame="4" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="16" flip="0" time="1" fx="0" fy="1" visible="true" />
+   <aframe frame="17" flip="0" time="1" fx="0" fy="2" visible="true" />
+   <aframe frame="16" flip="0" time="1" fx="0" fy="1" visible="true" />
+  </action>
+  <action id="5" name="2xingzou" key="2xingzou" px="0" py="0" bound_x="-72" bound_y="-128" bound_w="149" bound_h="153">
+   <aframe frame="7" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="18" flip="0" time="1" fx="0" fy="-1" visible="true" />
+   <aframe frame="19" flip="0" time="1" fx="0" fy="1" visible="true" />
+   <aframe frame="18" flip="0" time="1" fx="0" fy="-1" visible="true" />
+   <aframe frame="7" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="20" flip="0" time="1" fx="0" fy="-1" visible="true" />
+   <aframe frame="21" flip="0" time="1" fx="0" fy="1" visible="true" />
+   <aframe frame="20" flip="0" time="1" fx="0" fy="-1" visible="true" />
+  </action>
+  <action id="6" name="qianchong" key="qianchong" px="0" py="0" bound_x="-62" bound_y="-119" bound_w="150" bound_h="144">
+   <aframe frame="22" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="23" flip="0" time="1" fx="0" fy="1" visible="true" />
+   <aframe frame="24" flip="0" time="1" fx="0" fy="2" visible="true" />
+   <aframe frame="25" flip="0" time="1" fx="0" fy="2" visible="true" />
+  </action>
+  <action id="7" name="fangyu" key="fangyu" px="0" py="0" bound_x="-145" bound_y="-124" bound_w="150" bound_h="142">
+   <aframe frame="26" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="27" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="28" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="29" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="30" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="31" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="32" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="33" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="34" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="35" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="36" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="37" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="38" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="39" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="28" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="31" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="32" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="33" flip="0" time="1" fx="0" fy="0" visible="true" />
+  </action>
+  <action id="8" name="shanbi" key="shanbi" px="0" py="0" bound_x="-103" bound_y="-192" bound_w="197" bound_h="217">
+   <aframe frame="1" flip="0" time="2" fx="0" fy="0" visible="true" />
+   <aframe frame="2" flip="0" time="2" fx="0" fy="0" visible="true" />
+   <aframe frame="40" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="41" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="42" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="43" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="46" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="45" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="44" flip="0" time="1" fx="0" fy="0" visible="true" />
+  </action>
+  <action id="9" name="aida" key="aida" px="0" py="0" bound_x="-113" bound_y="-136" bound_w="167" bound_h="168">
+   <aframe frame="1" flip="0" time="2" fx="0" fy="0" visible="true" />
+   <aframe frame="2" flip="0" time="2" fx="0" fy="0" visible="true" />
+   <aframe frame="47" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="48" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="49" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="50" flip="0" time="1" fx="-1" fy="0" visible="true" />
+   <aframe frame="51" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="49" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="50" flip="0" time="1" fx="-1" fy="0" visible="true" />
+   <aframe frame="51" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="49" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="50" flip="0" time="1" fx="-1" fy="0" visible="true" />
+   <aframe frame="51" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="49" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="50" flip="0" time="1" fx="-1" fy="0" visible="true" />
+   <aframe frame="51" flip="0" time="1" fx="0" fy="0" visible="true" />
+  </action>
+  <action id="10" name="gongji" key="gongji" px="0" py="0" bound_x="-90" bound_y="-176" bound_w="374" bound_h="206">
+   <aframe frame="59" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="60" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="61" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="62" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="63" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="64" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="65" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="66" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="67" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="68" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="69" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="70" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="71" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="72" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="73" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="73" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="73" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="73" flip="0" time="1" fx="0" fy="0" visible="true" />
+  </action>
+  <action id="11" name="shifa" key="shifa" px="0" py="0" bound_x="-108" bound_y="-180" bound_w="163" bound_h="210">
+   <aframe frame="1" flip="0" time="2" fx="0" fy="0" visible="true" />
+   <aframe frame="2" flip="0" time="2" fx="0" fy="0" visible="true" />
+   <aframe frame="3" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="52" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="53" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="54" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="55" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="56" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="57" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="58" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="53" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="54" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="55" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="56" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="57" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="58" flip="0" time="1" fx="0" fy="0" visible="true" />
+  </action>
+  <action id="12" name="fang" key="fang" px="0" py="0" bound_x="-111" bound_y="-123" bound_w="112" bound_h="141">
+   <aframe frame="28" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="29" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="30" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="31" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="32" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="33" flip="0" time="1" fx="0" fy="0" visible="true" />
+  </action>
+  <action id="13" name="gongjishibai" key="gongjishibai" px="0" py="0" bound_x="-90" bound_y="-176" bound_w="374" bound_h="206">
+   <aframe frame="59" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="60" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="61" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="62" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="63" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="64" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="74" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="75" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="76" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="77" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="78" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="79" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="77" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="80" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="78" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="79" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="61" flip="0" time="1" fx="0" fy="0" visible="true" />
+   <aframe frame="3" flip="0" time="1" fx="0" fy="0" visible="true" />
+  </action>
+ </actions>
+</sprite>

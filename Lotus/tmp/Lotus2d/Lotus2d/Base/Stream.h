@@ -41,6 +41,7 @@ namespace Lotus2d {
 		virtual uint16 read16();
 		virtual uint32 read32();
 		virtual uint64 read64();
+		virtual float readf();
 
 		/* 以le字节序读入*/
 		virtual uint16 read16le();
@@ -53,6 +54,7 @@ namespace Lotus2d {
 		virtual void write16(uint16 s);
 		virtual void write32(uint32 i);	
 		virtual void write64(uint64 l);	
+		virtual void writef(float f);
 		
 		/* 以le字节序写入，可以直接写入，无需转换*/
 		virtual void write16le(uint16 s);
